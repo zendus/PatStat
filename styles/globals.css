@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap");
 
-/* =========================================
-   PAT-STAT DESIGN TOKENS
-   ========================================= */
-
 :root {
   /* --- Brand Colors --- */
   --color-deep-teal: #0e4655;
@@ -25,7 +21,8 @@
   --color-red: #ee3d2b;
   --color-green: #2ecc71;
   --color-orange: #f39c12;
-  --color-blue: #0688dc;
+  --color-blue: #015DDD;
+
 
   /* --- Neutrals --- */
   --color-black: #05171c;
@@ -69,10 +66,6 @@
   --shadow-lg: 0 8px 24px rgba(14, 70, 85, 0.16);
 }
 
-/* =========================================
-   BASE STYLES
-   ========================================= */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -93,10 +86,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-/* =========================================
-   TYPOGRAPHY
-   ========================================= */
 
 h1,
 h2,
@@ -128,17 +117,12 @@ p {
   color: var(--color-grey-1);
 }
 
-/* =========================================
-   UTILITY CLASSES
-   ========================================= */
-
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--gutter);
 }
 
-/* Text utilities */
 .text-large-bold {
   font-size: var(--text-large);
   font-weight: 700;
