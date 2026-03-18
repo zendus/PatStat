@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap");
+
+:root {
+  /* --- Brand Colors --- */
+  --color-deep-teal: #0e4655;
+  --color-teal-cyan: #1a949d;
+
+  /* --- Primary (DTB Scale) --- */
+  --color-dtb-1: #0e4655;
+  --color-dtb-2: #366571;
+  --color-dtb-3: #86a2aa;
+  --color-dtb-4: #cfdadd;
+
+  /* --- Secondary (Teal Cyan Scale) --- */
+  --color-tc-1: #1a949d;
+  --color-tc-2: #40a6ad;
+  --color-tc-3: #8cc9ce;
+  --color-tc-4: #d1eaeb;
+
+  /* --- Accents --- */
+  --color-red: #ee3d2b;
+  --color-green: #2ecc71;
+  --color-orange: #f39c12;
+  --color-blue: #015DDD;
+
+
+  /* --- Neutrals --- */
+  --color-black: #05171c;
+  --color-grey-1: #555555;
+  --color-grey-2: #878383;
+  --color-grey-3: #aaaaaa;
+  --color-grey-4: #cccccc;
+  --color-white: #f8fdff;
+  --color-ash: #414141;
+
+  /* --- Typography --- */
+  --font-heading: "Manrope", sans-serif;
+  --font-body: "Source Sans 3", sans-serif;
+
+  /* --- Font Sizes (Headings) --- */
+  --text-h1: 50px;
+  --text-h2: 30px;
+  --text-h3: 24px;
+
+  /* --- Font Sizes (Body) --- */
+  --text-large: 24px;
+  --text-medium: 18px;
+  --text-normal: 16px;
+  --text-small: 14px;
+  --text-xsmall: 12px;
+
+  /* --- Spacing & Grid --- */
+  --gutter: 20px;
+  --max-width: 1440px;
+  --columns: 12;
+
+  /* --- Radius --- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 3px rgba(14, 70, 85, 0.08);
+  --shadow-md: 0 4px 12px rgba(14, 70, 85, 0.12);
+  --shadow-lg: 0 8px 24px rgba(14, 70, 85, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-normal);
+  color: var(--color-black);
+  background-color: var(--color-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: auto;
+  color: var(--color-deep-teal);
+}
+
+h1 {
+  font-size: var(--text-h1);
+}
+
+h2 {
+  font-size: var(--text-h2);
+}
+
+h3 {
+  font-size: var(--text-h3);
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--text-normal);
+  color: var(--color-grey-1);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.text-large-bold {
+  font-size: var(--text-large);
+  font-weight: 700;
+}
+.text-large {
+  font-size: var(--text-large);
+  font-weight: 400;
+}
+.text-medium-bold {
+  font-size: var(--text-medium);
+  font-weight: 600;
+}
+.text-medium {
+  font-size: var(--text-medium);
+  font-weight: 400;
+}
+.text-normal-bold {
+  font-size: var(--text-normal);
+  font-weight: 600;
+}
+.text-normal {
+  font-size: var(--text-normal);
+  font-weight: 400;
+}
+.text-small-bold {
+  font-size: var(--text-small);
+  font-weight: 600;
+}
+.text-small {
+  font-size: var(--text-small);
+  font-weight: 400;
+}
+.text-xsmall-bold {
+  font-size: var(--text-xsmall);
+  font-weight: 600;
+}
+.text-xsmall {
+  font-size: var(--text-xsmall);
+  font-weight: 400;
+}
