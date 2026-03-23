@@ -1,30 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap");
 
 :root {
-  /* --- Brand Colors --- */
   --color-deep-teal: #0e4655;
   --color-teal-cyan: #1a949d;
 
-  /* --- Primary (DTB Scale) --- */
   --color-dtb-1: #0e4655;
   --color-dtb-2: #366571;
   --color-dtb-3: #86a2aa;
   --color-dtb-4: #cfdadd;
 
-  /* --- Secondary (Teal Cyan Scale) --- */
   --color-tc-1: #1a949d;
   --color-tc-2: #40a6ad;
   --color-tc-3: #8cc9ce;
   --color-tc-4: #d1eaeb;
 
-  /* --- Accents --- */
   --color-red: #ee3d2b;
   --color-green: #2ecc71;
   --color-orange: #f39c12;
   --color-blue: #015DDD;
 
 
-  /* --- Neutrals --- */
   --color-black: #05171c;
   --color-grey-1: #555555;
   --color-grey-2: #878383;
@@ -33,34 +28,28 @@
   --color-white: #f8fdff;
   --color-ash: #414141;
 
-  /* --- Typography --- */
   --font-heading: "Manrope", sans-serif;
   --font-body: "Source Sans 3", sans-serif;
 
-  /* --- Font Sizes (Headings) --- */
   --text-h1: 50px;
   --text-h2: 30px;
   --text-h3: 24px;
 
-  /* --- Font Sizes (Body) --- */
   --text-large: 24px;
   --text-medium: 18px;
   --text-normal: 16px;
   --text-small: 14px;
   --text-xsmall: 12px;
 
-  /* --- Spacing & Grid --- */
   --gutter: 20px;
   --max-width: 1440px;
   --columns: 12;
 
-  /* --- Radius --- */
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 24px;
   --radius-full: 9999px;
 
-  /* --- Shadows --- */
   --shadow-sm: 0 1px 3px rgba(14, 70, 85, 0.08);
   --shadow-md: 0 4px 12px rgba(14, 70, 85, 0.12);
   --shadow-lg: 0 8px 24px rgba(14, 70, 85, 0.16);
