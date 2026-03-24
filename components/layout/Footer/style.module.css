@@ -46,7 +46,7 @@
 
 .tagline {
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: #C0D0E3;
   line-height: 25px;
@@ -62,7 +62,7 @@
 
 .colHeading {
   font-family: var(--font-body);
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   color: #ffffff;
   line-height: 35px;
@@ -72,7 +72,7 @@
 
 .footerLink {
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: #C0D0E3;
   text-decoration: none;
@@ -102,7 +102,7 @@
 
 .copyright {
   font-family: var(--font-body);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   color: #C0D0E3;
   line-height: 25px;
