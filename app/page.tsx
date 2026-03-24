@@ -1,6 +1,7 @@
 "use client";
 
 import { Layout } from "@/components/ui/Layout";
+import { HowItWorks } from "@/widgets/HomeHeros";
 import { MainHero } from "@/widgets/HomeHeros/MainHero";
 import Head from "next/head";
 
@@ -16,6 +17,7 @@ const Home = () => {
 
       <main>
         <MainHero />
+        <HowItWorks />
       </main>
     </Layout>
   );
