@@ -48,7 +48,6 @@ export function HowItWorks() {
           </p>
         </div>
 
-        {/* ── Cards ── */}
         <div className={styles.grid}>
           {steps.map((step) => {
             const Icon = step.icon;
