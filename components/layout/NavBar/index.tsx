@@ -1,41 +1,45 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import styles from "./style.module.css";
 import Image from "next/image";
 
+// Define interfaces for better type safety
 interface NavItem {
   label: string;
   href: string;
 }
 
-const navItems: NavItem[] = [
+const navItems: readonly NavItem[] = [
   { label: "Features", href: "/features" },
   { label: "How it Works", href: "/how-it-works" },
   { label: "Who it's For", href: "/who-its-for" },
   { label: "Support", href: "/support" },
 ];
 
-export function Navbar(): React.ReactElement {
+export const Navbar: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
 
-  const closeMobile = (): void => setMobileOpen(false);
+  const toggleMobile = useCallback(() => {
+    setMobileOpen((prev) => !prev);
+  }, []);
+
+  const closeMobile = useCallback(() => {
+    setMobileOpen(false);
+  }, []);
 
   useEffect(() => {
     const handleResize = (): void => {
       if (window.innerWidth > 768 && mobileOpen) {
-        setMobileOpen(false);
+        closeMobile();
       }
     };
 
-    window.addEventListener('resize', handleResize);
-    
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [mobileOpen]);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [mobileOpen, closeMobile]);
 
   return (
     <nav className={styles.nav}>
@@ -69,7 +73,7 @@ export function Navbar(): React.ReactElement {
 
         <button
           className={styles.hamburger}
-          onClick={() => setMobileOpen((prev) => !prev)}
+          onClick={toggleMobile}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
           type="button"
@@ -101,6 +105,6 @@ export function Navbar(): React.ReactElement {
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;
