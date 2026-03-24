@@ -1,6 +1,7 @@
 .nav {
+  position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: 0px;
   z-index: 100;
   background: #ffffff;
   border-bottom: 1px solid var(--color-dtb-4);
@@ -183,6 +184,17 @@
 
 .mobileCta:hover {
   background: #0577c3;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav {
+    background: #ffffff;
+    color: #414141;
+  }
+  
+  .navLink {
+    color: #414141;
+  }
 }
 
 @media (max-width: 1200px) {

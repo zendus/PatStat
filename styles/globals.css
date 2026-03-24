@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;600;700&family=Roboto:wght@400;500;700;900&display=swap");
 
 :root {
   --color-deep-teal: #0e4655;
@@ -30,6 +30,7 @@
 
   --font-heading: "Manrope", sans-serif;
   --font-body: "Source Sans 3", sans-serif;
+  --font-body-alt: "Roboto", sans-serif;
 
   --text-h1: 50px;
   --text-h2: 30px;

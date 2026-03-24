@@ -1,0 +1,2 @@
+
+export { MainHero } from "./HomeHeros";
