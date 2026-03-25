@@ -1,0 +1,260 @@
+.section {
+    width: 100%;
+    background: #F5F9FF;
+}
+
+.inner {
+    max-width: var(--max-width, 1440px);
+    margin: 0 auto;
+    padding: 80px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    font-weight: 700;
+    color: #252E30;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0;
+    ;
+    opacity: 1;
+
+}
+
+.subtitle {
+    font-family: var(--font-body);
+    font-size: 22px;
+    font-weight: 500;
+    color: #414141;
+    line-height: 35px;
+    margin: 0;
+    font-style: Medium;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    opacity: 1;
+}
+
+.item {
+    border-top: 1px solid #B1B1B1;
+}
+
+.item:first-child {
+    border-top: none;
+}
+
+.item:last-child {
+    border-bottom: 1px solid #B1B1B1;
+}
+
+.trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 20px 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.question {
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 600;
+    color: #252E30;
+    line-height: 100%;
+    margin: 0;
+    flex: 1;
+    transition: color 0.18s ease;
+    font-style: Semi Bold;
+    letter-spacing: 0%;
+
+}
+
+.itemOpen .question {
+    color: #252E30;
+}
+
+.trigger:hover .question {
+    color: var(--color-blue, #015DDD);
+}
+
+.iconWrap {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #414141;
+    transition: color 0.18s ease;
+}
+
+.itemOpen .iconWrap {
+    color: #252E30;
+}
+
+.answerWrap {
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.answer {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 400;
+    color: #646363;
+    line-height: 25px;
+    margin: 0;
+    padding: 10px 25px;
+    padding-bottom: 24px;
+    font-style: Regular;
+    letter-spacing: 0%;
+
+}
+
+@media (max-width: 1024px) {
+    .inner {
+        padding: 72px 32px;
+        gap: 48px;
+    }
+
+    .title {
+        font-size: 40px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 860px) {
+    .title {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        line-height: 25px;
+    }
+
+    .accordion {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .inner {
+        padding: 56px 20px;
+        gap: 40px;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    .question {
+        font-size: 16px;
+    }
+
+    .answer {
+        font-size: 15px;
+    }
+
+    .trigger {
+        padding: 18px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .inner {
+        padding: 48px 16px;
+        gap: 32px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .question {
+        font-size: 15px;
+    }
+
+    .answer {
+        font-size: 14px;
+        padding-bottom: 20px;
+    }
+
+    .iconWrap {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 375px) {
+    .inner {
+        padding: 40px 16px;
+        gap: 28px;
+    }
+
+    .title {
+        font-size: 24px;
+        letter-spacing: -0.01em;
+        line-height: 1.15;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .trigger {
+        padding: 16px 0;
+        gap: 12px;
+    }
+
+    .question {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .answer {
+        font-size: 14px;
+        line-height: 1.65;
+        padding-bottom: 18px;
+    }
+
+    .iconWrap {
+        width: 22px;
+        height: 22px;
+    }
+}

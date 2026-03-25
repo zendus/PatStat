@@ -1,10 +1,17 @@
 .nav {
   position: sticky;
   top: 0;
-  z-index: 100;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   background: #ffffff;
   border-bottom: 1px solid var(--color-dtb-4);
-  box-shadow: 0px 2px 10px 0px #393939;
+  box-shadow: 0px 2px 10px 0px rgba(57, 57, 57, 0.1);
+  align-self: flex-start;
+}
+
+:global(html), :global(body) {
+  overflow-x: visible !important;
 }
 
 .inner {
@@ -41,7 +48,7 @@
   height: 45px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 40px;
   list-style: none;
   margin: 0;
@@ -50,16 +57,33 @@
 
 .navLink {
   font-family: var(--text-medium);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--color-ash);
   text-decoration: none;
-  transition: color 0.18s ease;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.3s ease;
   white-space: nowrap;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-teal-cyan, #015DDD);
+  transition: width 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
 .navLink:hover {
   color: var(--color-teal-cyan);
+}
+
+.navLink:hover::after {
+  width: 100%;
 }
 
 .desktopCta {
@@ -75,13 +99,18 @@
   width: 100%;
   height: 100%;
   background: var(--color-blue, #015DDD);
-  color: #ffffff;
+  color: var(--Miscellaneous-Text-Field---BG, #FFFFFF);
+  font-style: SemiBold;
+  line-height: 25px;
+  letter-spacing: 0%;
+  text-align: center;
   border: none;
   border-radius: 25px;
   padding: 18px 25px;
   font-family: var(--font-body);
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
+  gap: 10px;
   cursor: pointer;
   text-decoration: none;
   display: inline-flex;
@@ -116,46 +145,47 @@
 }
 
 .mobileMenu {
-  display: none;
-  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
   background: #ffffff;
-  padding: 8px 24px 28px;
-  animation: slideDown 0.2s ease;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+  border-bottom: 0 solid transparent;
 }
 
 .mobileMenuOpen {
-  display: flex;
+  max-height: 500px;
+  padding: 8px 24px 28px;
+  border-bottom: 1px solid var(--color-dtb-4, #eee);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .mobileNavItem {
-  display: block;
-  padding: 14px 0;
-  font-family: var(--font-body);
-  font-size: var(--text-normal);
-  font-weight: 400;
-  color: var(--color-black);
+  padding: 16px 0;
+  font-size: 18px;
+  color: #333;
   text-decoration: none;
-  border-bottom: 1px solid var(--color-dtb-4);
-  transition: color 0.15s;
-}
-
-.mobileNavItem:last-of-type {
-  border-bottom: none;
+  border-bottom: 1px solid #f0f0f0;
+  transition: padding-left 0.3s ease;
 }
 
 .mobileNavItem:hover {
-  color: var(--color-teal-cyan);
+  padding-left: 8px;
+  color: var(--color-teal-cyan, #015DDD);
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
 }
 
 .mobileDivider {
@@ -165,11 +195,11 @@
 
 .mobileCta {
   margin-top: 12px;
-  background: var(--color-blue, #0688dc);
-  color: #ffffff;
+  background: var(--color-blue, #015DDD);
+  color: var(--Miscellaneous-Text-Field---BG, #FFFFFF);
   border: none;
-  border-radius: 9999px;
-  padding: 14px 28px;
+  border-radius: 25px;
+  padding: 14px 21px;
   font-family: var(--font-body);
   font-size: var(--text-normal);
   font-weight: 600;
@@ -183,6 +213,17 @@
 
 .mobileCta:hover {
   background: #0577c3;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav {
+    background: #ffffff;
+    color: #414141;
+  }
+  
+  .navLink {
+    color: #414141;
+  }
 }
 
 @media (max-width: 1200px) {
