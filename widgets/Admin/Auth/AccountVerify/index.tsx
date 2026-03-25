@@ -47,9 +47,7 @@ const AccessVerification: React.FC = () => {
     <main className={styles.wrapper}>
       <div className={styles.card}>
 
-        {/* ── LEFT PANEL ── */}
         <div className={styles.left}>
-          {/* Background image — swap src with your asset path */}
           <Image
             src="/images/auth_bg.webp"
             alt="background image of a doctor reviewing patient data on a tablet"
@@ -72,14 +70,12 @@ const AccessVerification: React.FC = () => {
 
             </div>
 
-            {/* Hero */}
             <div className={styles.hero}>
               <h1 className={styles.heroTitle}>Secure Patient Access</h1>
               <p className={styles.heroSubtitle}>
                 You&apos;ve been invited to securely access patient updates through Pat-Stat.
               </p>
 
-              {/* Patient card */}
               <div className={styles.patientCard}>
                 <dl className={styles.patientFields}>
                   <div className={styles.patientField}>
@@ -101,11 +97,10 @@ const AccessVerification: React.FC = () => {
               </div>
             </div>
 
-            {/* Support footer */}
             <footer className={styles.support}>
               <div className={styles.supportItem}>
                 <span className={styles.supportIcon} aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                     <polyline points="22,6 12,13 2,6"/>
                   </svg>
@@ -117,7 +112,7 @@ const AccessVerification: React.FC = () => {
               </div>
               <div className={styles.supportItem}>
                 <span className={styles.supportIcon} aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/>
                   </svg>
                 </span>
@@ -131,7 +126,6 @@ const AccessVerification: React.FC = () => {
           </div>
         </div>
 
-        {/* ── RIGHT PANEL ── */}
         <div className={styles.right}>
 
           <div className={styles.stepBadge} aria-label="Step 1 of 2: Access Verification">
@@ -145,7 +139,6 @@ const AccessVerification: React.FC = () => {
 
             <form onSubmit={handleSubmit} noValidate>
 
-              {/* Access code — read-only display */}
               <div className={styles.field}>
                 <span className={styles.fieldLabelRight}>Access Code</span>
                 <div className={styles.codePill} aria-label={`Access code: ${PATIENT_INFO.accessCode}`}>
@@ -153,7 +146,6 @@ const AccessVerification: React.FC = () => {
                 </div>
               </div>
 
-              {/* Email */}
               <div className={styles.field}>
                 <label htmlFor="email" className={styles.fieldLabelRight}>
                   Enter Email Address <span className={styles.required} aria-hidden="true">*</span>

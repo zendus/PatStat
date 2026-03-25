@@ -1,16 +1,9 @@
-/* ─────────────────────────────────────────
-   Pat-Stat – Access Verification
-   styles.module.css
-───────────────────────────────────────── */
-
-/* ── Layout ──────────────────────────── */
-
 .wrapper {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #E8EAE9;
+  background: #E7F3F7;
   padding: 32px 24px;
 }
 
@@ -24,11 +17,9 @@
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.16);
 }
 
-/* ── Left Panel ──────────────────────── */
-
 .left {
   position: relative;
-  flex: 0 0 46.25%; /* 666/1440 */
+  flex: 0 0 46.25%;
   min-height: 640px;
   border-radius: 40px 0 0 40px;
   overflow: hidden;
@@ -45,7 +36,7 @@
 .leftOverlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(41, 43, 42, 0.60); /* #292B2A at 60% */
+  background-color: rgba(41, 43, 42, 0.60);
   z-index: 1;
 }
 
@@ -55,11 +46,9 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  /* mirrors spec: top:128px left:57px on a 1024px container */
-  padding: 40px 57px 48px;
+  padding: 40px 40px 48px;
 }
 
-/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -71,37 +60,41 @@
   flex-shrink: 0;
 }
 
-/* Hero section */
 .hero {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 48px 0 32px;
+  padding: 35px 0 32px;
 }
 
 .heroTitle {
-  font-size: clamp(26px, 3.2vw, 40px);
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.2;
+  font-family: var(--font-heading);
+  font-size: 42px;
+  font-weight:700;
+  color: var(--Miscellaneous-Text-Field---BG, #FFFFFF);
+  line-height: 100%;
   margin-bottom: 16px;
+font-style: ExtraBold;
+letter-spacing: 0%;
 }
 
 .heroSubtitle {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.82);
-  line-height: 1.65;
-  max-width: 400px;
+  font-family: var(--font-body);
+  font-size: 19px;
+  color: var(--Miscellaneous-Text-Field---BG, #FFFFFF);
+  line-height: 35px;
+  width: 100%;
   margin-bottom: 36px;
+font-weight: 500;
+font-style: Medium;
+letter-spacing: 0%;
 }
 
-/* Patient card (glassmorphism) */
 .patientCard {
   background: rgba(255, 255, 255, 0.13);
-  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(12px);
   border-radius: 16px;
   padding: 24px 28px 20px;
 }
@@ -115,32 +108,42 @@
 }
 
 .fieldLabel {
+  font-family: var(--font-body);
   display: block;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.60);
-  text-transform: uppercase;
-  letter-spacing: 0.9px;
-  margin-bottom: 4px;
+  color: #D0D0D0;
+  letter-spacing: 0%;
+  margin-bottom: 10px;
+font-style: Medium;
+line-height: 100%;
+vertical-align: middle;
 }
 
 .fieldValue {
-  font-size: 17px;
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-size: 20px;
+  font-weight: 600;
   color: #ffffff;
   margin: 0;
+font-style: SemiBold;
+line-height: 25px;
+letter-spacing: 0%;
 }
 
 .patientNote {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.58);
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+    font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+font-style: Regular;
+  color: #D0D0D0;
   padding-top: 14px;
-  margin-top: 6px;
-  line-height: 1.5;
+  margin-top: 10px;
+  line-height: 28px;
+letter-spacing: 0%;
+vertical-align: middle;
 }
 
-/* Support footer */
 .support {
   display: flex;
   flex-direction: column;
@@ -157,26 +160,34 @@
 .supportIcon {
   width: 34px;
   height: 34px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.14);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: #ffffff;
+  color: var(--Miscellaneous-Text-Field---BG, #FFFFFF);
 }
 
 .supportLabel {
+  font-family: var(--font-body);
   display: block;
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--Miscellaneous-Text-Field---BG, #FFFFFF);
+font-style: SemiBold;
+line-height: 25px;
+letter-spacing: 0%;
 }
 
 .supportValue {
+  font-family: var(--font-body);
   display: block;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  color: var(--Miscellaneous-Text-Field---BG, #FFFFFF);
+font-weight: 400;
+font-style: Regular;
+line-height: 25px;
+letter-spacing: 0%;
+
 }
 
 /* ── Right Panel ─────────────────────── */
