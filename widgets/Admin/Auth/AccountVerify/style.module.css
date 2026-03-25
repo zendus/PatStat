@@ -1,0 +1,445 @@
+/* ─────────────────────────────────────────
+   Pat-Stat – Access Verification
+   styles.module.css
+───────────────────────────────────────── */
+
+/* ── Layout ──────────────────────────── */
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #E8EAE9;
+  padding: 32px 24px;
+}
+
+.card {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  min-height: 640px;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.16);
+}
+
+/* ── Left Panel ──────────────────────── */
+
+.left {
+  position: relative;
+  flex: 0 0 46.25%; /* 666/1440 */
+  min-height: 640px;
+  border-radius: 40px 0 0 40px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.leftOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(41, 43, 42, 0.60); /* #292B2A at 60% */
+  z-index: 1;
+}
+
+.leftContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* mirrors spec: top:128px left:57px on a 1024px container */
+  padding: 40px 57px 48px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+  flex-shrink: 0;
+}
+
+/* Hero section */
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 0 32px;
+}
+
+.heroTitle {
+  font-size: clamp(26px, 3.2vw, 40px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.heroSubtitle {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.65;
+  max-width: 400px;
+  margin-bottom: 36px;
+}
+
+/* Patient card (glassmorphism) */
+.patientCard {
+  background: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: 16px;
+  padding: 24px 28px 20px;
+}
+
+.patientFields {
+  margin: 0;
+}
+
+.patientField {
+  margin-bottom: 20px;
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.60);
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  margin-bottom: 4px;
+}
+
+.fieldValue {
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.patientNote {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.58);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding-top: 14px;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* Support footer */
+.support {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.supportItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.supportIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #ffffff;
+}
+
+.supportLabel {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.supportValue {
+  display: block;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ── Right Panel ─────────────────────── */
+
+.right {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 0 40px 40px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* mirrors spec: left:107px on 774px container */
+  padding: 72px 72px 72px 107px;
+}
+
+/* Step badge */
+.stepBadge {
+  position: absolute;
+  top: 40px;
+  right: 48px;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.stepNumber {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #1A7A4A;
+  letter-spacing: 0.5px;
+}
+
+.stepName {
+  display: block;
+  font-size: 11.5px;
+  color: #6B7280;
+}
+
+/* Form wrapper */
+.formWrap {
+  width: 100%;
+  max-width: 520px;
+}
+
+.formTitle {
+  font-size: clamp(22px, 2.6vw, 32px);
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.formSubtitle {
+  font-size: 14px;
+  color: #6B7280;
+  margin-bottom: 44px;
+  line-height: 1.5;
+}
+
+/* Field */
+.field {
+  margin-bottom: 28px;
+}
+
+.fieldLabelRight {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1A1A1A;
+  margin-bottom: 10px;
+}
+
+.required {
+  color: #E53E3E;
+  margin-left: 2px;
+}
+
+/* Access code pill */
+.codePill {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1.5px solid #C9CDD2;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #1A1A1A;
+  user-select: all;
+}
+
+/* Email input */
+.input {
+  width: 100%;
+  background: #F4F4F5;
+  border: 1.5px solid transparent;
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 14px;
+  color: #1A1A1A;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  font-family: inherit;
+}
+
+.input::placeholder {
+  color: #A8ADB5;
+}
+
+.input:focus {
+  border-color: #1A7A4A;
+  background: #ffffff;
+}
+
+.inputError {
+  border-color: #E53E3E !important;
+}
+
+.hint {
+  font-size: 12px;
+  color: #9CA3AF;
+  margin-top: 7px;
+  line-height: 1.5;
+}
+
+.errorMsg {
+  font-size: 12px;
+  color: #E53E3E;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* Sign In button */
+.btnSignIn {
+  width: 100%;
+  padding: 15px 24px;
+  background: #1E8A52;
+  color: #ffffff;
+  font-size: 15.5px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease, opacity 0.2s ease;
+  font-family: inherit;
+  letter-spacing: 0.1px;
+  margin-top: 4px;
+}
+
+.btnSignIn:hover:not(:disabled) {
+  background: #166B3E;
+}
+
+.btnSignIn:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+.btnSignIn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Security badge */
+.securityBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 14px;
+  background: #E8F5EE;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-size: 12.5px;
+  color: #1A7A4A;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* ── Responsive ──────────────────────── */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .leftContent {
+    padding: 36px 40px 40px;
+  }
+
+  .right {
+    padding: 64px 48px;
+    justify-content: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0;
+    background: #ffffff;
+    align-items: flex-start;
+  }
+
+  .card {
+    flex-direction: column;
+    border-radius: 0;
+    box-shadow: none;
+    min-height: 100vh;
+  }
+
+  .left {
+    flex: 0 0 auto;
+    border-radius: 0;
+    min-height: auto;
+  }
+
+  .leftContent {
+    padding: 28px 24px 36px;
+  }
+
+  .hero {
+    padding: 28px 0 24px;
+  }
+
+  .support {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .right {
+    flex: 1;
+    border-radius: 0;
+    padding: 40px 24px 56px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .stepBadge {
+    top: 20px;
+    right: 24px;
+  }
+
+  .formWrap {
+    max-width: 100%;
+  }
+
+  .formSubtitle {
+    margin-bottom: 32px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 400px) {
+  .leftContent {
+    padding: 24px 20px 28px;
+  }
+
+  .right {
+    padding: 36px 20px 48px;
+  }
+
+  .heroTitle {
+    font-size: 24px;
+  }
+}
