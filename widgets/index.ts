@@ -1,3 +1,4 @@
+export { AccessCreation } from "./Admin/Auth/AccountCreation";
 
 export { MainHero } from "./HomeHeros";
 

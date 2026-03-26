@@ -19,11 +19,11 @@ const PATIENT_INFO: PatientInfo = {
 };
 
 const AccessVerification: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>('');
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     setError('');
 
@@ -33,11 +33,15 @@ const AccessVerification: React.FC = () => {
     }
 
     setIsLoading(true);
-    try {
-      await new Promise((res) => setTimeout(res, 1200));
-      console.log('Verifying:', { email, accessCode: PATIENT_INFO.accessCode });
-    } catch {
-      setError('Verification failed. Please try again.');
+    try {   // Simulate API call
+      await new Promise((resolve) => setTimeout(resolve, 1200));
+      console.log('Verification successful for:', email);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(`Verification failed: ${err.message}. Please try again.`);
+      } else {
+        setError('Verification failed. Please try again.');
+      }
     } finally {
       setIsLoading(false);
     }
@@ -46,7 +50,6 @@ const AccessVerification: React.FC = () => {
   return (
     <main className={styles.wrapper}>
       <div className={styles.card}>
-
         <div className={styles.left}>
           <Image
             src="/images/auth_bg.webp"
@@ -54,20 +57,18 @@ const AccessVerification: React.FC = () => {
             fill
             priority
             className={styles.bgImage}
-            sizes="(max-width: 768px) 100vw, 46vw"
+            sizes="(max-width: 860px) 0vw, (max-width: 1024px) 50vw, 46vw"
           />
           <div className={styles.leftOverlay} />
 
           <div className={styles.leftContent}>
-
             <div className={styles.logo}>
               <Image
                 src="/images/auth_logo.svg"
                 alt="Pat-Stat logo"
-                width={133.3333282470703}
+                width={133}
                 height={50}
               />
-
             </div>
 
             <div className={styles.hero}>
@@ -122,12 +123,10 @@ const AccessVerification: React.FC = () => {
                 </div>
               </div>
             </footer>
-
           </div>
         </div>
 
         <div className={styles.right}>
-
           <div className={styles.stepBadge} aria-label="Step 1 of 2: Access Verification">
             <span className={styles.stepNumber}>STEP 01/02</span>
             <span className={styles.stepName}>Access Verification</span>
@@ -138,7 +137,6 @@ const AccessVerification: React.FC = () => {
             <p className={styles.formSubtitle}>Confirm your invitation details to continue.</p>
 
             <form onSubmit={handleSubmit} noValidate>
-
               <div className={styles.field}>
                 <span className={styles.fieldLabelRight}>Access Code</span>
                 <div className={styles.codePill} aria-label={`Access code: ${PATIENT_INFO.accessCode}`}>
@@ -156,7 +154,7 @@ const AccessVerification: React.FC = () => {
                   className={`${styles.input} ${error ? styles.inputError : ''}`}
                   placeholder="Enter Email Address"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                   autoComplete="email"
                   aria-describedby="email-hint email-error"
                   aria-required="true"
@@ -180,10 +178,8 @@ const AccessVerification: React.FC = () => {
               >
                 {isLoading ? 'Verifying…' : 'Sign In'}
               </button>
-
             </form>
 
-            {/* Security badge */}
             <div className={styles.securityBadge} aria-label="Secure hospital connection, protected by Pat-Stat">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
@@ -192,7 +188,6 @@ const AccessVerification: React.FC = () => {
               <span>Secure hospital connection &bull; Protected by Pat-Stat</span>
             </div>
           </div>
-
         </div>
       </div>
     </main>
