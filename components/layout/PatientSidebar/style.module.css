@@ -1,0 +1,203 @@
+.sidebar {
+  width: 230px;
+  min-height: 100vh;
+  background: var(--Miscellaneous-Text-Field---BG, #FFFFFF);
+  box-shadow: 0px 2px 15px 0px rgba(183, 183, 183, 0.15);
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+/* ── Header ─────────────────────────── */
+
+.sidebarHeader {
+  padding: 0 20px 20px;
+  border-bottom: 1px solid #E8E8E8;
+  margin-bottom: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.logoIcon {
+  width: 44px;
+  height: 44px;
+  background-color: #1B9362;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* .logoText {} */
+
+.logoName {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1D1D1D;
+  line-height: 1.2;
+  font-family: var(--font-heading);
+}
+
+.logoHospital {
+  font-size: 11px;
+  color: #8C8C8C;
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+/* Patient info — plain text below logo, no green box */
+.patientInfoBox {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.patientName {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: #1D1D1D;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.patientInfoBox .patientNameBox {
+  background-color: #1B9362;
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+
+.patientInfoBox .patientNameBox .patientName {
+  color: #FFFFFF;
+  font-size: 16px;
+}
+
+.patientInfoBox .patientNameBox .patientRole {
+  color: rgba(255,255,255,0.8);
+}
+
+.patientRole {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  color: #8C8C8C;
+  margin: 0;
+}
+
+/* ── Nav ─────────────────────────────── */
+
+.sidebarNav {
+  flex-grow: 1;
+  padding: 0 12px;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* .navItem {} */
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  color: #4A4A4A;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 500;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.navLink svg {
+  width: 20px;
+  height: 20px;
+  color: #9CA3AF;
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+.navLink:hover {
+  background-color: #F5F5F5;
+  color: #1D1D1D;
+}
+
+.navLink:hover svg {
+  color: #4A4A4A;
+}
+
+/* Active state — light green pill, green text & icon */
+.navLink.active {
+  background-color: rgba(27, 147, 98, 0.10);
+  color: #1B9362;
+  font-weight: 600;
+}
+
+.navLink.active svg {
+  color: #1B9362;
+}
+
+/* ── Logout ──────────────────────────── */
+
+.logoutContainer {
+  padding: 16px 12px 8px;
+  border-top: 1px solid #E8E8E8;
+  margin-top: auto;
+}
+
+.logoutBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 11px 16px;
+  border: 1px solid rgba(255, 90, 90, 0.35);
+  border-radius: 10px;
+  background-color: transparent;
+  color: #FF5A5A;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.logoutBtn svg {
+  width: 18px;
+  height: 18px;
+  color: #FF5A5A;
+  transition: color 0.15s ease;
+}
+
+.logoutBtn:hover {
+  background-color: #FF5A5A;
+  color: #FFFFFF;
+}
+
+.logoutBtn:hover svg {
+  color: #FFFFFF;
+}
+
+/* ── Responsive ──────────────────────── */
+
+@media (max-width: 860px) {
+  .sidebar {
+    display: none;
+  }
+}

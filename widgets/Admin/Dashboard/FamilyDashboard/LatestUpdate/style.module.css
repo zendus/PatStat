@@ -1,0 +1,187 @@
+.latestUpdateWrapper {
+  padding: 0;
+}
+
+.contentTitle {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: #1D1D1D;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.contentSubtitle {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: #8C8C8C;
+  margin: 0 0 28px;
+}
+
+.updatesGrid {
+  display: grid;
+  gap: 16px;
+}
+
+.updateCard {
+  background: #FFFFFF;
+  border: 1px solid #E8E8E8;
+  border-radius: 16px;
+  padding: 20px 24px;
+  border-left-width: 4px;
+  border-left-style: solid;
+  transition: box-shadow 0.15s ease;
+}
+
+.updateCard:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.updateCard--green  { border-left-color: #1B9362; }
+.updateCard--blue   { border-left-color: #2F80ED; }
+.updateCard--yellow { border-left-color: #F2C94C; }
+.updateCard--red    { border-left-color: #EB5757; }
+
+.updateHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.updatePatientName {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 600;
+  color: #1D1D1D;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.statusBadge {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1.5px solid;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.statusBadge--green {
+  color: #1B9362;
+  border-color: #1B9362;
+  background: transparent;
+}
+
+.statusBadge--blue {
+  color: #2F80ED;
+  border-color: #2F80ED;
+  background: transparent;
+}
+
+.statusBadge--yellow {
+  color: #C08B00;
+  border-color: #F2C94C;
+  background: transparent;
+}
+
+.statusBadge--red {
+  color: #EB5757;
+  border-color: #EB5757;
+  background: transparent;
+}
+
+.updateMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: #8C8C8C;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.metaProvider {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #646363;
+  font-weight: 500;
+}
+
+.metaProvider svg {
+  color: #9CA3AF;
+  flex-shrink: 0;
+}
+
+.metaDot {
+  color: #C4C4C4;
+  font-size: 16px;
+  line-height: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.metaDate {
+  color: #8C8C8C;
+}
+
+.updateDescription {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 400;
+  color: #4A4A4A;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 860px) {
+  .contentTitle {
+    font-size: 22px;
+  }
+
+  .contentSubtitle {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .updateCard {
+    padding: 16px 18px;
+  }
+
+  .updatePatientName {
+    font-size: 16px;
+  }
+
+  .statusBadge {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+
+  .updateDescription {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .updateCard {
+    padding: 14px 16px;
+  }
+
+  .updatePatientName {
+    font-size: 15px;
+  }
+
+  .updateMeta {
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .updateDescription {
+    font-size: 13.5px;
+  }
+}

@@ -1,3 +1,11 @@
+export { PatientSidebar } from "./PatientSidebar";
+
+export { PatientMobileMenu } from "./PatientMobileMenu";
+
+export { PatientMobileFooter } from "./PatientMobileFooter";
+
+export { PatientMobileHeader } from "./PatientMobileHeader";
+
 // UI Components
 export { Button } from "../ui/FlatButton/index";
 export { Heading, Text, NavLinkText } from "../ui/Typography/index";

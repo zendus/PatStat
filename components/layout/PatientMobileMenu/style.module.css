@@ -1,0 +1,625 @@
+/* .mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1001;
+  display: flex;
+  justify-content: flex-start;
+  transition: opacity 0.3s ease;
+}
+
+.mobileMenu {
+  width: 280px;
+  height: 100%;
+  background-color: #FFFFFF;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.mobileMenuOverlay:not([style*="display: none"]) .mobileMenu {
+  transform: translateX(0);
+}
+
+.mobileMenuNotifications {
+  width: 100%;
+  transform: translateX(0);
+}
+
+.mobileMenuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #E0E0E0;
+  margin-bottom: 20px;
+}
+
+.mobileMenuCloseBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #4A4A4A;
+}
+
+.mobileMenuCloseBtn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.mobileMenuProfile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #1B9362;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.mobileMenuProfileName {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #1D1D1D;
+}
+
+.mobileMenuProfileRole {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: #646363;
+  margin: 0;
+}
+
+.mobileMenuNav .navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobileMenuNav .navItem {
+  margin-bottom: 8px;
+}
+
+.mobileMenuNav .navLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  color: #4A4A4A;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mobileMenuNav .navLink:hover {
+  background-color: #F0F0F0;
+}
+
+.mobileMenuNav .navLink.active {
+  background-color: #1B9362;
+  color: #FFFFFF;
+}
+
+.mobileMenuNav .navLink.active svg {
+  color: #FFFFFF;
+}
+
+.mobileMenuNav .navLink svg {
+  color: #646363;
+  transition: color 0.2s ease;
+}
+
+.mobileMenuNav .logoutContainer {
+  padding: 20px 0 0;
+  border-top: 1px solid #E0E0E0;
+  margin-top: auto;
+}
+
+.notificationTitle {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 600;
+  color: #1D1D1D;
+  margin: 0;
+}
+
+.notificationHeaderBadge {
+  background-color: #1B9362;
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-weight: 500;
+}
+
+.notificationList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.notificationItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  background-color: #F9F9F9;
+  border-radius: 10px;
+  border: 1px solid #E0E0E0;
+}
+
+.notificationIcon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.notificationIcon svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.5;
+  color: #FFFFFF;
+}
+
+.notificationIconSuccess {
+  background-color: #1B9362;
+}
+
+.notificationIconInfo {
+  background-color: #2F80ED;
+}
+
+.notificationIconWarning {
+  background-color: #F2C94C;
+}
+
+.notificationIconDanger {
+  background-color: #EB5757;
+}
+
+.notificationText {
+  flex-grow: 1;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #1D1D1D;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.notificationTime {
+  flex-shrink: 0;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #8C8C8C;
+  white-space: nowrap;
+}
+
+@media (min-width: 861px) {
+  .mobileMenuOverlay {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobileMenu {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .notificationItem {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .notificationText {
+    font-size: 13px;
+  }
+
+  .notificationTime {
+    font-size: 11px;
+  }
+} */
+
+/* ─────────────────────────────────────────
+   Pat-Stat – Mobile Menu & Notifications
+   style.module.css
+───────────────────────────────────────── */
+
+/* ── Overlay ─────────────────────────── */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 1001;
+  display: flex;
+  justify-content: flex-end; /* panels slide from right */
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Panel base ──────────────────────── */
+
+.panel {
+  height: 100%;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  animation: slideIn 0.25s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+/* Menu panel — narrower, slides from right */
+.panelMenu {
+  width: 300px;
+  max-width: 85vw;
+}
+
+/* Notifications panel — full width */
+.panelNotif {
+  width: 100%;
+  border-radius: 0;
+}
+
+/* ── Shared close button ─────────────── */
+
+.closeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease;
+}
+
+.closeBtn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ══════════════════════════════════════
+   NOTIFICATIONS PANEL
+══════════════════════════════════════ */
+
+/* Green header bar */
+.notifHeader {
+  background-color: #1B9362;
+  padding: 20px 20px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.notifTitle {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.notifHeaderRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* "0 New" pill */
+.notifBadge {
+  background-color: #FFFFFF;
+  color: #1B9362;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* Notification list */
+.notifList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.notifRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #F0F0F0;
+  transition: background-color 0.15s ease;
+}
+
+.notifRow:last-child {
+  border-bottom: none;
+}
+
+.notifRow:hover {
+  background-color: #FAFAFA;
+}
+
+/* Icon circle */
+.notifIconCircle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.notifIconCircle svg {
+  color: inherit;
+}
+
+/* Tinted circles — light background, coloured icon */
+.notifIconCircle--success {
+  background-color: rgba(27, 147, 98, 0.12);
+  color: #1B9362;
+}
+
+.notifIconCircle--info {
+  background-color: rgba(47, 128, 237, 0.12);
+  color: #2F80ED;
+}
+
+.notifIconCircle--danger {
+  background-color: rgba(235, 87, 87, 0.12);
+  color: #EB5757;
+}
+
+.notifBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 2px;
+}
+
+.notifText {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #1D1D1D;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.notifTime {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #9CA3AF;
+}
+
+/* ══════════════════════════════════════
+   MENU PANEL
+══════════════════════════════════════ */
+
+/* Profile header */
+.menuHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 18px;
+  border-bottom: 1px solid #F0F0F0;
+  flex-shrink: 0;
+}
+
+.menuProfile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Green avatar circle */
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #1B9362;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* .menuProfileText {} */
+
+.menuProfileName {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: #1D1D1D;
+  margin: 0 0 2px;
+  line-height: 1.2;
+}
+
+.menuProfileRole {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: #8C8C8C;
+  margin: 0;
+}
+
+.menuHeader .closeBtn {
+  color: #4A4A4A;
+}
+
+.menuHeader .closeBtn:hover {
+  background-color: #F5F5F5;
+}
+
+/* Nav */
+.menuNav {
+  flex: 1;
+  padding: 12px 12px 0;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: #4A4A4A;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.navLink svg {
+  color: #9CA3AF;
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+.navLink:hover {
+  background-color: #F5F5F5;
+  color: #1D1D1D;
+}
+
+.navLink:hover svg {
+  color: #4A4A4A;
+}
+
+/* Active — light green tint */
+.navLink.active {
+  background-color: rgba(27, 147, 98, 0.10);
+  color: #1B9362;
+  font-weight: 600;
+}
+
+.navLink.active svg {
+  color: #1B9362;
+}
+
+/* Logout */
+.menuLogout {
+  padding: 16px 12px calc(16px + env(safe-area-inset-bottom));
+  border-top: 1px solid #F0F0F0;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+.logoutBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border: 1.5px solid rgba(255, 90, 90, 0.40);
+  border-radius: 10px;
+  background: transparent;
+  color: #FF5A5A;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.logoutBtn svg {
+  color: #FF5A5A;
+  transition: color 0.15s ease;
+}
+
+.logoutBtn:hover {
+  background-color: #FF5A5A;
+  color: #FFFFFF;
+}
+
+.logoutBtn:hover svg {
+  color: #FFFFFF;
+}
+
+/* ── Responsive ──────────────────────── */
+
+@media (min-width: 861px) {
+  .overlay {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .panelMenu {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .notifRow {
+    padding: 14px 16px;
+  }
+
+  .menuHeader {
+    padding: 16px 16px 14px;
+  }
+
+  .menuNav {
+    padding: 10px 10px 0;
+  }
+
+  .menuLogout {
+    padding: 12px 10px calc(12px + env(safe-area-inset-bottom));
+  }
+}

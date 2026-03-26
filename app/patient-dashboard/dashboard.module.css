@@ -1,0 +1,50 @@
+/* app/patient-dashboard/dashboard.module.css */
+
+.dashboardLayout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #FBFBFB; /* Figma background color */
+  border-radius: 24px; /* Apply to the overall dashboard container */
+  overflow: hidden; /* Ensures rounded corners are visible */
+}
+
+/* --- Main Content (Desktop) --- */
+.desktopMainContent {
+  flex-grow: 1;
+  padding: 40px 48px;
+  max-width: calc(100% - 300px); /* Adjust based on sidebar width */
+  overflow-y: auto; /* Allows content to scroll if it exceeds height */
+}
+
+/* --- Main Content (Mobile) --- */
+.mobileMainContent {
+  flex-grow: 1;
+  padding: 24px;
+  margin-top: 60px; /* Space for fixed mobile header */
+  margin-bottom: 60px; /* Space for fixed mobile footer */
+  overflow-y: auto;
+}
+
+/* Responsive Adjustments for the Layout */
+@media (max-width: 860px) {
+  .dashboardLayout {
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0;
+    border-radius: 0; /* Remove border-radius on small screens for full width */
+  }
+
+  .desktopMainContent {
+    display: none; /* Hide desktop main content */
+  }
+
+  .mobileMainContent {
+    display: block; /* Show mobile main content */
+  }
+}
+
+@media (max-width: 480px) {
+  .mobileMainContent {
+    padding: 16px;
+  }
+}
