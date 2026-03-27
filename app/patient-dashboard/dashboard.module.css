@@ -3,7 +3,7 @@
 .dashboardLayout {
   display: flex;
   min-height: 100vh;
-  background-color: #FBFBFB; /* Figma background color */
+  background-color: #FBFBFB;
   border-radius: 24px; /* Apply to the overall dashboard container */
   overflow: hidden; /* Ensures rounded corners are visible */
 }

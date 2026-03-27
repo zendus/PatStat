@@ -2,97 +2,82 @@
   width: 230px;
   min-height: 100vh;
   background: var(--Miscellaneous-Text-Field---BG, #FFFFFF);
-  box-shadow: 0px 2px 15px 0px rgba(183, 183, 183, 0.15);
-  padding: 24px 0;
+  box-shadow: 0px 2px 15px 0px #B7B7B726;
+  padding: 0 0 24px;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
 }
 
-/* ── Header ─────────────────────────── */
-
 .sidebarHeader {
-  padding: 0 20px 20px;
+  padding: 12px 20px 20px;
   border-bottom: 1px solid #E8E8E8;
   margin-bottom: 20px;
+  background: #1B9362;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 16px;
-}
-
-.logoIcon {
-  width: 44px;
-  height: 44px;
-  background-color: #1B9362;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-/* .logoText {} */
-
-.logoName {
-  font-size: 15px;
-  font-weight: 700;
-  color: #1D1D1D;
-  line-height: 1.2;
-  font-family: var(--font-heading);
 }
 
 .logoHospital {
   font-size: 11px;
-  color: #8C8C8C;
+  color: #E1FFF4;
   font-family: var(--font-body);
   font-weight: 400;
   line-height: 1.3;
+  margin-top: -12px;
+  margin-left: 43px;
+  line-height: 1.3;
+  letter-spacing: 0%;
 }
 
-/* Patient info — plain text below logo, no green box */
 .patientInfoBox {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  background: rgb(51, 166, 129);
+  border: 0.5px solid transparent;
+  margin-top: 25px;
+  border-radius: 8px;
 }
 
 .patientName {
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: 600;
-  color: #1D1D1D;
+  color: var(--Miscellaneous-Text-Field---BG, #FFFFFF);
   margin: 0;
   line-height: 1.3;
+  letter-spacing: 0%;
 }
 
 .patientInfoBox .patientNameBox {
-  background-color: #1B9362;
-  border-radius: 12px;
-  padding: 12px 16px;
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 12px 14px;
 }
 
 .patientInfoBox .patientNameBox .patientName {
-  color: #FFFFFF;
+  color: var(--Miscellaneous-Text-Field---BG, #FFFFFF);
   font-size: 16px;
 }
 
 .patientInfoBox .patientNameBox .patientRole {
-  color: rgba(255,255,255,0.8);
+  color: var(--Miscellaneous-Text-Field---BG, #FFFFFF);
 }
 
 .patientRole {
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 400;
-  color: #8C8C8C;
+  color: #E1FFF4;
   margin: 0;
+  line-height: 1.3;
+  letter-spacing: 0%;
 }
-
-/* ── Nav ─────────────────────────────── */
 
 .sidebarNav {
   flex-grow: 1;
@@ -107,8 +92,6 @@
   flex-direction: column;
   gap: 2px;
 }
-
-/* .navItem {} */
 
 .navLink {
   display: flex;
@@ -127,7 +110,7 @@
 .navLink svg {
   width: 20px;
   height: 20px;
-  color: #9CA3AF;
+  color: #646363;
   flex-shrink: 0;
   transition: color 0.15s ease;
 }
@@ -141,22 +124,20 @@
   color: #4A4A4A;
 }
 
-/* Active state — light green pill, green text & icon */
 .navLink.active {
-  background-color: rgba(27, 147, 98, 0.10);
+  background: #E7FFF1;
   color: #1B9362;
-  font-weight: 600;
+  font-weight: 500;
+  box-shadow: 0px 2px 6px 0px #3030301A;
 }
 
 .navLink.active svg {
-  color: #1B9362;
+  color: #0CA54D;
 }
 
-/* ── Logout ──────────────────────────── */
 
 .logoutContainer {
   padding: 16px 12px 8px;
-  border-top: 1px solid #E8E8E8;
   margin-top: auto;
 }
 
@@ -164,13 +145,12 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
   padding: 11px 16px;
-  border: 1px solid rgba(255, 90, 90, 0.35);
+  border: 1px solid #FFCCC7;
   border-radius: 10px;
   background-color: transparent;
-  color: #FF5A5A;
+  color: #FF4C3A;
   font-family: var(--font-body);
   font-size: 14.5px;
   font-weight: 500;
@@ -181,12 +161,12 @@
 .logoutBtn svg {
   width: 18px;
   height: 18px;
-  color: #FF5A5A;
+  color: #FF4C3A;
   transition: color 0.15s ease;
 }
 
 .logoutBtn:hover {
-  background-color: #FF5A5A;
+  background-color: #EB5757;
   color: #FFFFFF;
 }
 
@@ -194,7 +174,6 @@
   color: #FFFFFF;
 }
 
-/* ── Responsive ──────────────────────── */
 
 @media (max-width: 860px) {
   .sidebar {

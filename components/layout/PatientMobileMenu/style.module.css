@@ -1,266 +1,10 @@
-/* .mobileMenuOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1001;
-  display: flex;
-  justify-content: flex-start;
-  transition: opacity 0.3s ease;
-}
-
-.mobileMenu {
-  width: 280px;
-  height: 100%;
-  background-color: #FFFFFF;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-out;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  overflow-y: auto;
-}
-
-.mobileMenuOverlay:not([style*="display: none"]) .mobileMenu {
-  transform: translateX(0);
-}
-
-.mobileMenuNotifications {
-  width: 100%;
-  transform: translateX(0);
-}
-
-.mobileMenuHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #E0E0E0;
-  margin-bottom: 20px;
-}
-
-.mobileMenuCloseBtn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #4A4A4A;
-}
-
-.mobileMenuCloseBtn svg {
-  width: 24px;
-  height: 24px;
-}
-
-.mobileMenuProfile {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #1B9362;
-  color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 18px;
-}
-
-.mobileMenuProfileName {
-  font-family: var(--font-body);
-  font-size: 16px;
-  font-weight: 600;
-  margin: 0;
-  color: #1D1D1D;
-}
-
-.mobileMenuProfileRole {
-  font-family: var(--font-body);
-  font-size: 13px;
-  color: #646363;
-  margin: 0;
-}
-
-.mobileMenuNav .navList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.mobileMenuNav .navItem {
-  margin-bottom: 8px;
-}
-
-.mobileMenuNav .navLink {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 16px;
-  border-radius: 10px;
-  color: #4A4A4A;
-  text-decoration: none;
-  font-family: var(--font-body);
-  font-size: 16px;
-  font-weight: 500;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.mobileMenuNav .navLink:hover {
-  background-color: #F0F0F0;
-}
-
-.mobileMenuNav .navLink.active {
-  background-color: #1B9362;
-  color: #FFFFFF;
-}
-
-.mobileMenuNav .navLink.active svg {
-  color: #FFFFFF;
-}
-
-.mobileMenuNav .navLink svg {
-  color: #646363;
-  transition: color 0.2s ease;
-}
-
-.mobileMenuNav .logoutContainer {
-  padding: 20px 0 0;
-  border-top: 1px solid #E0E0E0;
-  margin-top: auto;
-}
-
-.notificationTitle {
-  font-family: var(--font-heading);
-  font-size: 24px;
-  font-weight: 600;
-  color: #1D1D1D;
-  margin: 0;
-}
-
-.notificationHeaderBadge {
-  background-color: #1B9362;
-  color: #FFFFFF;
-  font-family: var(--font-body);
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 15px;
-  font-weight: 500;
-}
-
-.notificationList {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.notificationItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 12px;
-  background-color: #F9F9F9;
-  border-radius: 10px;
-  border: 1px solid #E0E0E0;
-}
-
-.notificationIcon {
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  padding: 2px;
-}
-
-.notificationIcon svg {
-  width: 16px;
-  height: 16px;
-  stroke-width: 2.5;
-  color: #FFFFFF;
-}
-
-.notificationIconSuccess {
-  background-color: #1B9362;
-}
-
-.notificationIconInfo {
-  background-color: #2F80ED;
-}
-
-.notificationIconWarning {
-  background-color: #F2C94C;
-}
-
-.notificationIconDanger {
-  background-color: #EB5757;
-}
-
-.notificationText {
-  flex-grow: 1;
-  font-family: var(--font-body);
-  font-size: 14px;
-  color: #1D1D1D;
-  margin: 0;
-  line-height: 1.4;
-}
-
-.notificationTime {
-  flex-shrink: 0;
-  font-family: var(--font-body);
-  font-size: 12px;
-  color: #8C8C8C;
-  white-space: nowrap;
-}
-
-@media (min-width: 861px) {
-  .mobileMenuOverlay {
-    display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .mobileMenu {
-    width: 100%;
-    padding: 15px;
-  }
-
-  .notificationItem {
-    padding: 10px;
-    gap: 8px;
-  }
-
-  .notificationText {
-    font-size: 13px;
-  }
-
-  .notificationTime {
-    font-size: 11px;
-  }
-} */
-
-/* ─────────────────────────────────────────
-   Pat-Stat – Mobile Menu & Notifications
-   style.module.css
-───────────────────────────────────────── */
-
-/* ── Overlay ─────────────────────────── */
-
 .overlay {
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.45);
   z-index: 1001;
   display: flex;
-  justify-content: flex-end; /* panels slide from right */
+  justify-content: flex-end;
   animation: fadeIn 0.2s ease;
 }
 
@@ -268,8 +12,6 @@
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-
-/* ── Panel base ──────────────────────── */
 
 .panel {
   height: 100%;
@@ -285,7 +27,6 @@
   to   { transform: translateX(0); }
 }
 
-/* Menu panel — narrower, slides from right */
 .panelMenu {
   width: 300px;
   max-width: 85vw;
@@ -478,7 +219,7 @@
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: 600;
-  color: #1D1D1D;
+  color: #252E30;
   margin: 0 0 2px;
   line-height: 1.2;
 }
@@ -486,12 +227,12 @@
 .menuProfileRole {
   font-family: var(--font-body);
   font-size: 13px;
-  color: #8C8C8C;
+  color: #8A8A8A;
   margin: 0;
 }
 
 .menuHeader .closeBtn {
-  color: #4A4A4A;
+  color: #414141;
 }
 
 .menuHeader .closeBtn:hover {
@@ -522,13 +263,13 @@
   color: #4A4A4A;
   text-decoration: none;
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 500;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .navLink svg {
-  color: #9CA3AF;
+  color: #646363;
   flex-shrink: 0;
   transition: color 0.15s ease;
 }
@@ -544,19 +285,19 @@
 
 /* Active — light green tint */
 .navLink.active {
-  background-color: rgba(27, 147, 98, 0.10);
+  background-color: #E7FFF1;
   color: #1B9362;
-  font-weight: 600;
+  font-weight: 500;
+  box-shadow: 0px 2px 6px 0px #3030301A;
 }
 
 .navLink.active svg {
-  color: #1B9362;
+  color: #0CA54D;
 }
 
 /* Logout */
 .menuLogout {
   padding: 16px 12px calc(16px + env(safe-area-inset-bottom));
-  border-top: 1px solid #F0F0F0;
   margin-top: auto;
   flex-shrink: 0;
 }
@@ -568,32 +309,30 @@
   justify-content: center;
   gap: 10px;
   padding: 12px 16px;
-  border: 1.5px solid rgba(255, 90, 90, 0.40);
+  border: 1px solid #FFCCC7;
   border-radius: 10px;
   background: transparent;
-  color: #FF5A5A;
+  color: #FF4C3A;
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .logoutBtn svg {
-  color: #FF5A5A;
+  color: #ff4c3a;
   transition: color 0.15s ease;
 }
 
 .logoutBtn:hover {
-  background-color: #FF5A5A;
+  background-color: #EB5757;
   color: #FFFFFF;
 }
 
 .logoutBtn:hover svg {
   color: #FFFFFF;
 }
-
-/* ── Responsive ──────────────────────── */
 
 @media (min-width: 861px) {
   .overlay {

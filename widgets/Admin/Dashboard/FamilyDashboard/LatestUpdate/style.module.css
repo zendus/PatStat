@@ -3,20 +3,23 @@
 }
 
 .contentTitle {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-size: 28px;
   font-weight: 700;
-  color: #1D1D1D;
-  margin: 0 0 6px;
-  line-height: 1.2;
+  color: #252E30;
+  margin: 0px 0 6px;
+  line-height: 25px;
+  letter-spacing: 0%;
 }
 
 .contentSubtitle {
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 400;
-  color: #8C8C8C;
+  color: #646363;
   margin: 0 0 28px;
+  line-height: 25px;
+  letter-spacing: 0%;
 }
 
 .updatesGrid {
@@ -25,23 +28,16 @@
 }
 
 .updateCard {
-  background: #FFFFFF;
-  border: 1px solid #E8E8E8;
-  border-radius: 16px;
+  background: var(--Miscellaneous-Text-Field---BG, #FFFFFF);
+  border: 0.5px solid #D0D0D0;
+  border-radius: 20px;
   padding: 20px 24px;
-  border-left-width: 4px;
-  border-left-style: solid;
   transition: box-shadow 0.15s ease;
 }
 
 .updateCard:hover {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
-
-.updateCard--green  { border-left-color: #1B9362; }
-.updateCard--blue   { border-left-color: #2F80ED; }
-.updateCard--yellow { border-left-color: #F2C94C; }
-.updateCard--red    { border-left-color: #EB5757; }
 
 .updateHeader {
   display: flex;
@@ -53,10 +49,11 @@
 .updatePatientName {
   font-family: var(--font-body);
   font-size: 17px;
-  font-weight: 600;
-  color: #1D1D1D;
+  font-weight: 500;
+  color: #252E30;
   margin: 0;
-  line-height: 1.3;
+  line-height: 25px;
+  letter-spacing: 0%;
 }
 
 .statusBadge {
@@ -65,33 +62,37 @@
   font-weight: 500;
   padding: 4px 12px;
   border-radius: 20px;
-  border: 1.5px solid;
+  border: 0.5px solid;
   white-space: nowrap;
-  line-height: 1.4;
+  line-height: 18.86px;
+  letter-spacing: 0%;
+  vertical-align: middle;
 }
 
 .statusBadge--green {
-  color: #1B9362;
-  border-color: #1B9362;
-  background: transparent;
+  color: #0CA54D;
+  border-color: #15BD5C;
+  background: #E7FFF1;
+
 }
 
 .statusBadge--blue {
-  color: #2F80ED;
-  border-color: #2F80ED;
-  background: transparent;
+  color: #015DDD;
+  border-color: #438DF4;
+  background: #DEECFF;
+
 }
 
 .statusBadge--yellow {
-  color: #C08B00;
-  border-color: #F2C94C;
-  background: transparent;
+  color: #E88E00;
+  border-color: #FFCC7B;
+  background: #FEF3E2;
 }
 
 .statusBadge--red {
-  color: #EB5757;
+  color: #FF4C3A;
   border-color: #EB5757;
-  background: transparent;
+  background: #f8d4ca;
 }
 
 .updateMeta {
@@ -100,9 +101,12 @@
   gap: 8px;
   font-family: var(--font-body);
   font-size: 13px;
-  color: #8C8C8C;
+  color: #646363;
   margin-bottom: 14px;
   flex-wrap: wrap;
+  line-height: 25px;
+  letter-spacing: 0%;
+  vertical-align: middle;
 }
 
 .metaProvider {
@@ -114,12 +118,12 @@
 }
 
 .metaProvider svg {
-  color: #9CA3AF;
+  color: #646363;
   flex-shrink: 0;
 }
 
 .metaDot {
-  color: #C4C4C4;
+  color: #646363;
   font-size: 16px;
   line-height: 1;
   -webkit-user-select: none;
@@ -127,16 +131,19 @@
 }
 
 .metaDate {
-  color: #8C8C8C;
+  color: #646363;
 }
 
 .updateDescription {
   font-family: var(--font-body);
   font-size: 14.5px;
   font-weight: 400;
-  color: #4A4A4A;
+  color: #646363;
   line-height: 1.6;
   margin: 0;
+  line-height: 25px;
+  letter-spacing: 0%;
+  vertical-align: middle;
 }
 
 @media (max-width: 860px) {
