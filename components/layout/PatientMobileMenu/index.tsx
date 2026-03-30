@@ -27,7 +27,6 @@ const notifications: Notification[] = [
   { type: 'info',    text: "You've been granted access to patient updates", time: '2 days ago' },
 ];
 
-/* ── Icon helpers ──────────────────────────────────── */
 const SuccessIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />

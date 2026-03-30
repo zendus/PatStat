@@ -15,7 +15,7 @@ const PatientSidebar: React.FC<PatientSidebarProps> = ({ activeLink }) => {
 
         <div className={styles.logo}>
           <div className={styles.logoIcon} aria-hidden="true">
-            <Link href="/http://localhost:3000/patient-dashboard/overview">
+            <Link href="/patient-dashboard/overview">
               <Image src="/images/pat-stat-patient-side-logo.svg"
               alt="Pat-stat patient dashboard logo"
               width={95}

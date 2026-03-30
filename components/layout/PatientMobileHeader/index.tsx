@@ -1,4 +1,6 @@
 import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import styles from './style.module.css';
 
 interface PatientMobileHeaderProps {
@@ -14,29 +16,19 @@ const PatientMobileHeader: React.FC<PatientMobileHeaderProps> = ({
 }) => {
   return (
     <header className={styles.mobileHeader}>
-      {/* Logo — green icon square + text */}
-      <div className={styles.mobileLogo}>
-        <div className={styles.logoIconBox} aria-hidden="true">
-          <svg width="20" height="16" viewBox="0 0 28 22" fill="none">
-            <polyline
-              points="0,11 5,11 8,4 11,18 14,8 17,14 20,11 28,11"
-              stroke="white"
-              strokeWidth="2.5"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-        <div className={styles.logoText}>
-          <span className={styles.logoName}>Pat-Stat</span>
-          <span className={styles.logoSub}>Family</span>
+      <div className={styles.logo}>
+        <div className={styles.logoIcon} aria-hidden="true">
+          <Link href="/patient-dashboard/overview">
+            <Image src="/images/pat-stat-patient-menu-logo.svg"
+              alt="Pat-stat patient dashboard logo"
+              width={133}
+              height={50}
+            />  
+          </Link>
         </div>
       </div>
 
-      {/* Actions */}
       <div className={styles.mobileActions}>
-        {/* Bell */}
         <button
           className={styles.mobileActionBtn}
           onClick={onNotificationToggle}
@@ -50,7 +42,6 @@ const PatientMobileHeader: React.FC<PatientMobileHeaderProps> = ({
           {hasUnread && <span className={styles.unreadDot} aria-label="New notifications" />}
         </button>
 
-        {/* Hamburger */}
         <button
           className={styles.mobileActionBtn}
           onClick={onMenuToggle}
