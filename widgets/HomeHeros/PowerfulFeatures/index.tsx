@@ -94,7 +94,7 @@ export function PowerfulFeatures() {
   const onMouseUp = () => { isDragging.current = false; };
 
   return (
-    <section className={styles.section}>
+    <section id="features" className={styles.section}>
       <div className={styles.inner}>
 
         <div className={styles.header}>

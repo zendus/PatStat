@@ -5,7 +5,7 @@ import styles from "./style.module.css";
 
 export function CTABanner() {
   return (
-    <section className={styles.section}>
+    <section id="support" className={styles.section}>
       <div className={styles.inner}>
         <h2 className={styles.title}>
           Ready to Transform Patient Communication?

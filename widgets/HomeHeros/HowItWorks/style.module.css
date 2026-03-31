@@ -1,6 +1,7 @@
 .section {
     width: 100%;
     background: #FFFFFF;
+    scroll-margin-top: 100px;
 }
 
 .inner {

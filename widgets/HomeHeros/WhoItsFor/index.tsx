@@ -31,7 +31,7 @@ const items = [
 
 export function WhoItsFor() {
   return (
-    <section className={styles.section}>
+    <section id="who-its-for" className={styles.section}>
       <div className={styles.inner}>
         {items.map((item, index) => (
           <div

@@ -1,6 +1,7 @@
 .section {
     width: 100%;
     background: linear-gradient(96.96deg, #0067ED 2.06%, #0087AF 42.87%, #009868 104.86%);
+    scroll-margin-top: 100px;
 }
 
 .inner {
