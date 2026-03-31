@@ -14,34 +14,19 @@ const ContactSuccessPage: NextPage = () => {
 
       <div className={styles.pageWrapper}>
 
-        {/* ── Header ── */}
-        <header className={styles.header}>
-          <Link href="/" className={styles.headerLogo} aria-label="Pat-Stat home">
-            <Image
-              src="/images/pat-stat-landing-logo.svg"
-              alt="Pat-Stat"
-              width={120}
-              height={36}
-              priority
-            />
-          </Link>
-          <Link href="/" className={styles.backLink}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-            Back
-          </Link>
-        </header>
-
         {/* ── Success card ── */}
         <main className={styles.main}>
           <div className={styles.successCard} role="alert" aria-live="polite">
 
             {/* Check icon */}
             <div className={styles.iconCircle} aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
+              <Image 
+              src="images/contact-success-check-icon.svg" 
+              alt="Success" 
+              width={32} 
+              height={32} 
+              className={styles.checkIcon}
+              />
             </div>
 
             <h1 className={styles.successTitle}>Request received</h1>

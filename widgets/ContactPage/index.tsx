@@ -62,7 +62,7 @@ const ContactPage: NextPage = () => {
     try {
       // TODO: Replace with your real API call
       await new Promise((res) => setTimeout(res, 1000));
-      router.push('/contact/success');
+      router.push('/contact-success');
     } catch {
       setIsSubmitting(false);
     }
