@@ -67,7 +67,7 @@ text-align: center;
 
 .card:hover,
 .carouselCard:hover {
-  box-shadow: 0 8px 32px rgba(1, 93, 221, 0.08);
+  box-shadow: 0 8px 32px rgba(1, 93, 221, 0.06);
   transform: translateY(-2px);
 }
 

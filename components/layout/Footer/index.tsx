@@ -6,23 +6,23 @@ import Image from "next/image";
 import styles from "./style.module.css";
 
 const productLinks = [
-  { label: "How It Works", href: "/how-it-works" },
-  { label: "Why Pat-Stat", href: "/why-pat-stat" },
-  { label: "Security & Privacy", href: "/security" },
-  { label: "Support", href: "/support" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "Why Pat-Stat", href: "/#" },
+  { label: "Security & Privacy", href: "/#" },
+  { label: "Support", href: "/#support" },
 ];
 
 const solutionsLinks = [
-  { label: "For Hospitals", href: "/solutions/hospitals" },
-  { label: "For Care Teams", href: "/solutions/care-teams" },
-  { label: "For Families", href: "/solutions/families" },
+  { label: "For Hospitals", href: "/#" },
+  { label: "For Care Teams", href: "/#" },
+  { label: "For Families", href: "/#" },
 ];
 
 const companyLinks = [
-  { label: "About Pat-Stat", href: "/about" },
-  { label: "Contact Us", href: "/contact" },
-  { label: "Terms of Use", href: "/terms" },
-  { label: "Privacy Policy", href: "/privacy" },
+  { label: "About Pat-Stat", href: "/#" },
+  { label: "Contact Us", href: "/#" },
+  { label: "Terms of Use", href: "/#" },
+  { label: "Privacy Policy", href: "/#" },
 ];
 
 export function Footer() {
@@ -36,7 +36,7 @@ export function Footer() {
           <div className={styles.brand}>
             <Link href="/" className={styles.logoRow}>
               <Image
-                src="/images/pat-stat-website-logo-dark.png"
+                src="/images/pat-stat-footer-logo.svg"
                 alt="Pat-Stat Logo"
                 width={142}
                 height={50}
