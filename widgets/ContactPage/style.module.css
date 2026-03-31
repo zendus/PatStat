@@ -1,0 +1,357 @@
+/* ─────────────────────────────────────────
+   Pat-Stat – Contact / Demo Request
+   styles.module.css
+───────────────────────────────────────── */
+
+/* ── Page wrapper ────────────────────── */
+
+.pageWrapper {
+  min-height: 100vh;
+  background: #F5F5F5;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ──────────────────────────── */
+
+.header {
+  height: 100px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #EFEFEF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.headerLogo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.backLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: #4A4A4A;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.backLink:hover {
+  background-color: #F0F0F0;
+  color: #1D1D1D;
+}
+
+/* ── Main ────────────────────────────── */
+
+.main {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 64px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 64px 48px 80px;
+}
+
+/* ── Left column ─────────────────────── */
+
+.leftCol {
+  flex: 1;
+  max-width: 440px;
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 700;
+  color: #1D1D1D;
+  line-height: 1.25;
+  margin: 0 0 32px;
+  letter-spacing: -0.4px;
+}
+
+/* Benefits checklist */
+.benefitsList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.benefitsItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: #3A3A3A;
+  line-height: 1.4;
+}
+
+.benefitsItem svg {
+  color: #1D1D1D;
+  flex-shrink: 0;
+}
+
+/* Contact methods */
+.contactMethods {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contactMethod {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.contactIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(47, 128, 237, 0.10);
+  color: #2F80ED;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contactIconGreen {
+  background: rgba(27, 147, 98, 0.10);
+  color: #1B9362;
+}
+
+.contactLabel {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: #1D1D1D;
+  margin: 0 0 2px;
+}
+
+.contactSub {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: #8C8C8C;
+  margin: 0 0 4px;
+}
+
+.contactLink {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #2F80ED;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.contactLink:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+/* ── Right column — form ─────────────── */
+
+.rightCol {
+  flex: 0 0 460px;
+}
+
+.formCard {
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid #E8E8E8;
+  padding: 36px 32px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Name row — two columns */
+.nameRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Field */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #1D1D1D;
+}
+
+.input {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #D0D0D0;
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #1D1D1D;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input::placeholder {
+  color: #B0B0B0;
+}
+
+.input:focus {
+  border-color: #2F80ED;
+  box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.10);
+}
+
+.inputError {
+  border-color: #EB5757 !important;
+}
+
+.textarea {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #D0D0D0;
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #1D1D1D;
+  outline: none;
+  resize: vertical;
+  min-height: 120px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.textarea::placeholder {
+  color: #B0B0B0;
+}
+
+.textarea:focus {
+  border-color: #2F80ED;
+  box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.10);
+}
+
+.errorMsg {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #EB5757;
+  font-weight: 500;
+}
+
+/* Submit button — blue as per screenshot */
+.submitBtn {
+  width: 100%;
+  padding: 14px;
+  background: #2F80ED;
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, opacity 0.2s ease;
+  margin-top: 4px;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: #1A6FD4;
+}
+
+.submitBtn:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+.submitBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.privacyNote {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: #9CA3AF;
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.privacyLink {
+  color: #2F80ED;
+  text-decoration: none;
+}
+
+.privacyLink:hover {
+  text-decoration: underline;
+}
+
+/* ── Responsive ──────────────────────── */
+
+@media (max-width: 900px) {
+  .main {
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 32px 64px;
+  }
+
+  .leftCol {
+    max-width: 100%;
+  }
+
+  .rightCol {
+    flex: none;
+    width: 100%;
+  }
+
+  .formCard {
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    height: 72px;
+    padding: 0 20px;
+  }
+
+  .main {
+    padding: 32px 20px 56px;
+  }
+
+  .heroTitle {
+    font-size: 22px;
+  }
+
+  .nameRow {
+    grid-template-columns: 1fr;
+  }
+
+  .formCard {
+    padding: 22px 18px;
+    gap: 16px;
+  }
+}

@@ -1,0 +1,161 @@
+/* ─────────────────────────────────────────
+   Pat-Stat – Contact Success
+   styles.module.css
+───────────────────────────────────────── */
+
+.pageWrapper {
+  min-height: 100vh;
+  background: #F5F5F5;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header — same spec as contact page ─ */
+
+.header {
+  height: 100px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #EFEFEF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.headerLogo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.backLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: #4A4A4A;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.backLink:hover {
+  background-color: #F0F0F0;
+  color: #1D1D1D;
+}
+
+/* ── Main ─────────────────────────────── */
+
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+}
+
+/* ── Success card ────────────────────── */
+
+.successCard {
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid #E8E8E8;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  padding: 52px 48px 44px;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+}
+
+/* Green check circle */
+.iconCircle {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: rgba(27, 147, 98, 0.12);
+  color: #1B9362;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  flex-shrink: 0;
+}
+
+.successTitle {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: #1D1D1D;
+  margin: 0 0 12px;
+  letter-spacing: -0.3px;
+}
+
+.successDesc {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  color: #646363;
+  line-height: 1.6;
+  margin: 0 0 36px;
+}
+
+/* Return button — blue per screenshot */
+.returnBtn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: #2F80ED;
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  font-weight: 600;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.returnBtn:hover {
+  background: #1A6FD4;
+}
+
+.returnBtn:active {
+  transform: scale(0.99);
+}
+
+/* ── Responsive ──────────────────────── */
+
+@media (max-width: 600px) {
+  .header {
+    height: 72px;
+    padding: 0 20px;
+  }
+
+  .successCard {
+    padding: 40px 24px 36px;
+    border-radius: 16px;
+  }
+
+  .iconCircle {
+    width: 58px;
+    height: 58px;
+  }
+
+  .successTitle {
+    font-size: 21px;
+  }
+
+  .successDesc {
+    font-size: 14px;
+  }
+}
