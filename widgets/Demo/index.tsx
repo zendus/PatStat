@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './style.module.css';
 
@@ -16,19 +16,19 @@ const roles: Role[] = [
     id: 'admin',
     title: 'Hospital Admin',
     description: 'Manage patients, staff, and access control',
-    href: '/admin-dashboard',
+    href: '/#admin-dashboard',
   },
   {
     id: 'doctor',
     title: 'Doctor',
     description: 'Update patient status and manage care',
-    href: '/doctor-dashboard',
+    href: '/#doctor-dashboard',
   },
   {
     id: 'nurse',
     title: 'Nurse',
     description: 'Monitor patients and provide status updates',
-    href: '/nurse-dashboard',
+    href: '/#nurse-dashboard',
   },
   {
     id: 'family',
@@ -54,28 +54,19 @@ const SelectRolePage: NextPage = () => {
 
       <div className={styles.pageWrapper}>
 
-        {/* ── Logo ── */}
         <div className={styles.logoSection}>
-          {/* <div className={styles.logoIconBox}>
-            <svg width="32" height="26" viewBox="0 0 28 22" fill="none" aria-hidden="true">
-              <polyline
-                points="0,11 5,11 8,4 11,18 14,8 17,14 20,11 28,11"
-                stroke="white"
-                strokeWidth="2.2"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <h1 className={styles.logoName}>Pat-Stat</h1> */}
-          <Image src="/pat-stat-landing.svg" alt="Pat-Stat Logo" width={120} height={40} className={styles.logoImage} />
+          <Image
+            src="images/pat-stat-landing-logo.svg"
+            alt="Pat-Stat Logo"
+            width={120}
+            height={40}
+            className={styles.logoImage}
+          />
           <p className={styles.logoTagline}>
             Healthcare Communication Platform<br />for African Hospitals
           </p>
         </div>
 
-        {/* ── Role card ── */}
         <div className={styles.roleCard}>
           <div className={styles.roleCardHeader}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
