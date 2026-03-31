@@ -13,9 +13,21 @@
 }
 
 .headerLogo {
+  width: 142px;
+  height: 45px;
   display: flex;
   align-items: center;
-  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  object-fit: contain;
 }
 
 .backLink { 
@@ -36,7 +48,24 @@
   color: #414141;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 32px;
+  }
+}
+@media (max-width: 900px) {
+  .header {
+    padding: 0 32px;
+  }
+}
+@media (max-width: 768px) {
+ .headerLogo {
+  width: 120px;
+  height: 40px;
+ }
+}
+
+@media (max-width: 640px) {
   .header {
     height: 72px;
     padding: 0 20px;
@@ -45,4 +74,24 @@
     font-size: 13px;
     padding: 6px 10px;
   }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0 16px;
+  }
+  .headerLogo {
+    width: 100px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header {
+    padding: 0 12px;
+  }
+  .backLink {
+    font-size: 12px;
+    padding: 6px 8px;
+  } 
 }

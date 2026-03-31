@@ -10,7 +10,8 @@ export const ContactNavigation = () => {
           src="images/pat-stat-landing-logo.svg"
           alt="Pat-Stat"
           width={142}
-          height={50}
+          height={45}
+          className={styles.logoImage}
           priority
         />
       </Link>
