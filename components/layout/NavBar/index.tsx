@@ -204,7 +204,7 @@ export const Navbar: React.FC = () => {
 
       elem?.scrollIntoView({ behavior: "smooth" });
 
-      setActive(href); // 🔥 active state
+      setActive(href);
       closeMobile();
     }
   };
@@ -223,10 +223,9 @@ export const Navbar: React.FC = () => {
   return (
     <nav className={styles.nav} ref={navRef}>
       <div className={styles.inner}>
-        {/* LOGO */}
         <Link href="/" className={styles.logo}>
           <Image
-            src="/images/pat-stat-website-logo.png"
+            src="/images/pat-stat-landing-logo.svg"
             alt="Pat-Stat Logo"
             width={142}
             height={50}
@@ -234,13 +233,12 @@ export const Navbar: React.FC = () => {
             style={{ cursor: "pointer" }}
             onClick={() => {
               window.scrollTo({ top: 0, behavior: "smooth" });
-              setActive(""); // reset active
+              setActive("");
             }}
             priority
           />
         </Link>
 
-        {/* DESKTOP LINKS */}
         <ul className={styles.desktopLinks}>
           {navItems.map((item) => (
             <li key={item.href}>
@@ -257,14 +255,12 @@ export const Navbar: React.FC = () => {
           ))}
         </ul>
 
-        {/* CTA */}
         <div className={styles.desktopCta}>
           <Link href="/demo" className={styles.tryDemoBtn}>
             Try Demo
           </Link>
         </div>
 
-        {/* MOBILE BUTTON */}
         <button
           className={styles.hamburger}
           onClick={toggleMobile}
@@ -276,7 +272,6 @@ export const Navbar: React.FC = () => {
         </button>
       </div>
 
-      {/* MOBILE MENU */}
       <div
         className={`${styles.mobileMenu} ${
           mobileOpen ? styles.mobileMenuOpen : ""
