@@ -16,9 +16,6 @@ const PatientDashboardLayout: React.FC<PatientDashboardLayoutProps> = ({ childre
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
   const [showNotifications, setShowNotifications] = useState<boolean>(false);
 
-  // Determine active link based on current path
-  // This will need to be made more robust with usePathname from next/navigation in actual app
-  // For now, hardcoding 'updates' as per your screenshot and request
   const activeLink: 'overview' | 'updates' | 'history' | 'careteam' | 'notifications' | 'help' = 'updates';
   const footerActiveLink: 'status' | 'updates' | 'careteam' | 'help' = 'updates';
 

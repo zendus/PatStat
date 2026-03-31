@@ -32,13 +32,10 @@
   max-width: 85vw;
 }
 
-/* Notifications panel — full width */
 .panelNotif {
   width: 100%;
   border-radius: 0;
 }
-
-/* ── Shared close button ─────────────── */
 
 .closeBtn {
   background: none;
