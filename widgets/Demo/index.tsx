@@ -16,25 +16,25 @@ const roles: Role[] = [
     id: 'admin',
     title: 'Hospital Admin',
     description: 'Manage patients, staff, and access control',
-    href: '/#admin-dashboard',
+    href: '/admin-dashboard',
   },
   {
     id: 'doctor',
     title: 'Doctor',
     description: 'Update patient status and manage care',
-    href: '/#doctor-dashboard',
+    href: '/doctor-dashboard/verify-access',
   },
   {
     id: 'nurse',
     title: 'Nurse',
     description: 'Monitor patients and provide status updates',
-    href: '/#nurse-dashboard',
+    href: '/nurse-dashboard/verify-access',
   },
   {
     id: 'family',
     title: 'Family Member',
     description: 'View patient status and updates',
-    href: '/patient-dashboard/overview',
+    href: '/patient-admin/verify-access',
   },
 ];
 
