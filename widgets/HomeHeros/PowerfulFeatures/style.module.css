@@ -1,6 +1,7 @@
 .section {
   width: 100%;
   background: #ffffff;
+  scroll-margin-top: 100px;
 }
 
 .inner {
@@ -66,7 +67,7 @@ text-align: center;
 
 .card:hover,
 .carouselCard:hover {
-  box-shadow: 0 8px 32px rgba(1, 93, 221, 0.08);
+  box-shadow: 0 8px 32px rgba(1, 93, 221, 0.06);
   transform: translateY(-2px);
 }
 
@@ -210,6 +211,10 @@ letter-spacing: 0%;
 }
 
 @media (max-width: 768px) {
+  .section {
+    scroll-margin-top: 80px;
+  }
+
   .inner {
     padding: 56px 20px;
     gap: 40px;
@@ -233,6 +238,10 @@ letter-spacing: 0%;
 }
 
 @media (max-width: 480px) {
+  .section {
+    scroll-margin-top: 70px;
+  }
+
   .inner {
     padding: 48px 16px;
     gap: 32px;

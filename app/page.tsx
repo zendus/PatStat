@@ -3,6 +3,7 @@
 import { Layout } from "@/components/ui/Layout";
 import { CTABanner, FAQSection, HowItWorks, PowerfulFeatures, SecuritySection, WhoItsFor } from "@/widgets/HomeHeros";
 import { MainHero } from "@/widgets/HomeHeros/MainHero";
+import { Contact } from "lucide-react";
 import Head from "next/head";
 
 

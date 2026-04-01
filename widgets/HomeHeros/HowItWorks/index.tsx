@@ -37,7 +37,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className={styles.section}>
+    <section id="how-it-works" className={styles.section}>
       <div className={styles.inner}>
 
         {/* ── Header ── */}

@@ -20,6 +20,7 @@ const navItems: readonly NavItem[] = [
 
 export const Navbar: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
+  const [active, setActive] = useState<string>("");
   const navRef = useRef<HTMLElement>(null);
 
   const toggleMobile = useCallback(() => {
@@ -46,13 +47,15 @@ export const Navbar: React.FC = () => {
     };
   }, [mobileOpen, closeMobile]);
 
-  // Handle Smooth Scroll
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith("#")) {
       e.preventDefault();
       const targetId = href.replace("#", "");
       const elem = document.getElementById(targetId);
+
       elem?.scrollIntoView({ behavior: "smooth" });
+
+      setActive(href);
       closeMobile();
     }
   };
@@ -73,11 +76,16 @@ export const Navbar: React.FC = () => {
       <div className={styles.inner}>
         <Link href="/" className={styles.logo}>
           <Image
-            src="/images/pat-stat-website-logo.png"
+            src="/images/pat-stat-landing-logo.svg"
             alt="Pat-Stat Logo"
             width={142}
             height={50}
             className={styles.logoImage}
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+              setActive("");
+            }}
             priority
           />
         </Link>
@@ -85,9 +93,12 @@ export const Navbar: React.FC = () => {
         <ul className={styles.desktopLinks}>
           {navItems.map((item) => (
             <li key={item.href}>
-              <Link href={item.href} 
-              className={styles.navLink}
-              onClick={(e) => handleScroll(e, item.href)}
+              <Link
+                href={item.href}
+                className={`${styles.navLink} ${
+                  active === item.href ? styles.active : ""
+                }`}
+                onClick={(e) => handleScroll(e, item.href)}
               >
                 {item.label}
               </Link>
@@ -108,20 +119,20 @@ export const Navbar: React.FC = () => {
           aria-expanded={mobileOpen}
           type="button"
         >
-          {mobileOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       <div
-        className={`${styles.mobileMenu} ${mobileOpen ? styles.mobileMenuOpen : ""}`}
-        aria-hidden={!mobileOpen}
+        className={`${styles.mobileMenu} ${
+          mobileOpen ? styles.mobileMenuOpen : ""
+        }`}
       >
         {navItems.map((item) => (
           <Link
             key={item.href}
             href={item.href}
             className={styles.mobileNavItem}
-            // onClick={closeMobile}
             onClick={(e) => handleScroll(e, item.href)}
           >
             {item.label}

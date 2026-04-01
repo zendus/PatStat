@@ -1,6 +1,7 @@
 .section {
     width: 100%;
     background: linear-gradient(96.96deg, #0067ED 2.06%, #0087AF 42.87%, #009868 104.86%);
+    scroll-margin-top: 100px;
 }
 
 .inner {
@@ -153,6 +154,10 @@
 }
 
 @media (max-width: 768px) {
+    .section {
+        scroll-margin-top: 80px;
+    }
+
     .inner {
         padding: 56px 20px;
         gap: 20px;
@@ -189,6 +194,10 @@
 }
 
 @media (max-width: 480px) {
+    .section {
+        scroll-margin-top: 70px;
+    }
+    
     .inner {
         padding: 48px 16px;
         gap: 18px;

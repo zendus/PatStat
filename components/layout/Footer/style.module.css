@@ -13,7 +13,7 @@
 .topGrid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 150px;
+  gap: 80px;
   padding-bottom: 64px;
   margin-bottom: 86px;
 }
@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
   gap: 23px;
-  max-width: 367px;
+  max-width: 420px;
 }
 
 .logoRow {
@@ -51,7 +51,7 @@
   color: #C0D0E3;
   line-height: 25px;
   letter-spacing: 0%;
-  max-width: 367px;
+  width: 100%;
 }
 
 .linkCol {
@@ -62,7 +62,7 @@
 
 .colHeading {
   font-family: var(--font-body);
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   color: #ffffff;
   line-height: 35px;
@@ -72,18 +72,19 @@
 
 .footerLink {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   color: #C0D0E3;
   text-decoration: none;
-  padding: 5px 0;
+  padding: 6px 0;
   line-height: 25px;
   display: block;
-  transition: color 0.18s ease;
+  transition: all 0.2s ease;
 }
 
 .footerLink:hover {
   color: #ffffff;
+  transform: translateX(4px);
 }
 
 .bottomBar {
@@ -102,7 +103,7 @@
 
 .copyright {
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: #C0D0E3;
   line-height: 25px;
@@ -130,21 +131,6 @@
     margin-bottom: 45px;
   }
 
-  .colHeading {
-    font-size: 20px;
-  }
-
-  .footerLink {
-    font-size: 16px;
-  }
-
-  .tagline {
-    font-size: 16px;
-  }
-
-  .copyright {
-    font-size: 16px;
-  }
 }
 
 @media (max-width: 860px) {
@@ -228,16 +214,22 @@
     height: 35px;
   }
 
+  .tagline {
+    line-height: 22px;
+    max-width: 100%;
+    font-size: 13px;
+  }
+
   .colHeading {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .footerLink {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .copyright {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.8;
   }
 }
@@ -277,19 +269,19 @@
   }
 
   .colHeading {
-    font-size: 16px;
+    /* font-size: 16px; */
     line-height: 28px;
     margin-bottom: 4px;
   }
 
   .footerLink {
-    font-size: 14px;
+    /* font-size: 14px; */
     padding: 4px 0;
     line-height: 22px;
   }
 
   .tagline {
-    font-size: 14px;
+    /* font-size: 14px; */
     line-height: 22px;
     max-width: 100%;
   }

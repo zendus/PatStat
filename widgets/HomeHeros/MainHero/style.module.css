@@ -6,6 +6,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  scroll-margin-top: 100px;
 }
 
 .inner {
@@ -327,6 +328,7 @@
 @media (max-width: 768px) {
   .hero {
     padding: 56px 20px;
+     scroll-margin-top: 80px;
   }
 
   .inner {
@@ -387,6 +389,7 @@
 @media (max-width: 480px) {
   .hero {
     padding: 48px 16px;
+     scroll-margin-top: 70px;
   }
 
   .inner {

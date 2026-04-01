@@ -14,7 +14,7 @@ const stats = [
 
 export function MainHero() {
   return (
-    <section className={styles.hero}>
+    <section id="home" className={styles.hero}>
       <div className={styles.inner}>
 
         <div className={styles.badge}>
