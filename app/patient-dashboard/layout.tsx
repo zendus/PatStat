@@ -134,13 +134,11 @@ const PatientDashboardLayout: React.FC<Props> = ({ children }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
 
-  /* 🔥 ACTIVE LINK SYNC */
   const activeLink: DashboardRoute =
     routeMap[pathname] || "overview";
 
-  /* 🔥 FOOTER ACTIVE (ONLY IF EXISTS) */
-  const footerActiveLink =
-    footerRouteMap[activeLink] || undefined;
+  const footerActiveLink: "status" | "updates" | "careteam" | "help" | undefined =
+    (footerRouteMap[activeLink] as "status" | "updates" | "careteam" | "help" | undefined) || undefined;
 
   useEffect(() => {
     const handleResize = () => {
@@ -193,7 +191,9 @@ const PatientDashboardLayout: React.FC<Props> = ({ children }) => {
             {children}
           </main>
 
-          <PatientMobileFooter activeLink={footerActiveLink} />
+          <PatientMobileFooter 
+          activeLink={footerActiveLink} 
+          />
         </>
       ) : (
         <>

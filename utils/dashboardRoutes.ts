@@ -15,7 +15,6 @@ export const routeMap: Record<string, DashboardRoute> = {
   "/patient-dashboard/help": "help",
 };
 
-/* Footer ONLY supports these */
 export const footerRouteMap: Partial<Record<DashboardRoute, string>> = {
   overview: "status",
   updates: "updates",
