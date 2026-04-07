@@ -3,6 +3,7 @@
 import React, { useState, FormEvent } from 'react';
 import Image from 'next/image';
 import styles from './style.module.css';
+import Link from 'next/link';
 
 interface PatientInfo {
   name: string;
@@ -63,12 +64,14 @@ const AccessVerification: React.FC = () => {
 
           <div className={styles.leftContent}>
             <div className={styles.logo}>
+              <Link href="/" aria-label="Pat-Stat Home">
               <Image
                 src="/images/auth_logo.svg"
                 alt="Pat-Stat logo"
                 width={133}
                 height={50}
               />
+              </Link>
             </div>
 
             <div className={styles.hero}>

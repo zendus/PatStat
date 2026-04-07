@@ -308,7 +308,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 32px;
-  position: relative; /* For error message positioning */
+  position: relative;
 }
 
 .checkbox {

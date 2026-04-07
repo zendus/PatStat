@@ -1,3 +1,5 @@
+"use client";
+
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/navigation';
@@ -22,19 +24,19 @@ const roles: Role[] = [
     id: 'doctor',
     title: 'Doctor',
     description: 'Update patient status and manage care',
-    href: '/doctor-dashboard/verify-access',
+    href: '/doctors/verify-access',
   },
   {
     id: 'nurse',
     title: 'Nurse',
     description: 'Monitor patients and provide status updates',
-    href: '/nurse-dashboard/verify-access',
+    href: '/nurses/verify-access',
   },
   {
     id: 'family',
     title: 'Family Member',
     description: 'View patient status and updates',
-    href: '/patient-admin/verify-access',
+    href: '/patients/verify-access',
   },
 ];
 
