@@ -1,6 +1,8 @@
-"use client";
 
-import React, { useState, useRouter, FormEvent } from 'react';
+
+import React, { useState } from 'react';
+import { FormEvent } from 'react';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import styles from './style.module.css';
