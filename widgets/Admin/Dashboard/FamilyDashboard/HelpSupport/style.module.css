@@ -1,0 +1,125 @@
+.helpWrapper {
+  padding: 0;
+}
+
+.contentTitle {
+  font-family: var(--font-body);
+  font-size: 28px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0 0 6px;
+}
+
+.contentSubtitle {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #646363;
+  margin: 0 0 30px;
+}
+
+.helpGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.helpCard {
+  background: #ffffff;
+  border: 0.5px solid rgba(208, 208, 208, 0.5);
+  border-radius: 20px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px;
+  height: 100%;
+  transition: all 0.15s ease;
+}
+
+.helpCard:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.iconWrap {
+  margin-bottom: 27.5px;
+}
+
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cardTitle {
+  font-size: 22px;
+  font-weight: 600;
+  color: #252E30;
+  margin-bottom: 40px;
+}
+
+.cardDescription {
+  font-size: 16px;
+  color: #646363;
+  line-height: 1.5;
+}
+
+.cardButton {
+  margin-top: 18px;
+  height: 50px;
+  border-radius: 10px;
+  border: 0.5px solid rgba(208, 208, 208, 0.5);
+  background: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+  color: #252E30;
+}
+
+.cardButton:hover {
+  background: #f1f1f1;
+}
+
+@media (max-width: 1024px) {
+  .helpGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .contentTitle {
+    font-size: 22px;
+    margin-top: 30px;
+  }
+
+  .contentSubtitle {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .helpCard {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+
+      .helpCard {
+    min-height: unset;
+  }
+
+  .iconWrap {
+    margin-bottom: 18px;
+  }
+  .cardTitle {
+    font-size: 16px;
+  }
+
+  .cardDescription {
+    font-size: 13px;
+  }
+
+  .cardButton {
+    font-size: 13px;
+  }
+}

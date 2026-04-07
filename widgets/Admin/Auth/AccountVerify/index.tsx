@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, FormEvent } from 'react';
+import React, { useState, useRouter, FormEvent } from 'react';
 import Image from 'next/image';
 import styles from './style.module.css';
 import Link from 'next/link';
@@ -24,6 +24,8 @@ const AccessVerification: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
 
+  const router = useRouter();
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     setError('');
@@ -34,9 +36,11 @@ const AccessVerification: React.FC = () => {
     }
 
     setIsLoading(true);
+
     try {   // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1200));
       console.log('Verification successful for:', email);
+      router.push('/create-account'); // Redirect to dashboard on successful verification
     } catch (err: unknown) {
       if (err instanceof Error) {
         setError(`Verification failed: ${err.message}. Please try again.`);
