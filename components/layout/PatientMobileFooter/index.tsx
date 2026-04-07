@@ -2,8 +2,12 @@ import React from 'react';
 import Link from 'next/link';
 import styles from './style.module.css';
 
+// interface PatientMobileFooterProps {
+//   activeLink: 'status' | 'updates' | 'careteam' | 'help';
+// }
+
 interface PatientMobileFooterProps {
-  activeLink: 'status' | 'updates' | 'careteam' | 'help';
+  activeLink?: "status" | "updates" | "careteam" | "help";
 }
 
 const PatientMobileFooter: React.FC<PatientMobileFooterProps> = ({ activeLink }) => {
