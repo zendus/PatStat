@@ -1,7 +1,11 @@
 "use client";
 
-import React, { useState, FormEvent } from 'react';
+import React, { useState } from 'react';
+import { FormEvent } from 'react';
+// import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation'; 
 import Image from 'next/image';
+import { useSearchParams } from 'next/navigation';
 import styles from './style.module.css';
 import Link from 'next/link';
 
@@ -14,6 +18,11 @@ const AccessCreation: React.FC = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
+
+  const router = useRouter();
+
+  const searchParams = useSearchParams();
+  const email = searchParams.get('email') || '';
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
@@ -36,6 +45,9 @@ const AccessCreation: React.FC = () => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
       console.log('Account created:', { password, phoneNumber });
+      router.push('/patient-dashboard/updates'); // Redirect to dashboard on successful account creation 
+      // router.replace('/patient-dashboard/updates');
+
     } catch (err: unknown) {
       if (err instanceof Error) {
         setError(`Account creation failed: ${err.message}. Please try again.`);

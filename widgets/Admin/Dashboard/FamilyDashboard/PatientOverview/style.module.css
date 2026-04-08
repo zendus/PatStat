@@ -1,0 +1,543 @@
+.overviewWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+}
+
+.desktopWelcomeCard {
+  background: #FFFFFF;
+  border: 1px solid #E8E8E8;
+  border-radius: 16px;
+  padding: 24px 28px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.welcomeLeft {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  flex: 1;
+}
+
+.avatarCircle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #d0d0d0;
+  border: 4px solid #CCF6DE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.avatarCircle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.welcomeHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.welcomeTitle {
+  font-family: var(--font-body);
+  font-size: 28px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.welcomeDesc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  color: #646363;
+  line-height: 1.65;
+  margin: 0;
+  /* max-width: 600px; */
+}
+
+.welcomeDate {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: #252E30;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin: 0;
+  padding-top: 4px;
+}
+
+.mobileWelcomeCard { display: none; }
+.mobileDateRow { display: none; }
+
+/* ── Patient Card ────────────────────── */
+
+.patientCard {
+  background: #DEECFF;
+  border: 1px solid #D0E4F3;
+  border-radius: 16px;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.patientCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.patientName {
+  font-family: var(--font-body);
+  font-size: 26px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.statusDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.statusDot--green  { background: #1B9362; }
+.statusDot--blue   { background: #015DDD; }
+.statusDot--yellow { background: #F2C94C; }
+.statusDot--red    { background: #EB5757; }
+
+.statusLabel {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+}
+.statusLabel--green  { color: #1B9362; }
+.statusLabel--blue   { color: #015DDD; }
+.statusLabel--yellow { color: #F2C94C; }
+.statusLabel--red    { color: #EB5757; }
+
+/* Meta row */
+.patientMeta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  row-gap: 6px;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: #414141;
+}
+
+.metaItem svg {
+  color: #414141;
+  flex-shrink: 0;
+}
+
+.metaDivider {
+  /* color: #C4C4C4;
+  font-size: 16px;
+  line-height: 1;
+  -webkit-user-select: none;
+  user-select: none; */
+}
+
+/* Latest Update */
+.latestUpdateSection {
+  padding-top: 16px;
+  /* border-top: 1px solid rgba(0, 0, 0, 0.08); */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.latestUpdateHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.latestUpdateLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 600;
+  color: #252E30;
+}
+
+.latestUpdateLabel svg { color: #252E30; }
+
+.latestUpdateDot {
+  color: #646363;
+  font-size: 16px;
+  line-height: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.latestUpdateTime {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: #646363;
+}
+
+.latestUpdateDesc {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  color: #414141;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.latestUpdateBy {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: #8A8A8A;
+  margin: 0;
+}
+
+/* Mobile real-time banner — hidden on desktop */
+.mobileRealtimeBanner { display: none; }
+
+/* ── Desktop: Care Team Section ──────── */
+
+.careTeamSection {
+  background: #FFFFFF;
+  border: 1px solid #E8E8E8;
+  border-radius: 16px;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0;
+}
+
+.sectionTitle svg { color: #252E30; }
+
+/* 2-column care team grid */
+.careTeamGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.careTeamCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+  padding: 14px 18px;
+  transition: box-shadow 0.15s ease;
+}
+
+.careTeamCard:hover {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.memberAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+  flex-shrink: 0;
+  letter-spacing: -0.3px;
+}
+
+.memberAvatar--doctor { background: #015DDD; }
+.memberAvatar--nurse  { background: #1A949D; }
+
+.memberInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.memberName {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #252E30;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.memberRole {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: #646363;
+  margin: 0;
+}
+
+/* CTA buttons row */
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.ctaBtnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 24px;
+  background: #1B9362;
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.ctaBtnPrimary:hover  { background: #166B47; }
+.ctaBtnPrimary:active { transform: scale(0.99); }
+
+.ctaBtnOutline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  background: #FFFFFF;
+  color: #414141;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 500;
+  border: 1.5px solid #D0D0D0;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+
+.ctaBtnOutline svg { color: #414141; }
+
+.ctaBtnOutline:hover {
+  border-color: #B0B0B0;
+  background: #F9F9F9;
+}
+
+/* ── Desktop: Privacy Section ────────── */
+
+.privacySection {
+  background: #FFFFFF;
+  border: 1px solid #E8E8E8;
+  border-radius: 16px;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.privacyText {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: #646363;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE — MOBILE
+══════════════════════════════════════ */
+
+@media (max-width: 880px) {
+
+  .overviewWrapper {
+    gap: 14px;
+  }
+
+  /* Hide desktop welcome; show mobile green card */
+  .desktopWelcomeCard { display: none; }
+  .careTeamSection    { display: none; }
+  .privacySection     { display: none; }
+
+  /* Mobile green welcome card */
+  .mobileWelcomeCard {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #1B9362;
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  .mobileWelcomeTop {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .mobileAvatarCircle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .mobileWelcomeTitle {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .mobileWelcomeDesc {
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* Date row */
+  .mobileDateRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+  }
+
+  .mobileDateToday {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    color: #1D1D1D;
+  }
+
+  .mobileDateValue {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: #646363;
+  }
+
+  /* Patient card — lighter green on mobile */
+  .patientCard {
+    background: #F0FAF5;
+    border-color: #C3E6D5;
+    border-radius: 12px;
+    padding: 18px 20px;
+    gap: 12px;
+  }
+
+  .patientName {
+    font-size: 18px;
+  }
+
+  /* Meta — stacked 2-up on mobile, no separators */
+  .patientMeta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .metaDivider { display: none; }
+
+  .metaItem { font-size: 13px; }
+
+  /* Latest update label in blue on mobile */
+  .latestUpdateLabel {
+    color: #2F80ED;
+  }
+
+  .latestUpdateLabel svg { color: #2F80ED; }
+
+  .latestUpdateDesc { font-size: 14px; }
+
+  /* Mobile real-time banner */
+  .mobileRealtimeBanner {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #EBF3FD;
+    border: 1px solid #C9DFFB;
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+
+  .mobileRealtimeHeader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #2F80ED;
+  }
+
+  .mobileRealtimeTitle {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    color: #2F80ED;
+  }
+
+  .mobileRealtimeDesc {
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    color: #2F80ED;
+    line-height: 1.55;
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobileWelcomeCard { padding: 18px 16px; }
+  .patientCard { padding: 16px; }
+
+  .patientMeta {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .mobileWelcomeTitle { font-size: 18px; }
+  .mobileWelcomeDesc  { font-size: 13px; }
+}

@@ -2,12 +2,17 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './style.module.css';
+import { DashboardRoute } from '@/utils/dashboardRoutes';
 
+// interface PatientSidebarProps {
+//   activeLink: 'overview' | 'updates' | 'history' | 'careteam' | 'notifications' | 'help';
+// }
 interface PatientSidebarProps {
-  activeLink: 'overview' | 'updates' | 'history' | 'careteam' | 'notifications' | 'help';
+  activeLink: DashboardRoute;
+  onLogout?: () => void;
 }
 
-const PatientSidebar: React.FC<PatientSidebarProps> = ({ activeLink }) => {
+const PatientSidebar: React.FC<PatientSidebarProps> = ({ activeLink, onLogout }) => {
   return (
     <aside className={styles.sidebar}>
 
@@ -123,7 +128,11 @@ const PatientSidebar: React.FC<PatientSidebarProps> = ({ activeLink }) => {
 
       {/* ── Logout ── */}
       <div className={styles.logoutContainer}>
-        <button className={styles.logoutBtn} type="button">
+        <button 
+        className={styles.logoutBtn} 
+        type="button"
+        onClick={onLogout}
+        >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" />
             <polyline points="16 17 21 12 16 7" />
