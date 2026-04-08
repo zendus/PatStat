@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import { FormEvent } from 'react';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation'; 
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import styles from './style.module.css';
