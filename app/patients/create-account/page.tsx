@@ -1,5 +1,3 @@
-"use client";
-
 import { AccessCreation } from "@/widgets/Admin/Auth/AccountCreation";
 
 const CreateAccount = ()=>{
