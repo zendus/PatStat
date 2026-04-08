@@ -1,3 +1,5 @@
+export { PatientOverview } from "./FamilyDashboard/PatientOverview";
+
 export { NotificationsPage } from "./FamilyDashboard/Notification";
 
 export { LatestUpdate } from "./FamilyDashboard/LatestUpdate";

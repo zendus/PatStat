@@ -1,12 +1,12 @@
-import React from 'react';
+
 import { AccessCreation } from "@/widgets/Admin/Auth/AccountCreation";
 
-const CreateAccount = ()=>{
+const CreateAccount = () => {
     return(
         <main>
             <AccessCreation />
         </main>
     )
-}
+};
 
 export default CreateAccount;
