@@ -152,7 +152,7 @@ const PatientDashboardLayout: React.FC<Props> = ({ children }) => {
   }, []);
 
   const handleLogout = () => {
-    router.push("/create-account");
+    router.push("/demo");
   };
 
   const handleMenuToggle = () => {
