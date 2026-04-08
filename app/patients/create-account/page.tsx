@@ -1,3 +1,6 @@
+"use client";
+
+import React from 'react';
 import { AccessCreation } from "@/widgets/Admin/Auth/AccountCreation";
 
 const CreateAccount = ()=>{
