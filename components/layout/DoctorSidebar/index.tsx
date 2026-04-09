@@ -2,12 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './style.module.css';
-// import { DashboardRoute } from '@/utils/dashboardRoutes';
 import { DoctorRoute } from '@/utils/doctorRoutes';
 
-// interface PatientSidebarProps {
-//   activeLink: 'overview' | 'updates' | 'history' | 'careteam' | 'notifications' | 'help';
-// }
 interface DoctorSidebarProps {
   activeLink: DoctorRoute;
   onLogout?: () => void;
@@ -92,9 +88,9 @@ const DoctorSidebar: React.FC<DoctorSidebarProps> = ({ activeLink, onLogout }) =
               className={`${styles.navLink} ${activeLink === 'notes' ? styles.active : ''}`}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 2V6M12 2V6M16 2V6" stroke="#646363" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M18 4H6C4.89543 4 4 4.89543 4 6V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V6C20 4.89543 19.1046 4 18 4Z" stroke="#646363" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M8 10H14M8 14H16M8 18H13" stroke="#646363" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8 2V6M12 2V6M16 2V6" stroke="#646363" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M18 4H6C4.89543 4 4 4.89543 4 6V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V6C20 4.89543 19.1046 4 18 4Z" stroke="#646363" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M8 10H14M8 14H16M8 18H13" stroke="#646363" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               Clinical Notes
             </Link>
@@ -107,7 +103,7 @@ const DoctorSidebar: React.FC<DoctorSidebarProps> = ({ activeLink, onLogout }) =
             >
 
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5.6 19.92L7.124 18.701L7.134 18.693C7.452 18.438 7.613 18.31 7.792 18.219C7.95267 18.137 8.122 18.0777 8.3 18.041C8.499 18 8.706 18 9.122 18H17.803C18.921 18 19.481 18 19.908 17.782C20.2843 17.5903 20.5903 17.2843 20.782 16.908C21 16.48 21 15.92 21 14.804V7.197C21 6.079 21 5.519 20.782 5.092C20.59 4.71554 20.2837 4.40957 19.907 4.218C19.48 4 18.92 4 17.8 4H6.2C5.08 4 4.52 4 4.092 4.218C3.71569 4.40974 3.40974 4.71569 3.218 5.092C3 5.52 3 6.08 3 7.2V18.671C3 19.737 3 20.27 3.218 20.543C3.31174 20.6607 3.43083 20.7557 3.56641 20.821C3.70198 20.8863 3.85053 20.9201 4.001 20.92C4.351 20.92 4.767 20.586 5.6 19.92Z" stroke="#646363" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M5.6 19.92L7.124 18.701L7.134 18.693C7.452 18.438 7.613 18.31 7.792 18.219C7.95267 18.137 8.122 18.0777 8.3 18.041C8.499 18 8.706 18 9.122 18H17.803C18.921 18 19.481 18 19.908 17.782C20.2843 17.5903 20.5903 17.2843 20.782 16.908C21 16.48 21 15.92 21 14.804V7.197C21 6.079 21 5.519 20.782 5.092C20.59 4.71554 20.2837 4.40957 19.907 4.218C19.48 4 18.92 4 17.8 4H6.2C5.08 4 4.52 4 4.092 4.218C3.71569 4.40974 3.40974 4.71569 3.218 5.092C3 5.52 3 6.08 3 7.2V18.671C3 19.737 3 20.27 3.218 20.543C3.31174 20.6607 3.43083 20.7557 3.56641 20.821C3.70198 20.8863 3.85053 20.9201 4.001 20.92C4.351 20.92 4.767 20.586 5.6 19.92Z" stroke="#646363" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
 
               Shift Handover
@@ -161,8 +157,8 @@ const DoctorSidebar: React.FC<DoctorSidebarProps> = ({ activeLink, onLogout }) =
             >
 
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18C4 16.9391 4.42143 15.9217 5.17157 15.1716C5.92172 14.4214 6.93913 14 8 14H16C17.0609 14 18.0783 14.4214 18.8284 15.1716C19.5786 15.9217 20 16.9391 20 18C20 18.5304 19.7893 19.0391 19.4142 19.4142C19.0391 19.7893 18.5304 20 18 20H6C5.46957 20 4.96086 19.7893 4.58579 19.4142C4.21071 19.0391 4 18.5304 4 18Z" stroke="#646363" stroke-width="2" stroke-linejoin="round" />
-                <path d="M12 10C13.6569 10 15 8.65685 15 7C15 5.34315 13.6569 4 12 4C10.3431 4 9 5.34315 9 7C9 8.65685 10.3431 10 12 10Z" stroke="#646363" stroke-width="2" />
+                <path d="M4 18C4 16.9391 4.42143 15.9217 5.17157 15.1716C5.92172 14.4214 6.93913 14 8 14H16C17.0609 14 18.0783 14.4214 18.8284 15.1716C19.5786 15.9217 20 16.9391 20 18C20 18.5304 19.7893 19.0391 19.4142 19.4142C19.0391 19.7893 18.5304 20 18 20H6C5.46957 20 4.96086 19.7893 4.58579 19.4142C4.21071 19.0391 4 18.5304 4 18Z" stroke="#646363" strokeWidth="2" strokeLinejoin="round" />
+                <path d="M12 10C13.6569 10 15 8.65685 15 7C15 5.34315 13.6569 4 12 4C10.3431 4 9 5.34315 9 7C9 8.65685 10.3431 10 12 10Z" stroke="#646363" strokeWidth="2" />
               </svg>
 
               Profile &amp; Settings

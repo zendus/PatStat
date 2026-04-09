@@ -1,3 +1,5 @@
+export { NotificationsPage } from "./Admin/Dashboard/DoctorDashboard";
+
 export { AccessCreation } from "./Admin/Auth/AccountCreation";
 
 export { MainHero } from "./HomeHeros";

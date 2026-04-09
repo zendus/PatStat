@@ -1,1 +1,1 @@
-export { DoctorNotificationsPage } from "./Notifications";
+export { NotificationsPage } from "./Notifications";
