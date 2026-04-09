@@ -24,7 +24,7 @@ const roles: Role[] = [
     id: 'doctor',
     title: 'Doctor',
     description: 'Update patient status and manage care',
-    href: '/doctors/verify-access',
+    href: 'doctor-dashboard/notifications',
   },
   {
     id: 'nurse',

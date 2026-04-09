@@ -14,3 +14,7 @@ export { Heading, Text, NavLinkText } from "../ui/Typography/index";
 export { Navbar } from "./NavBar/index";
 export { Footer } from "./Footer/index";
 export { ContactNavigation } from "./ContactNav";
+export { DoctorSidebar } from "./DoctorSidebar";
+export { DoctorMobileMenu } from "./DoctorMobileMenu";
+export { DoctorMobileHeader } from "./DoctorMobileHeader";
+export { DoctorMobileFooter } from "./DoctorMobileFooter";

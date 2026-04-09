@@ -1,0 +1,74 @@
+.wrapper {
+  animation: fadeIn 0.25s ease;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  margin-top: 25px;
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #252E30;
+}
+
+.badge {
+  background: #D5E7FF;
+  color: #015DDD;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card {
+  padding: 24px 16px;
+  border-radius: 12px;
+  background: #fff;
+  border: 0.5px solid rgba(208, 208, 208, 0.5);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.card p {
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: #252E30;
+  margin: 0 0 6px;
+  font-weight: 500;
+}
+
+.card span {
+  font-size: 14px;
+  color: #d0d0d0;
+}
+
+.success { border-left: 4px solid #1B9362; }
+.info    { border-left: 4px solid #015DDD; }
+.danger  { border-left: 4px solid #EB5757; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -42,7 +42,7 @@ const AccessVerification: React.FC = () => {
     try {   // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1200));
       console.log('Verification successful for:', email);
-      router.push('/create-account'); // Redirect to dashboard on successful verification
+      router.push('/doctors/create-account'); // Redirect to dashboard on successful verification
     } catch (err: unknown) {
       if (err instanceof Error) {
         setError(`Verification failed: ${err.message}. Please try again.`);
