@@ -32,6 +32,7 @@
   color: #4B6BFB;
   flex-shrink: 0;
   border: 2px solid #e0e7ff;
+  overflow: hidden;
 }
 
 .pageTitle {
@@ -53,13 +54,65 @@
   white-space: nowrap;
 }
 
-/* ── Stats grid ──────────────────────────────────────────────────────────────── */
+/* ── Stats scroll wrapper ────────────────────────────────────────────────────── */
+/*
+  Default (≥ 1025px): normal 4-col grid, no scroll
+  860px–1024px:        horizontal scroll
+  400px and below:     horizontal scroll (down to smallest screens)
+  401px–859px:         2-col grid (between the two scroll ranges)
+*/
+
+.statsScrollWrapper {
+  /* no overflow by default */
+  overflow: visible;
+}
 
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
 }
+
+/* Scroll zone 1: 860px – 1024px */
+@media (min-width: 860px) and (max-width: 1024px) {
+  .statsScrollWrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .statsScrollWrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .statsGrid {
+    grid-template-columns: repeat(4, 200px);
+    flex-shrink: 0;
+  }
+}
+
+/* 2-col grid: 401px – 859px */
+@media (min-width: 401px) and (max-width: 859px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Scroll zone 2: 400px and below */
+@media (max-width: 400px) {
+  .statsScrollWrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .statsScrollWrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .statsGrid {
+    grid-template-columns: repeat(4, 150px);
+    flex-shrink: 0;
+  }
+}
+
+/* ── Stat card ───────────────────────────────────────────────────────────────── */
 
 .statCard {
   background: #fff;
@@ -68,8 +121,8 @@
   padding: 18px 16px;
   display: flex;
   flex-direction: column;
-  gap: 0;
   transition: all 0.2s ease;
+  min-width: 0;
 }
 
 .statCard:hover {
@@ -93,6 +146,7 @@
 .statIcon {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .statValue {
@@ -116,7 +170,7 @@
   border: 1px solid #fecaca;
   border-left: 4px solid #EB5757;
   border-radius: 12px;
-  padding: 20px 20px;
+  padding: 20px;
 }
 
 .criticalHeader {
@@ -190,7 +244,7 @@
   background: #f9f9f9;
 }
 
-.btnUpdate {
+.btnUpdateRed {
   padding: 8px 18px;
   border-radius: 8px;
   border: none;
@@ -202,7 +256,7 @@
   transition: all 0.15s ease;
 }
 
-.btnUpdate:hover {
+.btnUpdateRed:hover {
   background: #d94f4f;
 }
 
@@ -250,12 +304,13 @@
   margin: 0;
 }
 
-/* ── Bottom panels ───────────────────────────────────────────────────────────── */
+/* ── Bottom grid ─────────────────────────────────────────────────────────────── */
 
 .bottomGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
+  align-items: start;
 }
 
 .panel {
@@ -263,14 +318,13 @@
   border: 0.5px solid rgba(208, 208, 208, 0.5);
   border-radius: 12px;
   padding: 18px 16px;
-  overflow: hidden;
 }
 
 .panelHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 14px;
+  margin-bottom: 4px;
 }
 
 .panelHeaderLeft {
@@ -295,55 +349,121 @@
   font-weight: 600;
 }
 
-.panelList {
+/* ── Needs Update list ───────────────────────────────────────────────────────── */
+
+.updateList {
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
 
-.miniRow {
+.updateRow {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 12px 0;
-  border-top: 1px solid rgba(208, 208, 208, 0.3);
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(208, 208, 208, 0.35);
 }
 
-.miniRow:first-child {
-  border-top: none;
+.updateRow:last-child {
+  border-bottom: none;
 }
 
-.miniName {
+.updateRowLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.updateName {
   font-size: 14px;
   font-weight: 600;
   color: #252E30;
-  margin: 0 0 2px;
+  margin: 0;
 }
 
-.miniSub {
+.updateSub {
   font-size: 12px;
   color: #8A9099;
-  margin: 0 0 2px;
-}
-
-.miniDiag {
-  font-size: 12px;
-  color: #6B7280;
-  margin: 0 0 4px;
-}
-
-.miniTime {
-  font-size: 11px;
-  color: #ABABAB;
   margin: 0;
+}
+
+.updateTime {
+  font-size: 12px;
+  color: #F59E0B;
+  margin: 2px 0 0;
+  font-weight: 500;
+}
+
+.btnUpdateDark {
+  padding: 9px 20px;
+  border-radius: 8px;
+  border: none;
+  background: #252E30;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.btnUpdateDark:hover {
+  background: #1a2022;
+}
+
+/* ── Recent Updates list ─────────────────────────────────────────────────────── */
+
+.recentList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.recentCard {
+  background: #F9FAFB;
+  border: 0.5px solid rgba(208, 208, 208, 0.5);
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.recentCard:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.recentCardTop {
   display: flex;
   align-items: center;
-  gap: 4px;
+  justify-content: space-between;
+  gap: 10px;
 }
 
-.miniTimeWarn {
-  color: #F59E0B;
+.recentName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #252E30;
+  margin: 0;
+}
+
+.recentNote {
+  font-size: 13px;
+  color: #6B7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.recentTime {
+  font-size: 12px;
+  color: #ABABAB;
+  margin: 0;
 }
 
 /* ── Badge ───────────────────────────────────────────────────────────────────── */
@@ -369,20 +489,13 @@
 .iconBlue   { color: #2F80ED; }
 .iconOrange { color: #F59E0B; }
 
-/* ── Animation ───────────────────────────────────────────────────────────────── */
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to   { opacity: 1; transform: translateY(0);   }
-}
-
-/* ── Responsive ──────────────────────────────────────────────────────────────── */
-
-@media (max-width: 768px) {
-  .statsGrid {
-    grid-template-columns: repeat(2, 1fr);
+/* ── Responsive: 768px and below ─────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .topBar {
+    padding-top: 20px;
   }
-
+}
+@media (max-width: 768px) {
   .quickGrid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -395,18 +508,13 @@
     font-size: 18px;
   }
 
-  .dateLabel {
-    font-size: 13px;
-    width: 100%;
-  }
-
   .statValue {
     font-size: 28px;
   }
 }
 
 @media (max-width: 480px) {
-  .statsGrid {
+  .quickGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
@@ -416,18 +524,18 @@
     gap: 6px;
   }
 
-  .btnView,
-  .btnUpdate {
-    padding: 7px 12px;
-    font-size: 12px;
-  }
-
   .criticalRow {
     align-items: flex-start;
   }
 
-  .quickGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+  .dateLabel {
+    font-size: 12px;
   }
+}
+
+/* ── Animation ───────────────────────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0);   }
 }
