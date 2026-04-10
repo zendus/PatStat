@@ -1,3 +1,5 @@
+export { EmergencyFlagsPage } from "./DoctorDashboard";
+
 export { PatientOverview } from "./FamilyDashboard/PatientOverview";
 
 export { NotificationsPage } from "./FamilyDashboard/Notification";
