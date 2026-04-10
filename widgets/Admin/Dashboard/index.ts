@@ -1,3 +1,7 @@
+export { ProfilePage } from "./DoctorDashboard";
+
+export { PatientPage } from "./DoctorDashboard";
+
 export { EmergencyFlagsPage } from "./DoctorDashboard";
 
 export { PatientOverview } from "./FamilyDashboard/PatientOverview";
