@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './style.module.css';
+import Link from 'next/link';
 
 type Role = {
   id: string;
@@ -24,13 +25,13 @@ const roles: Role[] = [
     id: 'doctor',
     title: 'Doctor',
     description: 'Update patient status and manage care',
-    href: 'doctor-dashboard/notifications',
+    href: 'doctor-dashboard/dashboard',
   },
   {
     id: 'nurse',
     title: 'Nurse',
     description: 'Monitor patients and provide status updates',
-    href: '/nurses/verify-access',
+    href: '/nurse-dashboard/dashboard',
   },
   {
     id: 'family',
@@ -57,6 +58,7 @@ const SelectRolePage: NextPage = () => {
       <div className={styles.pageWrapper}>
 
         <div className={styles.logoSection}>
+          <Link href="/">
           <Image
             src="images/pat-stat-landing-logo.svg"
             alt="Pat-Stat Logo"
@@ -64,6 +66,7 @@ const SelectRolePage: NextPage = () => {
             height={40}
             className={styles.logoImage}
           />
+          </Link>
           <p className={styles.logoTagline}>
             Healthcare Communication Platform<br />for African Hospitals
           </p>
