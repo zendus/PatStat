@@ -22,7 +22,7 @@ const DoctorMobileFooter: React.FC<DoctorMobileFooterProps> = ({ activeLink }) =
       </Link>
 
       <Link
-        href="/doctor-dashboard/patient-status"
+        href="/doctor-dashboard/status"
         className={`${styles.footerLink} ${activeLink === 'updates' ? styles.active : ''}`}
         aria-label="Updates"
       >
@@ -33,7 +33,7 @@ const DoctorMobileFooter: React.FC<DoctorMobileFooterProps> = ({ activeLink }) =
       </Link>
 
       <Link
-        href="/doctor-dashboard/clinical-notes"
+        href="/doctor-dashboard/notes"
         className={`${styles.footerLink} ${activeLink === 'notes' ? styles.active : ''}`}
         aria-label="Clinical Notes"
       >

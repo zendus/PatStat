@@ -1,3 +1,11 @@
+export { ShiftHandoverPage } from "./ShiftHandover";
+
+export { ClinicalNotesPage } from "./ClinicalNotes";
+
+export { PatientStatusUpdatePage } from "./PatientStatusUpdate";
+
+export { UpdateHistoryPage } from "./UpdateHistory";
+
 export { ProfilePage } from "./ProfileSettings";
 
 export { PatientPage } from "./MyPatients";
