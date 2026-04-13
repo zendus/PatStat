@@ -1,3 +1,5 @@
+export { NurseQuickUpdate } from "./NurseDashboard";
+
 export { NurseShiftNote } from "./NurseDashboard";
 
 export { NurseHistoryPage } from "./NurseDashboard";
