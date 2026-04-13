@@ -1,3 +1,9 @@
+export { NurseDashboardPage } from "./NurseDashboard";
+
+export { VitalSignsPage } from "./NurseDashboard";
+
+export { AssignedPatientPage } from "./NurseDashboard";
+
 export { NurseQuickUpdate } from "./NurseDashboard";
 
 export { NurseShiftNote } from "./NurseDashboard";
