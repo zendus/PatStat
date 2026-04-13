@@ -1,3 +1,7 @@
+export { NurseShiftNote } from "./NurseDashboard";
+
+export { NurseHistoryPage } from "./NurseDashboard";
+
 export { NurseAlertPage } from "./NurseDashboard";
 
 export { NurseProfilePage } from "./NurseDashboard";
