@@ -1,3 +1,5 @@
+export { NurseProfilePage } from "./NurseDashboard";
+
 export { ShiftHandoverPage } from "./DoctorDashboard";
 
 export { ClinicalNotesPage } from "./DoctorDashboard";
