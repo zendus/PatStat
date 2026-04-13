@@ -1,3 +1,17 @@
+export { ShiftHandoverPage } from "./DoctorDashboard";
+
+export { ClinicalNotesPage } from "./DoctorDashboard";
+
+export { PatientStatusUpdatePage } from "./DoctorDashboard";
+
+export { UpdateHistoryPage } from "./DoctorDashboard";
+
+export { ProfilePage } from "./DoctorDashboard";
+
+export { PatientPage } from "./DoctorDashboard";
+
+export { EmergencyFlagsPage } from "./DoctorDashboard";
+
 export { PatientOverview } from "./FamilyDashboard/PatientOverview";
 
 export { NotificationsPage } from "./FamilyDashboard/Notification";

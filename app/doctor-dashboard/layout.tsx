@@ -3,26 +3,26 @@
 import React, { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
-import {
-  PatientSidebar,
-  PatientMobileHeader,
-  PatientMobileFooter,
-  PatientMobileMenu,
+import { 
+  DoctorMobileFooter,
+  DoctorMobileMenu,
+  DoctorMobileHeader, 
 } from "@/components/layout";
-
 import {
   routeMap,
   footerRouteMap,
-  DashboardRoute,
-} from "@/utils/dashboardRoutes";
+  DoctorRoute,
+} from "@/utils/doctorRoutes";
+
 
 import dashboardStyles from "./dashboard.module.css";
+import { DoctorSidebar } from "@/components/layout/DoctorSidebar";
 
 interface Props {
   children: React.ReactNode;
 }
 
-const PatientDashboardLayout: React.FC<Props> = ({ children }) => {
+const DoctorDashboardLayout: React.FC<Props> = ({ children }) => {
   const pathname = usePathname();
   const router = useRouter();
 
@@ -30,11 +30,11 @@ const PatientDashboardLayout: React.FC<Props> = ({ children }) => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
 
-  const activeLink: DashboardRoute =
-    routeMap[pathname] || "overview";
+  const activeLink: DoctorRoute =
+    routeMap[pathname] || "dashboard";
 
-  const footerActiveLink: "status" | "updates" | "careteam" | "help" | undefined =
-    (footerRouteMap[activeLink] as "status" | "updates" | "careteam" | "help" | undefined) || undefined;
+  const footerActiveLink: "dashboard" | "updates" | "notes" | "profile" | undefined =
+    (footerRouteMap[activeLink] as "dashboard" | "updates" | "notes" | "profile" | undefined) || undefined;
 
   useEffect(() => {
     const handleResize = () => {
@@ -70,16 +70,16 @@ const PatientDashboardLayout: React.FC<Props> = ({ children }) => {
     <div className={dashboardStyles.dashboardLayout}>
       {isMobile ? (
         <>
-          <PatientMobileHeader
+          <DoctorMobileHeader
             onMenuToggle={handleMenuToggle}
             onNotificationToggle={handleNotificationToggle}
           />
 
-          <PatientMobileMenu
+          <DoctorMobileMenu
             isOpen={showMobileMenu}
             onClose={handleCloseMobileMenu}
             showNotifications={showNotifications}
-            activeLink={activeLink}
+            // activeLink={activeLink}
             onLogout={handleLogout}
           />
 
@@ -87,13 +87,13 @@ const PatientDashboardLayout: React.FC<Props> = ({ children }) => {
             {children}
           </main>
 
-          <PatientMobileFooter 
+          <DoctorMobileFooter
           activeLink={footerActiveLink} 
           />
         </>
       ) : (
         <>
-          <PatientSidebar
+          <DoctorSidebar
             activeLink={activeLink}
             onLogout={handleLogout}
           />
@@ -107,4 +107,4 @@ const PatientDashboardLayout: React.FC<Props> = ({ children }) => {
   );
 };
 
-export default PatientDashboardLayout;
+export default DoctorDashboardLayout;

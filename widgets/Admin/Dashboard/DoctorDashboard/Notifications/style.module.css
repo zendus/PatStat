@@ -1,0 +1,217 @@
+.wrapper {
+  animation: fadeIn 0.25s ease;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #8A9099;
+  margin: 0;
+}
+
+/* ── Tabs ──────────────────────────────────────────────────────────────────── */
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+  background: #F4F5F6;
+  border-radius: 10px;
+  padding: 4px;
+  width: fit-content;
+}
+
+.tab {
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6B7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  color: #252E30;
+}
+
+.tabActive {
+  background: #fff;
+  color: #252E30;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* ── List ──────────────────────────────────────────────────────────────────── */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: fadeIn 0.2s ease;
+}
+
+/* ── Card base ─────────────────────────────────────────────────────────────── */
+
+.card {
+  padding: 20px 20px;
+  border-radius: 12px;
+  background: #fff;
+  border: 0.5px solid rgba(208, 208, 208, 0.5);
+  transition: all 0.2s ease;
+  border-left: 4px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+/* ── Card severity variants ────────────────────────────────────────────────── */
+
+.card.critical {
+  border-left-color: #EB5757;
+}
+
+.card.warning {
+  border-left-color: #F59E0B;
+}
+
+.card.system {
+  border-left-color: #2F80ED;
+}
+
+.card.shift {
+  border-left-color: #2F80ED;
+}
+
+/* ── Card inner layout ─────────────────────────────────────────────────────── */
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cardTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #252E30;
+  flex: 1;
+}
+
+.cardTime {
+  font-size: 13px;
+  color: #ABABAB;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.cardBody {
+  padding-left: 28px;
+}
+
+.patientName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #252E30;
+  margin: 0 0 4px;
+}
+
+.patientLocation {
+  font-weight: 400;
+  color: #6B7280;
+}
+
+.cardDesc {
+  font-size: 14px;
+  color: #6B7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Icon wrap ─────────────────────────────────────────────────────────────── */
+
+.iconWrap {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.iconWrap.critical {
+  color: #EB5757;
+}
+
+.iconWrap.warning {
+  color: #F59E0B;
+}
+
+.iconWrap.system {
+  color: #2F80ED;
+}
+
+.iconWrap.shift {
+  color: #2F80ED;
+}
+
+/* ── Animation ─────────────────────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .header {
+      padding-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tabs {
+    width: 100%;
+  }
+
+  .tab {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .cardHeader {
+    flex-wrap: wrap;
+  }
+
+  .cardTime {
+    margin-left: auto;
+  }
+}

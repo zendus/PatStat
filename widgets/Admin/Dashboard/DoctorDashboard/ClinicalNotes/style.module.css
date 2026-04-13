@@ -1,0 +1,354 @@
+.wrapper {
+  animation: fadeIn 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Page header ─────────────────────────────────────────────────────────────── */
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #8A9099;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   DESKTOP LAYOUT  (≥ 601px)
+   Two stacked outer container cards
+══════════════════════════════════════════════════════════════════════════════ */
+
+.desktopLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobileLayout {
+  display: none;
+}
+
+/* ── Shared desktop card ─────────────────────────────────────────────────────── */
+
+.desktopCard {
+  background: #fff;
+  border: 0.5px solid rgba(208, 208, 208, 0.5);
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0;
+}
+
+/* ── Form elements ───────────────────────────────────────────────────────────── */
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: #252E30;
+}
+
+/* Select wrapper */
+.selectWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.select {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 12px 40px 12px 16px;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  background: #F9FAFB;
+  font-size: 14px;
+  color: #252E30;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.select:focus {
+  border-color: #015DDD;
+  background: #fff;
+}
+
+.select option[value=""] {
+  color: #B0B7BF;
+}
+
+.selectChevron {
+  position: absolute;
+  right: 14px;
+  pointer-events: none;
+  color: #8A9099;
+  display: flex;
+  align-items: center;
+}
+
+/* Textarea */
+.textarea {
+  width: 100%;
+  resize: none;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  background: #F9FAFB;
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #252E30;
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease;
+  min-height: 90px;
+}
+
+.textarea::placeholder {
+  color: #B0B7BF;
+}
+
+.textarea:focus {
+  border-color: #015DDD;
+  background: #fff;
+}
+
+/* Save button */
+.btnSave {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: 10px;
+  border: none;
+  background: #015DDD;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.15s ease;
+}
+
+.btnSave:hover {
+  background: rgba(1, 93, 221, 0.8);
+}
+
+/* ── Recent Clinical Notes list ──────────────────────────────────────────────── */
+
+.recentList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.recentEntry {
+  display: flex;
+  gap: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(208, 208, 208, 0.35);
+}
+
+.recentEntry:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.recentEntry:first-child {
+  padding-top: 0;
+}
+
+/* Blue left accent bar */
+.recentEntryAccent {
+  width: 4px;
+  border-radius: 2px;
+  background: #A9C0FF;
+  flex-shrink: 0;
+  margin-right: 14px;
+  align-self: stretch;
+  min-height: 100%;
+}
+
+.recentEntryContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.recentEntryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.recentPatientName {
+  font-size: 15px;
+  font-weight: 700;
+  color: #252E30;
+}
+
+.recentTime {
+  font-size: 12px;
+  color: #ABABAB;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.recentNoteText {
+  font-size: 13px;
+  color: #6B7280;
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   MOBILE LAYOUT  (≤ 600px)
+   Per-patient cards with note bubbles
+══════════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 860px) {
+    .header h1 {
+        padding-top: 20px;
+    }
+    
+}
+@media (max-width: 600px) {
+  .desktopLayout {
+    display: none;
+  }
+
+  .mobileLayout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+}
+
+/* ── Mobile patient card ─────────────────────────────────────────────────────── */
+
+.mobileCard {
+  background: #fff;
+  border: 0.5px solid rgba(208, 208, 208, 0.5);
+  border-radius: 14px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mobileCardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mobilePatientName {
+  font-size: 16px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0;
+}
+
+.mobilePatientLocation {
+  font-size: 13px;
+  color: #8A9099;
+  margin: 0;
+}
+
+/* ── Note bubbles ────────────────────────────────────────────────────────────── */
+
+.noteBubbleList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.noteBubble {
+  background: #F4F5F6;
+  border-radius: 10px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.noteBubbleText {
+  font-size: 13px;
+  color: #4B5563;
+  margin: 0;
+  line-height: 1.55;
+}
+
+.noteBubbleFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.noteBubbleMeta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #8A9099;
+}
+
+/* ── Add Note button (mobile) ────────────────────────────────────────────────── */
+
+.btnAddNote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px;
+  border-radius: 10px;
+  border: 1px solid #E5E7EB;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  color: #252E30;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btnAddNote:hover {
+  background: #F9FAFB;
+  border-color: #D0D0D0;
+}
+
+/* ── Animation ───────────────────────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}

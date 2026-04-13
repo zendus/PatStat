@@ -1,0 +1,269 @@
+.wrapper {
+  animation: fadeIn 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Page header ─────────────────────────────────────────────────────────────── */
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #8A9099;
+  margin: 0;
+}
+
+/* ── Desktop container ───────────────────────────────────────────────────────── */
+/* Shown on ≥ 601px, hidden on mobile */
+
+.desktopContainer {
+  background: #fff;
+  border: 0.5px solid rgba(208, 208, 208, 0.5);
+  border-radius: 16px;
+  padding: 8px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.desktopEntry {
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.desktopEntryBorder {
+  border-bottom: 1px solid rgba(208, 208, 208, 0.4);
+}
+
+/* ── Mobile list ─────────────────────────────────────────────────────────────── */
+/* Hidden on desktop, shown on ≤ 600px */
+
+.mobileList {
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mobileCard {
+  background: #fff;
+  border: 0.5px solid rgba(208, 208, 208, 0.5);
+  border-radius: 14px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.mobileCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+/* ── Shared entry header ─────────────────────────────────────────────────────── */
+
+.entryHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.entryMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.entryName {
+  font-size: 16px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0;
+}
+
+.entrySubrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.entryMetaIcon {
+  display: flex;
+  align-items: center;
+  color: #8A9099;
+}
+
+.entryBy {
+  font-size: 13px;
+  color: #8A9099;
+}
+
+.entryDot {
+  font-size: 13px;
+  color: #C4C9CC;
+}
+
+.entryDate {
+  font-size: 13px;
+  color: #8A9099;
+}
+
+/* ── Note ────────────────────────────────────────────────────────────────────── */
+
+.entryNote {
+  font-size: 14px;
+  color: #4B5563;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Mobile: quoted note */
+.mobileNote {
+  font-size: 13px;
+  color: #4B5563;
+  margin: 0;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ── Mobile location ─────────────────────────────────────────────────────────── */
+
+.mobileLocation {
+  font-size: 13px;
+  color: #8A9099;
+  margin: 3px 0 0;
+}
+
+/* ── Vitals block ────────────────────────────────────────────────────────────── */
+
+.vitalsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Vitals heading (mobile only) */
+.vitalsHeading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vitalsHeadingIcon {
+  display: flex;
+  color: #2F80ED;
+}
+
+.vitalsHeadingText {
+  font-size: 13px;
+  font-weight: 600;
+  color: #252E30;
+}
+
+/* Desktop: 4-column row */
+.vitalsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  background: #F9FAFB;
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.vitalItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.vitalLabel {
+  font-size: 12px;
+  color: #8A9099;
+  font-weight: 400;
+}
+
+.vitalValue {
+  font-size: 14px;
+  font-weight: 700;
+  color: #252E30;
+}
+
+/* ── Mobile footer ───────────────────────────────────────────────────────────── */
+
+.mobileFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 4px;
+  border-top: 1px solid rgba(208, 208, 208, 0.35);
+}
+
+.mobileFooterItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #8A9099;
+}
+
+/* ── Badge ───────────────────────────────────────────────────────────────────── */
+
+.badge {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.statusBlue   { background: #EFF6FF; color: #3B82F6; border: 1px solid #bfdbfe; }
+.statusGreen  { background: #F0FDF4; color: #16A34A; border: 1px solid #bbf7d0; }
+.statusOrange { background: #FFFBEB; color: #D97706; border: 1px solid #fde68a; }
+.statusRed    { background: #FEF2F2; color: #DC2626; border: 1px solid #fecaca; }
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+    .header h1 {
+        padding-top: 20px;
+    }
+}
+@media (max-width: 600px) {
+  /* hide desktop layout, show mobile cards */
+  .desktopContainer {
+    display: none;
+  }
+
+  .mobileList {
+    display: flex;
+  }
+
+  /* Mobile: vitals in 2×2 grid */
+  .vitalsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 10px;
+    background: transparent;
+    padding: 0;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+}
+
+/* ── Animation ───────────────────────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}

@@ -1,0 +1,195 @@
+.wrapper {
+  animation: fadeIn 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.desktopHeader {
+  display: block;
+}
+
+.desktopHeader h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #8A9099;
+  margin: 0;
+}
+
+.mobileProfileHeader {
+  display: none;
+  align-items: center;
+  gap: 14px;
+  padding-top: 20px;
+}
+
+.avatarCircle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #EEF2FF;
+  border: 2px solid #e0e7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #015DDD;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.mobileProfileName {
+  font-size: 17px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0 0 3px;
+}
+
+.mobileProfileRole {
+  font-size: 13px;
+  color: #8A9099;
+  margin: 0;
+}
+
+.formCard {
+  background: #fff;
+  border: 0.5px solid rgba(208, 208, 208, 0.5);
+  /* border-left: 4px solid #2563EB; */
+  border-radius: 14px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Field groups ────────────────────────────────────────────────────────────── */
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fieldLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: #252E30;
+}
+
+.fieldInput {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #F4F5F6;
+  font-size: 14px;
+  color: #252E30;
+  font-family: inherit;
+  outline: none;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.fieldInput:focus {
+  background: #fff;
+  box-shadow: 0 0 0 2px #2563EB33;
+}
+
+/* ── Password field ──────────────────────────────────────────────────────────── */
+
+.passwordWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.passwordInput {
+  padding-right: 44px;
+}
+
+.eyeBtn {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #8A9099;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  transition: color 0.15s ease;
+}
+
+.eyeBtn:hover {
+  color: #252E30;
+}
+
+/* ── Update button ───────────────────────────────────────────────────────────── */
+
+.btnUpdate {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #015DDD;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: background 0.2s ease;
+}
+
+.btnUpdate:hover {
+  background: rgba(1, 93, 221, 0.8);
+}
+
+.btnSaved {
+  background: #0CA54D;
+}
+
+.btnSaved:hover {
+  background: rgba(12, 165, 77, 0.8);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 860px) {
+  .desktopHeader h1 {
+    padding-top: 20px;
+  }
+}
+@media (max-width: 600px) {
+  /* Show mobile avatar header, hide desktop title */
+  .desktopHeader {
+    display: none;
+  }
+
+  .mobileProfileHeader {
+    display: flex;
+  }
+
+  /* Remove the blue left accent on mobile — plain card */
+  .formCard {
+    border-left: 0.5px solid rgba(208, 208, 208, 0.5);
+    border-radius: 14px;
+    padding: 20px 16px;
+  }
+
+  .fieldInput {
+    font-size: 14px;
+  }
+}
+
+/* ── Animation ───────────────────────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}

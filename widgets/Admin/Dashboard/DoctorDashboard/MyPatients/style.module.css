@@ -1,0 +1,224 @@
+.wrapper {
+  animation: fadeIn 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Page header ─────────────────────────────────────────────────────────────── */
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #8A9099;
+  margin: 0;
+}
+
+/* ── Outer container ─────────────────────────────────────────────────────────── */
+
+.outerContainer {
+  background: #fff;
+  border: 0.5px solid rgba(208, 208, 208, 0.5);
+  border-radius: 16px;
+  padding: 20px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Search bar ──────────────────────────────────────────────────────────────── */
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #F4F5F6;
+  border-radius: 10px;
+  padding: 11px 16px;
+}
+
+.searchIcon {
+  display: flex;
+  color: #ABABAB;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #252E30;
+  font-family: inherit;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: #ABABAB;
+}
+
+/* ── Patient list ────────────────────────────────────────────────────────────── */
+
+.patientList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Each row = inner card + update button side by side */
+.patientRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ── Inner patient card ──────────────────────────────────────────────────────── */
+/*
+  The card stops before the right edge of the outer container.
+  The Update button sits outside it, to the right.
+*/
+
+.patientCard {
+  flex: 1;
+  min-width: 0;
+  border: 0.5px solid rgba(208, 208, 208, 0.6);
+  border-radius: 10px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+.patientCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Name + badge */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.patientName {
+  font-size: 15px;
+  font-weight: 700;
+  color: #252E30;
+}
+
+/* Age / ward / bed */
+.patientMeta {
+  font-size: 13px;
+  color: #8A9099;
+  margin: 0;
+}
+
+/* Diagnosis */
+.patientDiagnosis {
+  font-size: 13px;
+  color: #6B7280;
+  margin: 4px 0 0;
+}
+
+/* ── Update button ───────────────────────────────────────────────────────────── */
+
+.btnUpdate {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: #015DDD;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: center;
+  transition: background 0.15s ease;
+}
+
+.btnUpdate:hover {
+  background: rgba(1, 93, 221, 0.8);
+}
+
+/* ── Empty state ─────────────────────────────────────────────────────────────── */
+
+.emptyText {
+  font-size: 14px;
+  color: #8A9099;
+  text-align: center;
+  padding: 32px 0;
+  margin: 0;
+}
+
+/* ── Badge ───────────────────────────────────────────────────────────────────── */
+
+.badge {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.statusBlue   { background: #EFF6FF; color: #015DDD; border: 1px solid #DEECFF; }
+.statusGreen  { background: #F0FDF4; color: #0CA54D; border: 1px solid #E2FFEE; }
+.statusOrange { background: #FFFBEB; color: #F48C1F; border: 1px solid #FFEFDE; }
+.statusRed    { background: #FEF2F2; color: #DC2626; border: 1px solid #fecaca; }
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .header h1 {
+    padding-top: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .outerContainer {
+    padding: 16px 14px;
+  }
+
+  /* Stack card and button vertically on small screens */
+  .patientRow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .btnUpdate {
+    align-self: flex-end;
+    padding: 9px 18px;
+  }
+
+  .patientCard {
+    padding: 14px;
+  }
+
+  /* Wrap badge to next line if needed */
+  .cardHeader {
+    flex-wrap: wrap;
+  }
+}
+
+/* ── Animation ───────────────────────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
