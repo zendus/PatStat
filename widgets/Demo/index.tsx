@@ -36,7 +36,7 @@ const roles: Role[] = [
     id: 'family',
     title: 'Family Member',
     description: 'View patient status and updates',
-    href: '/patients/verify-access',
+    href: '/patient-dashboard/overview',
   },
 ];
 
