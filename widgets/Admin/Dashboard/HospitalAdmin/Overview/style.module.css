@@ -16,15 +16,15 @@
 }
 
 .pageTitle {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 700;
   color: #252E30;
   margin: 0 0 4px;
 }
 
 .pageSubtitle {
-  font-size: 13px;
-  color: #8A9099;
+  font-size: 14px;
+  color: #646363;
   margin: 0;
 }
 
@@ -95,21 +95,22 @@
   font-weight: 700;
   color: #252E30;
   line-height: 1;
-  margin-bottom: 12px;
+  margin-bottom: 50px;
 }
 
 .statSubtext {
-  font-size: 12px;
+  font-size: 13px;
   color: #8A9099;
   margin-top: auto;
+  margin-bottom: 10px;
 }
 
 /* ── Icon colours ────────────────────────────────────────────────────────────── */
 
-.iconBlue   { color: #2F80ED; }
-.iconGreen  { color: #1B9362; }
-.iconRed    { color: #EB5757; }
-.iconOrange { color: #F59E0B; }
+.iconBlue   { color: #015DDD; }
+.iconGreen  { color: #0CA54D; }
+.iconRed    { color: #E6220D; }
+.iconOrange { color: #E17100; }
 
 /* ── Patient Status Distribution ─────────────────────────────────────────────── */
 
@@ -124,8 +125,8 @@
 }
 
 .cardTitle {
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
   color: #252E30;
   margin: 0;
 }
@@ -138,7 +139,7 @@
 
 .distBox {
   border-radius: 10px;
-  padding: 18px 12px;
+  padding: 20px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -146,29 +147,29 @@
 }
 
 .distCount {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 1;
 }
 
 .distLabel {
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
   text-align: center;
 }
 
 /* Distribution colours */
-.distBgGreen  { background: #F0FDF4; }
+.distBgGreen  { background: #ECFDF5; }
 .distBgOrange { background: #FFFBEB; }
 .distBgRed    { background: #FEF2F2; }
 .distBgBlue   { background: #EFF6FF; }
-.distBgGray   { background: #F4F5F6; }
+.distBgGray   { background: rgba(208, 208, 208, 0.15); }
 
-.distGreen  { color: #16A34A; }
-.distOrange { color: #D97706; }
-.distRed    { color: #DC2626; }
-.distBlue   { color: #2563EB; }
-.distGray   { color: #6B7280; }
+.distGreen  { color: #007A55; }
+.distOrange { color: #BB4D00; }
+.distRed    { color: #C10007; }
+.distBlue   { color: #1447E6; }
+.distGray   { color: #252E30; }
 
 /* ── Mobile Quick Actions ─────────────────────────────────────────────────────── */
 
@@ -193,7 +194,7 @@
   padding: 20px 16px;
   border-radius: 12px;
   border: none;
-  background: #0D9488;
+  background: #007A71;
   font-size: 15px;
   font-weight: 600;
   color: #fff;
@@ -201,7 +202,7 @@
   transition: background 0.15s ease;
 }
 
-.btnAdmit:hover { background: #0f766e; }
+.btnAdmit:hover { background: rgba(0, 122, 113, 0.8); }
 
 .btnInvite {
   display: flex;
@@ -248,16 +249,16 @@
 }
 
 .panelTitle {
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
   color: #252E30;
   margin: 0;
 }
 
 .viewAllBtn {
   font-size: 13px;
-  font-weight: 500;
-  color: #2F80ED;
+  font-weight: 600;
+  color: #252E30;
   background: none;
   border: none;
   cursor: pointer;
@@ -265,11 +266,11 @@
 }
 
 .alertBadge {
-  background: #FFFBEB;
-  color: #D97706;
-  border: 1px solid #fde68a;
+  background: #FEF3C6;
+  color: #973C00;
+  border: 1px solid #FEF3C6;
   padding: 3px 10px;
-  border-radius: 20px;
+  border-radius: 12px;
   font-size: 12px;
   font-weight: 600;
 }
@@ -286,7 +287,7 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  padding: 14px 0;
+  padding: 15px 0;
   border-bottom: 1px solid rgba(208, 208, 208, 0.3);
 }
 
@@ -296,19 +297,19 @@
 }
 
 .activityRow:first-child {
-  padding-top: 0;
+  padding-top: 13px;
 }
 
 .activityAvatar {
-  width: 36px;
-  height: 36px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  background: #EFF6FF;
-  border: 1px solid #bfdbfe;
+  background: #DBEAFE;
+  border: 1px solid #DBEAFE;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #2F80ED;
+  color: #015DDD;
   flex-shrink: 0;
 }
 
@@ -319,9 +320,10 @@
 
 .activityText {
   font-size: 13px;
-  color: #4B5563;
+  color: #646363;
   margin: 0 0 4px;
   line-height: 1.4;
+  font-weight: 400;
 }
 
 .activityText strong {
@@ -331,13 +333,13 @@
 
 .activityDate {
   font-size: 12px;
-  color: #ABABAB;
+  color: #646363;
   margin: 0;
 }
 
 .rolePill {
   font-size: 12px;
-  color: #6B7280;
+  color: #252E30;
   border: 1px solid #E5E7EB;
   border-radius: 6px;
   padding: 3px 10px;
@@ -358,12 +360,12 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  padding: 14px;
-  border-radius: 10px;
+  padding: 18px 14px;
+  border-radius: 12px;
 }
 
 .alertWarning { background: #FFFBEB; }
-.alertInfo    { background: #EFF6FF; }
+.alertInfo    { background: #F0F6FF; }
 
 .alertIcon {
   display: flex;
@@ -371,14 +373,14 @@
   margin-top: 1px;
 }
 
-.alertIconWarning { color: #D97706; }
-.alertIconInfo    { color: #2563EB; }
+.alertIconWarning { color: #E17100; }
+.alertIconInfo    { color: #015DDD; }
 
 .alertTitle {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
   color: #252E30;
-  margin: 0 0 3px;
+  margin: 0 0 7.5px;
 }
 
 .alertDesc {
@@ -389,11 +391,6 @@
 .alertDescWarning { color: #D97706; }
 .alertDescInfo    { color: #2563EB; }
 
-/* ══════════════════════════════════════════════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════════════════════════════════════════════ */
-
-/* Stats scroll: 860–1024px */
 @media (min-width: 860px) and (max-width: 1024px) {
   .statsScrollWrapper {
     overflow-x: auto;
@@ -406,7 +403,6 @@
   }
 }
 
-/* Distribution: collapse to 2+3 at medium */
 @media (max-width: 860px) {
   .distributionGrid {
     grid-template-columns: repeat(3, 1fr);
@@ -424,7 +420,7 @@
 /* Mobile: ≤ 600px */
 @media (max-width: 600px) {
   /* Show mobile date, hide desktop topbar */
-  .topBar { display: none; }
+  .topBar { display: none; } 
   .mobileDateLabel { display: block; }
 
   /* Show quick actions, hide distribution */
@@ -443,10 +439,10 @@
   }
 
   /* Stat card layout tweak for mobile */
-  .statTop { flex-direction: column-reverse; gap: 6px; }
-  .statValue { font-size: 28px; }
+  .statTop { flex-direction: column-reverse; gap: 12px; }
+  .statValue { font-size: 28px;  margin-bottom: 25px;}
   .statLabel { font-size: 12px; }
-  .statSubtext { display: none; }
+  /* .statSubtext { display: none; } */
 
   .bottomGrid {
     grid-template-columns: 1fr;
