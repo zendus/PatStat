@@ -1,0 +1,357 @@
+.wrapper {
+  animation: fadeIn 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  /* padding: 20px; */
+}
+
+/* ── Top Header ──────────────────────────────────────────────────────────────── */
+.topHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.headerContent h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #646363;
+  margin: 0;
+}
+
+.admitPatientBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #1A949D;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease;
+}
+
+.admitPatientBtn:hover {
+  background: rgba(26, 148, 157, 0.8);
+}
+
+/* ── Main Content Container ──────────────────────────────────────────────────── */
+.mainContent {
+  background: #fff;
+  border: 0.5px solid rgba(208, 208, 208, 0.5);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Search and Filter Bar ───────────────────────────────────────────────────── */
+.searchFilterBar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.searchBar {
+  flex: 1; /* Allows search bar to take most space */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #F4F5F6;
+  border-radius: 10px;
+  padding: 11px 16px;
+}
+
+.searchIcon {
+  display: flex;
+  color: #ABABAB;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #252E30;
+  font-family: inherit;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: #ABABAB;
+}
+
+.filterBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border-radius: 10px;
+  border: 1px solid #D0D0D0;
+  background: #FFFFFF;
+  font-size: 14px;
+  font-weight: 500;
+  color: #646363;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.filterBtn:hover {
+  background: #F5F5F5;
+  border-color: #A0A0A0;
+}
+
+/* ── Patient List Grouped by Ward ────────────────────────────────────────────── */
+.patientListGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between ward groups */
+}
+
+.wardGroupContainer {
+  /* background: #F9F9F9; */
+  border-radius: 12px;
+  padding: 15px;
+  border: 0.5px solid rgba(208, 208, 208, 0.6);
+}
+
+.wardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #EDEDED; /* Separator for ward header */
+}
+
+.wardGroupName {
+  font-size: 15px;
+  font-weight: 600;
+  color: #252E30;
+  margin: 0;
+}
+
+.wardPatientCount {
+  font-size: 14px;
+  color: #8A9099;
+}
+
+.patientList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.patientRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ── Inner patient card ──────────────────────────────────────────────────────── */
+.patientCard {
+  flex: 1;
+  min-width: 0;
+  border: 0.5px solid rgba(208, 208, 208, 0.6);
+  border-radius: 10px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+.patientCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.patientName {
+  font-size: 15px;
+  font-weight: 700;
+  color: #252E30;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.patientMeta {
+  font-size: 13px;
+  color: #8A9099;
+  margin: 0;
+}
+
+.patientDiagnosis {
+  font-size: 13px;
+  color: #6B7280;
+  margin: 40px 0 0; /* Adjusted margin to match screenshot spacing */
+}
+
+/* ── Empty state ─────────────────────────────────────────────────────────────── */
+
+.emptyText {
+  font-size: 14px;
+  color: #8A9099;
+  text-align: center;
+  padding: 32px 0;
+  margin: 0;
+}
+
+/* ── Badge ───────────────────────────────────────────────────────────────────── */
+
+.badge {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.statusBlue   { background: #EFF6FF; color: #015DDD; border: 1px solid #DEECFF; }
+.statusGreen  { background: #F0FDF4; color: #0CA54D; border: 1px solid #E2FFEE; }
+.statusOrange { background: #FFFBEB; color: #F48C1F; border: 1px solid #FFEFDE; }
+.statusRed    { background: #FEF2F2; color: #DC2626; border: 1px solid #fecaca; }
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  
+  .topHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  .headerContent h1 {
+    padding-top: 20px;
+  }
+
+  .admitPatientBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .headerContent h1 {
+    font-size: 24px;
+  }
+
+  .mainContent {
+    padding: 16px;
+  }
+
+  .searchFilterBar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .filterBtn {
+    width: 23%;
+    justify-content: center;
+    margin-left: auto;
+    padding: 10px 16px;
+  }
+
+  .wardGroupContainer {
+    padding: 12px;
+  }
+
+  .wardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
+  .patientCard {
+    padding: 14px;
+  }
+
+  .cardHeader {
+    flex-wrap: wrap;
+  }
+
+  .patientDiagnosis {
+    margin-top: 30px; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 10px;
+  }
+
+  .headerContent h1 {
+    font-size: 22px;
+  }
+
+  .mainContent {
+    padding: 12px;
+  }
+
+  .searchBar {
+    padding: 9px 14px;
+  }
+
+  .searchInput {
+    font-size: 13px;
+  }
+
+  .wardGroupName {
+    font-size: 14px;
+  }
+
+  .wardPatientCount {
+    font-size: 13px;
+  }
+
+  .patientName {
+    font-size: 14px;
+  }
+
+  .patientMeta, .patientDiagnosis {
+    font-size: 12px;
+  }
+
+  .badge {
+    padding: 4px 12px;
+    font-size: 11px;
+  }
+
+  .patientDiagnosis {
+    margin-top: 25px;
+  }
+}
+
+/* ── Animation ───────────────────────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}

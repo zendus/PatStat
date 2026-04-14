@@ -1,3 +1,5 @@
+export { PatientManagementPage } from "./HospitalAdmin";
+
 export { AdminDashboardPage } from "./HospitalAdmin";
 
 export { NurseDashboardPage } from "./NurseDashboard";
