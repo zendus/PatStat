@@ -1,3 +1,11 @@
+export { AdminMobileHeader } from "./AdminMobileHeader";
+
+export { AdminMobileMenu } from "./AdminMobileMenu";
+
+export { AdminMobileFooter } from "./AdminMobileFooter";
+
+export { AdminSidebar } from "./AdminSidebar";
+
 export { NurseSidebar } from "./NurseSidebar";
 
 export { NurseMobileHeader } from "./NurseMobileHeader";
