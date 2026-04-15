@@ -1,0 +1,190 @@
+.wrapper {
+  animation: fadeIn 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Page header ─────────────────────────────────────────────────────────────── */
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #646363;
+  margin: 0;
+}
+
+/* ── Card ────────────────────────────────────────────────────────────────────── */
+
+.card {
+  background: #fff;
+  border: 0.5px solid rgba(208, 208, 208, 0.5);
+  border-radius: 14px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0;
+}
+
+/* ── Field group ─────────────────────────────────────────────────────────────── */
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fieldLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: #252E30;
+}
+
+/* ── Select ──────────────────────────────────────────────────────────────────── */
+
+.selectWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.select {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 13px 44px 13px 16px;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 14px;
+  color: #252E30;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.select:focus {
+  border-color: #1A949D;
+}
+
+.select option[value=""] {
+  color: #B0B7BF;
+}
+
+.selectChevron {
+  position: absolute;
+  right: 14px;
+  pointer-events: none;
+  color: #8A9099;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Vitals 2-column grid ────────────────────────────────────────────────────── */
+
+.vitalsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 20px;
+}
+
+/* ── Input ───────────────────────────────────────────────────────────────────── */
+
+.fieldInput {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #F4F5F6;
+  font-size: 14px;
+  color: #252E30;
+  font-family: inherit;
+  outline: none;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.fieldInput::placeholder {
+  color: #B0B7BF;
+}
+
+.fieldInput:focus {
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.25);
+}
+
+/* ── Save button ─────────────────────────────────────────────────────────────── */
+
+.btnSave {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: none;
+  background: #1A949D;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.2s ease;
+}
+
+.btnSave:hover {
+  background: rgba(26, 148, 157, 0.8);
+}
+
+.btnSaved {
+  background: #0CA54D;
+}
+
+.btnSaved:hover {
+  background: rgba(12, 165, 77, 0.8);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+    .header h1 {
+        padding-top: 20px;
+    }
+}
+@media (max-width: 540px) {
+  .vitalsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 20px 16px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .btnSave {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ── Animation ───────────────────────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}

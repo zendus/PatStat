@@ -1,0 +1,206 @@
+.sidebar {
+  width: 230px;
+  min-height: 100vh;
+  background: var(--Miscellaneous-Text-Field---BG, #FFFFFF);
+  box-shadow: 0px 2px 15px 0px #B7B7B726;
+  padding: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.sidebarHeader {
+  padding: 12px 20px 20px;
+  border-bottom: 1px solid #E8E8E8;
+  margin-bottom: 20px;
+  background: #007A71;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color-interpolation-filters: auto;
+}
+
+.logoHospital {
+  font-size: 11px;
+  color: #E1FFF4;
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.3;
+  margin-top: -12px;
+  margin-left: 43px;
+  line-height: 1.3;
+  letter-spacing: 0%;
+}
+
+.patientInfoBox {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  /* background: rgb(51, 166, 129); */
+  background-color: #198C83;
+  border: 0.5px solid transparent;
+  margin-top: 25px;
+  border-radius: 8px;
+}
+
+.patientName {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--Miscellaneous-Text-Field---BG, #FFFFFF);
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: 0%;
+}
+
+.patientInfoBox .patientNameBox {
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.patientInfoBox .patientNameBox .patientName {
+  color: var(--Miscellaneous-Text-Field---BG, #FFFFFF);
+  font-size: 16px;
+}
+
+.patientInfoBox .patientNameBox .patientRole {
+  color: var(--Miscellaneous-Text-Field---BG, #FFFFFF);
+}
+
+.patientRole {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  color: #E1FFF4;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: 0%;
+}
+
+.sidebarNav {
+  flex-grow: 1;
+  padding: 0 12px;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  color: #4A4A4A;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 500;
+  /* transition: background-color 0.15s ease, color 0.15s ease; */
+  transition: all 0.2s ease;
+  transform: translateZ(0);
+  position: relative;
+  overflow: hidden;
+}
+
+/* .navLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scaleY(0);
+  width: 4px;
+  height: 70%;
+  background: #1B9362;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+} */
+
+.navLink.active::after {
+  transform: translateY(-50%) scaleY(1);
+}
+
+.navLink svg {
+  width: 20px;
+  height: 20px;
+  color: #646363;
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+.navLink:hover {
+  background-color: #F5F5F5;
+  color: #1D1D1D;
+}
+
+.navLink:hover svg {
+  color: #4A4A4A;
+}
+
+.navLink.active {
+  background: #E8FFFD;
+  color: #007A71;
+  font-weight: 500;
+  transform: scale(1.02);
+  box-shadow: 0px 2px 6px 0px #3030301A;
+}
+
+.navLink.active svg {
+  color: #007A71;
+}
+
+
+.logoutContainer {
+  padding: 16px 12px 8px;
+  margin-top: auto;
+}
+
+.logoutBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  border: 1px solid #FFCCC7;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #FF4C3A;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.logoutBtn svg {
+  width: 18px;
+  height: 18px;
+  color: #FF4C3A;
+  transition: color 0.15s ease;
+}
+
+.logoutBtn:hover {
+  background-color: #EB5757;
+  color: #FFFFFF;
+}
+
+.logoutBtn:hover svg {
+  color: #FFFFFF;
+}
+
+
+@media (max-width: 860px) {
+  .sidebar {
+    display: none;
+  }
+}

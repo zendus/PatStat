@@ -1,0 +1,216 @@
+/* ── Base Layout ───────────────────────────────────────────────────────────── */
+.emergencyWrapper {
+  animation: fadeIn 0.25s ease;
+    display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.emergencyHeader h1 {
+    /* font-family: var(--body); */
+  font-size: 28px;
+  font-weight: 700;
+  color: #252E30; /* Darker text for main titles */
+  margin: 0 0 4px;
+}
+
+.emergencySubtitle {
+  font-size: 14px;
+  color: #646363;
+  margin: 0;
+}
+
+/* ── Emergency Card ────────────────────────────────────────────────────────── */
+.emergencyList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Spacing between cards */
+}
+
+.emergencyCard {
+  display: flex;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #E6220D; /* Red border for emergency */
+  padding: 16px 20px;
+  align-items: flex-start;
+  gap: 15px;
+  transition: all 0.2s ease-in-out;
+}
+
+.emergencyCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.flagIcon {
+  color: #E6220D; /* Red icon */
+  flex-shrink: 0;
+  padding-top: 2px; /* Slight adjustment for icon alignment with text */
+}
+
+.flagContent {
+  flex-grow: 1;
+}
+
+.flagHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.patientName {
+  font-size: 16px;
+  font-weight: 700;
+  color: #252E30;
+  margin-right: 8px;
+}
+
+.emergencyBadge {
+  background: #FFE3E0;
+  color: #E6220D;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.patientLocation {
+  font-size: 14px;
+  color: #646363;
+  margin: 0 0 8px;
+}
+
+.flagDescription {
+  font-size: 14px;
+  color: #646363;
+  line-height: 1.4;
+  margin-bottom: 70px;
+}
+
+.flagActions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* For responsiveness on smaller screens */
+}
+
+.viewDetailsButton,
+.updateStatusButton {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.viewDetailsButton {
+  background: #fff; /* Light grey background */
+  color: #252E30;
+  border: 1px solid #D0D0D0;
+}
+
+.viewDetailsButton:hover {
+  background: #D5D5D5;
+  border-color: #C0C0C0;
+}
+
+.updateStatusButton {
+  background: #E6220D; /* Red background */
+  color: #fff;
+  border: 1px solid #E6220D;
+}
+
+.updateStatusButton:hover {
+  background: rgba(230, 34, 13, 0.8);
+  border-color: rgba(230, 34, 13, 0.8);
+}
+
+/* ── No Emergency Cases State ──────────────────────────────────────────────── */
+.noEmergencyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 40px 20px;
+  margin-top: 20px;
+  min-height: 250px; /* Ensure it takes up some space */
+}
+
+.noEmergencyContainer svg {
+  margin-bottom: 20px;
+}
+
+.noEmergencyTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #252E30;
+  margin: 0 0 8px;
+}
+
+.noEmergencyText {
+  font-size: 14px;
+  color: #646363;
+  max-width: 300px;
+  line-height: 1.5;
+}
+
+/* ── Animation ─────────────────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+    .emergencyHeader h1 {
+        padding-top: 20px;
+    }
+}
+@media (max-width: 600px) {
+  .emergencyWrapper {
+    padding: 15px;
+  }
+
+  .emergencyHeader h1 {
+    font-size: 22px;
+  }
+
+  .patientName {
+    font-size: 15px;
+  }
+
+  .flagDescription,
+  .patientLocation {
+    font-size: 13px;
+  }
+
+  .flagActions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .viewDetailsButton,
+  .updateStatusButton {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .emergencyBadge {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+}

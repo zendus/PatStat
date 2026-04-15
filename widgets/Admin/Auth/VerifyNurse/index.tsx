@@ -15,8 +15,8 @@ interface StaffInfo {
 
 const STAFF_INFO: StaffInfo = {
   hospital: 'Parklane General Hospital',
-  staffMember: 'Dr. Tobenna Obi',
-  workEmail: 'tobenna.obi@hospital.ng',
+  staffMember: 'Chisom Okeke',
+  workEmail: 'chisom.okeke@hospital.ng',
 };
 
 const HospitalIcon: React.FC = () => (

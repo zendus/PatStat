@@ -1,0 +1,457 @@
+.wrapper {
+  animation: fadeIn 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Top bar ─────────────────────────────────────────────────────────────────── */
+
+.topBar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pageTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0 0 4px;
+}
+
+.pageSubtitle {
+  font-size: 14px;
+  color: #646363;
+  margin: 0;
+}
+
+.dateLabel {
+  font-size: 14px;
+  color: #8A9099;
+  white-space: nowrap;
+  padding-top: 4px;
+}
+
+/* Mobile date label — hidden on desktop */
+.mobileDateLabel {
+  display: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #252E30;
+  margin: 0;
+}
+
+/* ── Stats scroll wrapper ────────────────────────────────────────────────────── */
+
+.statsScrollWrapper {
+  overflow: visible;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.statCard {
+  background: #fff;
+  border: 0.5px solid rgba(208, 208, 208, 0.5);
+  border-radius: 12px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+  min-width: 0;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.statTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: #8A9099;
+  font-weight: 500;
+}
+
+.statIcon {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.statValue {
+  font-size: 34px;
+  font-weight: 700;
+  color: #252E30;
+  line-height: 1;
+  margin-bottom: 50px;
+}
+
+.statSubtext {
+  font-size: 13px;
+  color: #8A9099;
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+
+/* ── Icon colours ────────────────────────────────────────────────────────────── */
+
+.iconBlue   { color: #015DDD; }
+.iconGreen  { color: #0CA54D; }
+.iconRed    { color: #E6220D; }
+.iconOrange { color: #E17100; }
+
+/* ── Patient Status Distribution ─────────────────────────────────────────────── */
+
+.distributionCard {
+  background: #fff;
+  border: 0.5px solid rgba(208, 208, 208, 0.5);
+  border-radius: 14px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #252E30;
+  margin: 0;
+}
+
+.distributionGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.distBox {
+  border-radius: 10px;
+  padding: 20px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.distCount {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.distLabel {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* Distribution colours */
+.distBgGreen  { background: #ECFDF5; }
+.distBgOrange { background: #FFFBEB; }
+.distBgRed    { background: #FEF2F2; }
+.distBgBlue   { background: #EFF6FF; }
+.distBgGray   { background: rgba(208, 208, 208, 0.15); }
+
+.distGreen  { color: #007A55; }
+.distOrange { color: #BB4D00; }
+.distRed    { color: #C10007; }
+.distBlue   { color: #1447E6; }
+.distGray   { color: #252E30; }
+
+/* ── Mobile Quick Actions ─────────────────────────────────────────────────────── */
+
+.mobileQuickActions {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quickActionsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.btnAdmit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 16px;
+  border-radius: 12px;
+  border: none;
+  background: #007A71;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.btnAdmit:hover { background: rgba(0, 122, 113, 0.8); }
+
+.btnInvite {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 16px;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  background: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  color: #252E30;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.btnInvite:hover { background: #F9FAFB; }
+
+/* ── Bottom two-col grid ─────────────────────────────────────────────────────── */
+
+.bottomGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.panel {
+  background: #fff;
+  border: 0.5px solid rgba(208, 208, 208, 0.5);
+  border-radius: 14px;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panelTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #252E30;
+  margin: 0;
+}
+
+.viewAllBtn {
+  font-size: 13px;
+  font-weight: 600;
+  color: #252E30;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.alertBadge {
+  background: #FEF3C6;
+  color: #973C00;
+  border: 1px solid #FEF3C6;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ── Activity list ───────────────────────────────────────────────────────────── */
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.activityRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(208, 208, 208, 0.3);
+}
+
+.activityRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.activityRow:first-child {
+  padding-top: 13px;
+}
+
+.activityAvatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #DBEAFE;
+  border: 1px solid #DBEAFE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #015DDD;
+  flex-shrink: 0;
+}
+
+.activityContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.activityText {
+  font-size: 13px;
+  color: #646363;
+  margin: 0 0 4px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.activityText strong {
+  color: #252E30;
+  font-weight: 600;
+}
+
+.activityDate {
+  font-size: 12px;
+  color: #646363;
+  margin: 0;
+}
+
+.rolePill {
+  font-size: 12px;
+  color: #252E30;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  padding: 3px 10px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  align-self: center;
+}
+
+/* ── Alert list ──────────────────────────────────────────────────────────────── */
+
+.alertList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.alertRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 18px 14px;
+  border-radius: 12px;
+}
+
+.alertWarning { background: #FFFBEB; }
+.alertInfo    { background: #F0F6FF; }
+
+.alertIcon {
+  display: flex;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.alertIconWarning { color: #E17100; }
+.alertIconInfo    { color: #015DDD; }
+
+.alertTitle {
+  font-size: 15px;
+  font-weight: 500;
+  color: #252E30;
+  margin: 0 0 7.5px;
+}
+
+.alertDesc {
+  font-size: 12px;
+  margin: 0;
+}
+
+.alertDescWarning { color: #D97706; }
+.alertDescInfo    { color: #2563EB; }
+
+@media (min-width: 860px) and (max-width: 1024px) {
+  .statsScrollWrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .statsScrollWrapper::-webkit-scrollbar { display: none; }
+  .statsGrid {
+    grid-template-columns: repeat(4, 190px);
+  }
+}
+
+@media (max-width: 860px) {
+  .distributionGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .bottomGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pageTitle, .mobileDateLabel {
+    padding-top: 20px;
+  }
+}
+
+/* Mobile: ≤ 600px */
+@media (max-width: 600px) {
+  /* Show mobile date, hide desktop topbar */
+  .topBar { display: none; } 
+  .mobileDateLabel { display: block; }
+
+  /* Show quick actions, hide distribution */
+  .mobileQuickActions { display: flex; }
+  .distributionCard { display: none; }
+
+  /* Stats horizontal scroll */
+  .statsScrollWrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .statsScrollWrapper::-webkit-scrollbar { display: none; }
+  .statsGrid {
+    grid-template-columns: repeat(4, 140px);
+  }
+
+  /* Stat card layout tweak for mobile */
+  .statTop { flex-direction: column-reverse; gap: 12px; }
+  .statValue { font-size: 28px;  margin-bottom: 25px;}
+  .statLabel { font-size: 12px; }
+  /* .statSubtext { display: none; } */
+
+  .bottomGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Animation ───────────────────────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

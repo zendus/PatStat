@@ -1,3 +1,33 @@
+export { ReportsAnalyticsPage } from "./HospitalAdmin";
+
+export { ActivityAuditPage } from "./HospitalAdmin";
+
+export { FamilyAccessPage } from "./HospitalAdmin";
+
+export { DepartmentsWardsPage } from "./HospitalAdmin";
+
+export { CareTeamsPage } from "./HospitalAdmin";
+
+export { PatientManagementPage } from "./HospitalAdmin";
+
+export { AdminDashboardPage } from "./HospitalAdmin";
+
+export { NurseDashboardPage } from "./NurseDashboard";
+
+export { VitalSignsPage } from "./NurseDashboard";
+
+export { AssignedPatientPage } from "./NurseDashboard";
+
+export { NurseQuickUpdate } from "./NurseDashboard";
+
+export { NurseShiftNote } from "./NurseDashboard";
+
+export { NurseHistoryPage } from "./NurseDashboard";
+
+export { NurseAlertPage } from "./NurseDashboard";
+
+export { NurseProfilePage } from "./NurseDashboard";
+
 export { ShiftHandoverPage } from "./DoctorDashboard";
 
 export { ClinicalNotesPage } from "./DoctorDashboard";

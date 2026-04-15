@@ -19,7 +19,7 @@ const roles: Role[] = [
     id: 'admin',
     title: 'Hospital Admin',
     description: 'Manage patients, staff, and access control',
-    href: '/admin-dashboard',
+    href: '/admin-dashboard/overview',
   },
   {
     id: 'doctor',
