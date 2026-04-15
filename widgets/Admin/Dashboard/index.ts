@@ -1,3 +1,7 @@
+export { ReportsAnalyticsPage } from "./HospitalAdmin";
+
+export { ActivityAuditPage } from "./HospitalAdmin";
+
 export { FamilyAccessPage } from "./HospitalAdmin";
 
 export { DepartmentsWardsPage } from "./HospitalAdmin";

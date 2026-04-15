@@ -421,9 +421,6 @@
 }
 
 @media (max-width: 480px) {
-  .wrapper {
-    padding: 10px;
-  }
   .headerContent h1 {
     font-size: 22px;
   }

@@ -1,3 +1,7 @@
+export { ReportsAnalyticsPage } from "./ReportAnalytics";
+
+export { ActivityAuditPage } from "./AuditActivity";
+
 export { FamilyAccessPage } from "./FamilyAccess";
 
 export { DepartmentsWardsPage } from "./Departments";
