@@ -1,0 +1,266 @@
+.wrapper {
+  animation: fadeIn 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Top bar ─────────────────────────────────────────────────────────────────── */
+
+.topBar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.pageTitle {
+  font-size: 26px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0 0 4px;
+}
+
+.pageSubtitle {
+  font-size: 13px;
+  color: #8A9099;
+  margin: 0;
+}
+
+.btnAddWard {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 20px;
+  border-radius: 10px;
+  border: none;
+  background: #007A71;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.15s ease;
+}
+
+.btnAddWard:hover {
+  background: rgba(0, 122, 113, 0.8);
+}
+
+/* ── Ward grid ───────────────────────────────────────────────────────────────── */
+
+.wardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ── Ward card ───────────────────────────────────────────────────────────────── */
+
+.wardCard {
+  background: #fff;
+  border: 0.5px solid rgba(208, 208, 208, 0.5);
+  border-radius: 14px;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.2s ease;
+}
+
+.wardCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* Card header: icon + name/status */
+.wardCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wardIconWrap {
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  background: #E8FFFD;
+  border: 1px solid #CCFBF1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #007A71;
+  flex-shrink: 0;
+}
+
+.wardName {
+  font-size: 15px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0 0 3px;
+}
+
+.wardStatus {
+  font-size: 12px;
+  color: #8A9099;
+  margin: 0;
+}
+
+/* ── Stats block ─────────────────────────────────────────────────────────────── */
+
+.statsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Base stat row */
+.statRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #F9FAFB;
+}
+
+.statRowLabel {
+  font-size: 13px;
+  color: #6B7280;
+  font-weight: 400;
+}
+
+.statRowValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: #252E30;
+}
+
+/* Stable row */
+.stableRow {
+  background: #F0FDF4;
+}
+
+.stableLabel {
+  color: #16A34A;
+  font-weight: 500;
+}
+
+.stableValue {
+  color: #16A34A;
+}
+
+/* Critical row */
+.criticalRow {
+  background: #FEF2F2;
+}
+
+.criticalLabel {
+  color: #DC2626;
+  font-weight: 500;
+}
+
+.criticalValue {
+  color: #DC2626;
+}
+
+/* ── View Ward Details button ────────────────────────────────────────────────── */
+
+.btnView {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #E5E7EB;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  color: #252E30;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+.btnView:hover {
+  background: #F9FAFB;
+  border-color: #D0D0D0;
+}
+
+/* ── Dashed add-ward placeholder card ────────────────────────────────────────── */
+
+.addWardCard {
+  border: 2px dashed #D0D0D0;
+  border-radius: 14px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.addWardCard:hover {
+  border-color: #0D9488;
+  background: #F0FDFA;
+}
+
+.addWardCard:hover .addWardPlus {
+  color: #0D9488;
+}
+
+.addWardPlus {
+  color: #C4C9CC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 860px) {
+  .wardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pageTitle {
+    padding-top: 20px;
+  }
+
+  .btnAddWard {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 540px) {
+  .wardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pageTitle {
+    font-size: 22px;
+  }
+
+  .topBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btnAddWard {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .addWardCard {
+    min-height: 100px;
+  }
+}
+
+/* ── Animation ───────────────────────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
