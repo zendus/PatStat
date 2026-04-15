@@ -1,3 +1,5 @@
+export { CareTeamsPage } from "./HospitalAdmin";
+
 export { PatientManagementPage } from "./HospitalAdmin";
 
 export { AdminDashboardPage } from "./HospitalAdmin";
