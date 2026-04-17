@@ -1,0 +1,502 @@
+/* ── Tokens ──────────────────────────────────────────────────────────────────── */
+:root {
+  --teal: #1A949D;
+  --teal-light: #e8f7f8;
+  --teal-mid: rgba(26, 148, 157, 0.12);
+  --dark: #0A0A0A;
+  --mid: #3d4f55;
+  --muted: #646363;
+  --border: #e4e9eb;
+  --surface: #ffffff;
+  --bg: #f0f4f5;
+  --danger: #e05252;
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-sm: 8px;
+  --shadow-card: 0 1px 3px rgba(26,33,36,0.06), 0 4px 16px rgba(26,33,36,0.06);
+  --shadow-btn: 0 2px 8px rgba(26, 148, 157, 0.28);
+  --danger-background: #FDF4F4; /* New token for alert background */
+  --danger-border: #F7DCDC; /* New token for alert border */
+  --red-text: #C0392B; /* New token for alert text */
+}
+
+/* ── Layout — aligned with ReportsAnalyticsPage wrapper ─────────────────────── */
+.wrapper {
+  animation: fadeIn 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  /* padding and background intentionally omitted — inherited from parent shell */
+}
+
+/* ── Top Header ──────────────────────────────────────────────────────────────── */
+.topHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.headerContent h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0 0 4px;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Header action buttons grouped together */
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* Shared button base */
+.editInformationBtn,
+.submitRequestBtn { /* Added submitRequestBtn to inherit styles */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  border: none;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  letter-spacing: 0.01em;
+}
+
+.editInformationBtn,
+.submitRequestBtn { /* Apply primary button styles to submit */
+  background: var(--teal);
+  color: #fff;
+  box-shadow: var(--shadow-btn);
+}
+
+.editInformationBtn:hover,
+.submitRequestBtn:hover {
+  background: #158a93;
+  box-shadow: 0 4px 14px rgba(26, 148, 157, 0.36);
+  transform: translateY(-1px);
+}
+
+.editInformationBtn:active,
+.submitRequestBtn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-btn);
+}
+
+/* ── Main Content Layout ─────────────────────────────────────────────────────── */
+.mainContent {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr; /* Adjust column ratio based on screenshot */
+  gap: 24px;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Settings Section (reused) ───────────────────────────────────────────────── */
+.settingsSection {
+  background: var(--surface);
+  border: 0.5px solid rgba(208, 208, 208, 0.5);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s ease;
+}
+
+.settingsSection:hover {
+  box-shadow: 0 2px 6px rgba(26,33,36,0.08), 0 8px 24px rgba(26,33,36,0.08);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #EDEDED;
+}
+
+.sectionIconWrap {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--teal-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #252E30;
+  margin: 0;
+}
+
+/* ── Form Styling (reused and adapted) ───────────────────────────────────────── */
+.formGridSingleColumn { /* New style for a single column form */
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.formLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark);
+  /* text-transform: uppercase; */
+  letter-spacing: 0.06em;
+}
+
+.formInput,
+.formSelect { /* Reusing styles for consistent input appearance */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #F4F5F6;
+  font-size: 14px;
+  color: #252E30;
+  font-family: inherit;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.formInput::placeholder {
+  color: #8A9099;
+}
+
+.formInput:focus,
+.formSelect:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(26, 148, 157, 0.1);
+  background: #fff;
+}
+
+.textarea {
+  resize: vertical; /* Allow vertical resizing for textarea */
+  min-height: 80px; /* Minimum height for textarea */
+}
+
+/* File Attachments */
+.attachFileLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 14px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.attachFileLabel:hover {
+  color: var(--teal);
+}
+
+.fileInput {
+  display: none; /* Hide default file input */
+}
+
+.optionalText {
+  font-size: 12px;
+  color: #8A9099;
+}
+
+.fileName {
+  margin-left: 8px;
+  color: var(--dark);
+  font-weight: 500;
+}
+
+
+/* ── Right Column Specific Styles ────────────────────────────────────────────── */
+
+.contactSupportTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #252E30;
+  margin: 0 0 15px; /* Added margin-bottom */
+  padding-bottom: 12px;
+  border-bottom: 1px solid #EDEDED;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contactLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark);
+  /* text-transform: uppercase; */
+  letter-spacing: 0.06em;
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+.contactValue {
+  font-size: 13px;
+  color: #252E30;
+  font-weight: 500;
+  margin: 0;
+}
+
+.helpGuideList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.helpGuideItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: #252E30;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  border: 1px solid transparent; /* Add a transparent border */
+}
+
+.helpGuideItem:hover {
+  background: #fff;
+  border-color: var(--border); /* Show border on hover */
+}
+
+.helpGuideItem svg {
+  color: var(--muted);
+}
+
+/* Report an Issue Section */
+.reportIssueSection {
+  background: var(--danger-background); /* Using new token */
+  border: 1px solid var(--danger-border); /* Using new token */
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  box-shadow: var(--shadow-card); /* Keep shadow for consistency */
+}
+
+.reportIssueSection svg {
+  color: var(--red-text); /* Using new token */
+}
+.reportIssueContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #82181A;
+}
+.reportIssueText {
+  font-size: 14px;
+  color: var(--red-text); /* Using new token */
+  margin: 0;
+  line-height: 1.5;
+}
+
+.reportBugBtn {
+  background: var(--red-text); /* Using new token */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  box-shadow: 0 2px 8px rgba(192, 57, 43, 0.28); /* Custom shadow for red button */
+}
+
+.reportBugBtn:hover {
+  background: #a93026; /* Darker red on hover */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(192, 57, 43, 0.36);
+}
+
+.reportBugBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(192, 57, 43, 0.28);
+}
+
+/* ── Accordion (FAQ) Styles ──────────────────────────────────────────────────── */
+.accordionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accordionItem {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.accordionItem:hover {
+  border-color: var(--teal-mid);
+  background-color: #fff;
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #252E30;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.accordionHeader:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26, 148, 157, 0.1);
+  border-radius: var(--radius-sm);
+}
+
+.accordionHeader svg {
+  color: var(--muted);
+  transition: transform 0.2s ease;
+}
+
+.accordionHeader[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.accordionContent {
+  padding: 0 15px 12px;
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.5;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .topHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .headerContent h1 {
+    padding-top: 20px;
+  }
+
+  .headerActions {
+    width: 100%;
+  }
+
+  .editInformationBtn,
+  .submitRequestBtn {
+    flex: 1;
+    justify-content: center;
+    padding: 12px 18px;
+  }
+
+  .mainContent {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    gap: 20px;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .headerContent h1 { font-size: 24px; }
+  .settingsSection { padding: 15px; }
+  .sectionTitle { font-size: 16px; }
+  .notificationItem { padding: 12px; }
+  .contactSupportTitle { font-size: 15px; margin-bottom: 10px; }
+  .reportIssueSection { padding: 15px; gap: 10px; }
+  .reportIssueText { font-size: 13px; }
+  .reportBugBtn { padding: 8px 15px; font-size: 13px; }
+  .accordionHeader { font-size: 13px; padding: 10px 12px; }
+  .accordionContent { font-size: 12px; padding: 0 12px 10px; }
+  .helpGuideItem { font-size: 13px; padding: 10px 12px; }
+}
+
+@media (max-width: 480px) {
+  .headerContent h1 { font-size: 22px; }
+  .subtitle { font-size: 13px; }
+  .formLabel { font-size: 11px; }
+  .formInput, .formSelect { font-size: 13px; padding: 10px 12px; }
+  .timeInput { font-size: 13px; padding: 10px 6px; }
+}
+
+/* ── Staggered section reveal ────────────────────────────────────────────────── */
+.settingsSection,
+.reportIssueSection { /* Apply animation to new sections as well */
+  animation: fadeIn 0.25s ease both;
+}
+
+.settingsSection:nth-child(1) { animation-delay: 0.04s; }
+.settingsSection:nth-child(2) { animation-delay: 0.08s; }
+.settingsSection:nth-child(3) { animation-delay: 0.12s; } /* For the right column sections */
+.settingsSection:nth-child(4) { animation-delay: 0.16s; }
+.reportIssueSection { animation-delay: 0.20s; }
+
+
+/* ── Animation ───────────────────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

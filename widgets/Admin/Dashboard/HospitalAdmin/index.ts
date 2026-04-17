@@ -1,3 +1,7 @@
+export { SupportCenterPage } from "./Support";
+
+export { SecurityPermissionsPage } from "./Security";
+
 export { ReportsAnalyticsPage } from "./ReportAnalytics";
 
 export { ActivityAuditPage } from "./AuditActivity";

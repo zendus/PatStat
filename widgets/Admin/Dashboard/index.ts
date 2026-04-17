@@ -1,3 +1,7 @@
+export { SupportCenterPage } from "./HospitalAdmin";
+
+export { SecurityPermissionsPage } from "./HospitalAdmin";
+
 export { HospitalSettingsPage } from "./HospitalAdmin";
 
 export { ReportsAnalyticsPage } from "./HospitalAdmin";
