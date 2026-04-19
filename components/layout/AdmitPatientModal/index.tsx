@@ -248,7 +248,7 @@ const AdmitPatientModal: React.FC<AdmitPatientModalProps> = ({ isOpen, onClose, 
                 label="Gender"
                 options={genderOptions}
                 value={gender}
-                onChange={setGender}
+                onChange={(value) => setGender(value as string)}
                 placeholder="Select gender..."
                 required
               />
@@ -258,7 +258,7 @@ const AdmitPatientModal: React.FC<AdmitPatientModalProps> = ({ isOpen, onClose, 
                   label="Ward/Department"
                   options={wardOptions}
                   value={ward}
-                  onChange={setWard}
+                  onChange={(value) => setWard(value as string)}
                   placeholder="Select ward..."
                   required
                 />
@@ -292,7 +292,7 @@ const AdmitPatientModal: React.FC<AdmitPatientModalProps> = ({ isOpen, onClose, 
                 label="Assign Primary Doctor"
                 options={doctorOptions}
                 value={primaryDoctor}
-                onChange={setPrimaryDoctor}
+                onChange={(value) => setPrimaryDoctor(value as string)}
                 placeholder="Select doctor..."
                 required
               />
@@ -301,7 +301,7 @@ const AdmitPatientModal: React.FC<AdmitPatientModalProps> = ({ isOpen, onClose, 
                 label="Assign Nurses (select one or more)"
                 options={nurseOptions}
                 value={assignedNurses}
-                onChange={setAssignedNurses}
+                onChange={(value) => setAssignedNurses(value as string[])}
                 placeholder="Select nurses..."
                 multiSelect
                 required
@@ -309,7 +309,7 @@ const AdmitPatientModal: React.FC<AdmitPatientModalProps> = ({ isOpen, onClose, 
 
               <div className={styles.infoBox}>
                 <InfoIcon />
-                <p>After admission, the care team will be notified and can begin updating the patient's status.</p>
+                <p>After admission, the care team will be notified and can begin updating the patient&apos;s status.</p>
               </div>
 
               <div className={styles.modalActions}>
