@@ -1,0 +1,522 @@
+/* ── Tokens ──────────────────────────────────────────────────────────────────── */
+:root {
+  --blue: #015DDD;
+  --blue-light: #EBF2FF;
+  --green: #0CA54D;
+  --green-light: #E8F8EF;
+  --orange: #E17100;
+  --orange-light: #FEF3E7;
+  --dark: #0A0A0A;
+  --mid: #3d4f55;
+  --muted: #646363;
+  --placeholder: #8A9099;
+  --border: #E4E9EB;
+  --surface: #ffffff;
+  --bg: #F0F4F5;
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-sm: 8px;
+  --shadow-card: 0 1px 3px rgba(26, 33, 36, 0.06), 0 4px 16px rgba(26, 33, 36, 0.06);
+}
+
+/* ── Page Wrapper ────────────────────────────────────────────────────────────── */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 28px 28px 40px;
+  background-color: var(--bg);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* ── Top Bar ─────────────────────────────────────────────────────────────────── */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.pageTitle {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 4px;
+  letter-spacing: -0.5px;
+}
+
+.pageSubtitle {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.topBarRight {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.bellBtn {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--mid);
+  transition: background 0.15s ease;
+}
+
+.bellBtn:hover {
+  background: var(--bg);
+}
+
+.bellDot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #E05252;
+  border: 2px solid var(--surface);
+}
+
+.userChip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 7px 14px 7px 8px;
+}
+
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.userName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+.userRole {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.2;
+}
+
+/* ── Stat Cards ──────────────────────────────────────────────────────────────── */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.statCard {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border);
+}
+
+.statCardLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  font-weight: 500;
+}
+
+.statValueRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.statValue {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--dark);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.statBadgeGreen {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--green);
+  background: var(--green-light);
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+.statBadgeOrange {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--orange);
+  background: var(--orange-light);
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+.statIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  flex-shrink: 0;
+}
+
+/* ── Main Grid ───────────────────────────────────────────────────────────────── */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+  align-items: start;
+}
+
+/* ── Chart Card ──────────────────────────────────────────────────────────────── */
+.chartCard {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border);
+}
+
+.cardTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 20px;
+  letter-spacing: -0.2px;
+}
+
+.chartWrapper {
+  width: 100%;
+  height: 240px;
+}
+
+/* ── Right Column ────────────────────────────────────────────────────────────── */
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sideCard {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border);
+}
+
+.sideCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.sideCardHeader .cardTitle {
+  margin-bottom: 0;
+}
+
+.pendingBadge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--orange);
+  background: var(--orange-light);
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.countBadge {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue);
+  background: var(--blue-light);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Needs Action List ───────────────────────────────────────────────────────── */
+.needsActionList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.needsActionItem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.needsActionItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.hospitalName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0 0 3px;
+}
+
+.hospitalLocation {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.reviewBtn {
+  width: 100%;
+  padding: 10px;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.reviewBtn:hover:not(:disabled) {
+  background: #0050c8;
+  transform: translateY(-1px);
+}
+
+.reviewBtn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.reviewedBtn {
+  background: var(--green-light);
+  color: var(--green);
+  cursor: default;
+}
+
+/* ── Recently Added List ─────────────────────────────────────────────────────── */
+.recentList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.recentItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.recentItem:first-child {
+  padding-top: 0;
+}
+
+.recentItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.statusActive {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--green);
+  background: var(--green-light);
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.statusPending {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--orange);
+  background: var(--orange-light);
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+
+/* Large tablets — collapse right column below chart */
+@media (max-width: 1100px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .rightColumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 20px 16px 32px;
+    gap: 18px;
+  }
+
+  .pageTitle {
+    font-size: 22px;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .statValue {
+    font-size: 26px;
+  }
+
+  .statCard {
+    padding: 16px;
+  }
+
+  .rightColumn {
+    grid-template-columns: 1fr;
+  }
+
+  .userInfo {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 16px 12px 28px;
+    gap: 14px;
+  }
+
+  .topBar {
+    gap: 12px;
+  }
+
+  .pageTitle {
+    font-size: 20px;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .statCard {
+    padding: 14px 12px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .statIcon {
+    display: none;
+  }
+
+  .statValue {
+    font-size: 24px;
+  }
+
+  .statLabel {
+    font-size: 12px;
+  }
+
+  .chartCard,
+  .sideCard {
+    padding: 16px;
+  }
+
+  .chartWrapper {
+    height: 180px;
+  }
+
+  .reviewBtn {
+    font-size: 12px;
+    padding: 9px;
+  }
+}
+
+/* Very small — stack stat cards */
+@media (max-width: 360px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .statCard {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .statIcon {
+    display: flex;
+  }
+}

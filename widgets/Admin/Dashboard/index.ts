@@ -1,3 +1,5 @@
+export { SuperAdminOverviewPage } from "./SuperAdmin";
+
 export { SupportCenterPage } from "./HospitalAdmin";
 
 export { SecurityPermissionsPage } from "./HospitalAdmin";
