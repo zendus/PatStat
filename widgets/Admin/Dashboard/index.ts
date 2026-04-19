@@ -1,3 +1,11 @@
+export { SettingsPage } from "./SuperAdmin";
+
+export { AuditLogsPage } from "./SuperAdmin";
+
+export { SystemAdminsPage } from "./SuperAdmin";
+
+export { HospitalDirectoryPage } from "./SuperAdmin";
+
 export { SuperAdminOverviewPage } from "./SuperAdmin";
 
 export { SupportCenterPage } from "./HospitalAdmin";
