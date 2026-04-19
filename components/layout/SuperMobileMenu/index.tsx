@@ -125,10 +125,10 @@ const SuperAdminMobileMenu: React.FC<SuperAdminMobileMenuProps> = ({
             {/* Profile header */}
             <div className={styles.menuHeader}>
               <div className={styles.menuProfile}>
-                <div className={styles.avatar} aria-hidden="true">AO</div>
+                <div className={styles.avatar} aria-hidden="true">JS</div>
                 <div className={styles.menuProfileText}>
-                  <p className={styles.menuProfileName}>Amara Okafor</p>
-                  <p className={styles.menuProfileRole}>Admin</p>
+                  <p className={styles.menuProfileName}>John Sunday</p>
+                  <p className={styles.menuProfileRole}>Super Admin</p>
                 </div>
               </div>
               <button className={styles.closeBtn} onClick={onClose} aria-label="Close menu" type="button">

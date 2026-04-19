@@ -62,7 +62,7 @@
 
 /* Green header bar */
 .notifHeader {
-  background-color: #007A71;
+  background-color: #015DDD;
   padding: 20px 20px 18px;
   display: flex;
   align-items: center;
@@ -87,7 +87,7 @@
 /* "0 New" pill */
 .notifBadge {
   background-color: #FFFFFF;
-  color: #007A71;
+  color: #015DDD;
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
@@ -200,7 +200,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: #007A71;
+  background-color: #015DDD;
   color: #FFFFFF;
   display: flex;
   align-items: center;

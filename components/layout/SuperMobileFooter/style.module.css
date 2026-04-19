@@ -41,12 +41,12 @@
 }
 
 .footerLink.active {
-  color: #007A71;
+  color: #015DDD;
   transform: scale(0.95);
 }
 
 .footerLink.active svg {
-  color: #007A71;
+  color: #015DDD;
   transform: scale(0.92);
 }
 

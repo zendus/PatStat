@@ -19,10 +19,11 @@ const SuperAdminMobileHeader: React.FC<SuperAdminMobileHeaderProps> = ({
       <div className={styles.logo}>
         <div className={styles.logoIcon} aria-hidden="true">
           <Link href="/super-admin/overview">
-            <Image src="/images/pat-stat-admin-menu-logo.svg"
-              alt="Pat-stat admin dashboard logo"
-              width={133}
-              height={50}
+            <Image src="/images/pat-stat-landing-logo.svg"
+              alt="Pat-stat super admin dashboard logo"
+              width={120}
+              height={42}
+              className={styles.superAdminHeaderLogo}
             />  
           </Link>
         </div>
