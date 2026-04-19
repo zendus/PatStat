@@ -1,3 +1,19 @@
+export { SettingsPage } from "./SuperAdmin";
+
+export { AuditLogsPage } from "./SuperAdmin";
+
+export { SystemAdminsPage } from "./SuperAdmin";
+
+export { HospitalDirectoryPage } from "./SuperAdmin";
+
+export { SuperAdminOverviewPage } from "./SuperAdmin";
+
+export { SupportCenterPage } from "./HospitalAdmin";
+
+export { SecurityPermissionsPage } from "./HospitalAdmin";
+
+export { HospitalSettingsPage } from "./HospitalAdmin";
+
 export { ReportsAnalyticsPage } from "./HospitalAdmin";
 
 export { ActivityAuditPage } from "./HospitalAdmin";

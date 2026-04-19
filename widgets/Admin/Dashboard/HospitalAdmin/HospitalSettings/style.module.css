@@ -1,0 +1,453 @@
+/* ── Tokens ──────────────────────────────────────────────────────────────────── */
+:root {
+  --teal: #1A949D;
+  --teal-light: #e8f7f8;
+  --teal-mid: rgba(26, 148, 157, 0.12);
+  --dark: #0A0A0A;
+  --mid: #3d4f55;
+  --muted: #646363;
+  --border: #e4e9eb;
+  --surface: #ffffff;
+  --bg: #f0f4f5;
+  --danger: #e05252;
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-sm: 8px;
+  --shadow-card: 0 1px 3px rgba(26,33,36,0.06), 0 4px 16px rgba(26,33,36,0.06);
+  --shadow-btn: 0 2px 8px rgba(26, 148, 157, 0.28);
+}
+
+/* ── Layout — aligned with ReportsAnalyticsPage wrapper ─────────────────────── */
+.wrapper {
+  animation: fadeIn 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  /* padding and background intentionally omitted — inherited from parent shell */
+}
+
+/* ── Top Header ──────────────────────────────────────────────────────────────── */
+.topHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.headerContent h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0 0 4px;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Header action buttons grouped together */
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* Shared button base */
+.editInformationBtn,
+.saveBtn,
+.cancelBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  border: none;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  letter-spacing: 0.01em;
+}
+
+.editInformationBtn {
+  background: var(--teal);
+  color: #fff;
+  box-shadow: var(--shadow-btn);
+}
+
+.editInformationBtn:hover {
+  background: #158a93;
+  box-shadow: 0 4px 14px rgba(26, 148, 157, 0.36);
+  transform: translateY(-1px);
+}
+
+.editInformationBtn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-btn);
+}
+
+.saveBtn {
+  background: var(--teal);
+  color: #fff;
+  box-shadow: var(--shadow-btn);
+}
+
+.saveBtn:hover {
+  background: #158a93;
+  box-shadow: 0 4px 14px rgba(26, 148, 157, 0.36);
+  transform: translateY(-1px);
+}
+
+.saveBtn:active {
+  transform: translateY(0);
+}
+
+.cancelBtn {
+  background: #fff;
+  color: var(--mid);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.cancelBtn:hover {
+  background: #f5f7f8;
+  border-color: #c8d0d3;
+  transform: translateY(-1px);
+}
+
+.cancelBtn:active {
+  transform: translateY(0);
+}
+
+/* ── Settings Section ────────────────────────────────────────────────────────── */
+.settingsSection {
+  background: var(--surface);
+  border: 0.5px solid rgba(208, 208, 208, 0.5);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s ease;
+}
+
+.settingsSection:hover {
+  box-shadow: 0 2px 6px rgba(26,33,36,0.08), 0 8px 24px rgba(26,33,36,0.08);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #EDEDED;
+}
+
+.sectionIconWrap {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--teal-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #252E30;
+  margin: 0;
+}
+
+/* ── Form Grid ───────────────────────────────────────────────────────────────── */
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 24px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  /* Prevent any child from overflowing the column */
+  min-width: 0;
+}
+
+.formLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.formInput,
+.formSelect {
+  /* Fill the column, never overflow it */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #F4F5F6;
+  font-size: 14px;
+  color: #252E30;
+  font-family: inherit;
+  font-weight: 500;
+  outline: none;
+  appearance: none;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Editable state */
+.formInput.editable,
+.formSelect.editable {
+  background: #fff;
+  border-color: var(--border);
+  cursor: text;
+}
+
+.formSelect.editable {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%237a8f96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+      background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.formInput.editable:focus,
+.formSelect.editable:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(26, 148, 157, 0.1);
+}
+
+/* Read-only / disabled visual */
+.formInput[readOnly],
+.formSelect:disabled {
+  cursor: default;
+  color: var(--mid);
+  opacity: 1; /* override browser-default disabled dimming */
+}
+
+.formSelect {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%237a8f96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.formSelect:disabled {
+  cursor: default;
+}
+
+/* ── Operating Hours — FIX for overlap ───────────────────────────────────────── */
+/* The formGroup already sits in a grid column. We only need the
+   row of two time inputs + separator to behave correctly. */
+.timeInputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* Prevent the flex children from pushing past the column boundary */
+  min-width: 0;
+  width: 100%;
+}
+
+.timeInput {
+  /* Each time box takes equal space, never overflows */
+  flex: 1 1 0;
+  min-width: 0;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 11px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #F4F5F6;
+  font-size: 14px;
+  font-weight: 600;
+  color: #252E30;
+  font-family: 'DM Mono', 'Roboto Mono', ui-monospace, monospace;
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.timeInput.editable {
+  background: #fff;
+  cursor: text;
+}
+
+.timeInput.editable:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(26, 148, 157, 0.1);
+}
+
+.timeInput[readOnly] {
+  cursor: default;
+  color: var(--mid);
+}
+
+.timeSeparator {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+/* ── Notification Items ───────────────────────────────────────────────────────── */
+.notificationItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  border: 1px solid transparent;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.notificationItem:hover {
+  border-color: var(--border);
+  background: #fff;
+}
+
+.notificationText {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.notificationTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #252E30;
+  margin: 0;
+}
+
+.notificationDescription {
+  font-size: 13px;
+  color: #8A9099;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ── Toggle Switch ───────────────────────────────────────────────────────────── */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #d0d9dc;
+  transition: background 0.2s ease;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: transform 0.2s ease;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.18);
+}
+
+input:checked + .slider {
+  background-color: var(--teal);
+}
+
+input:focus-visible + .slider {
+  box-shadow: 0 0 0 3px rgba(26, 148, 157, 0.25);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .topHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .headerContent h1 {
+    padding-top: 20px;
+  }
+
+  .headerActions {
+    width: 100%;
+  }
+
+  .editInformationBtn,
+  .saveBtn,
+  .cancelBtn {
+    flex: 1;
+    justify-content: center;
+    padding: 12px 18px;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .headerContent h1 { font-size: 24px; }
+  .settingsSection { padding: 15px; }
+  .sectionTitle { font-size: 16px; }
+  .notificationItem { padding: 12px; }
+}
+
+@media (max-width: 480px) {
+  .headerContent h1 { font-size: 22px; }
+  .subtitle { font-size: 13px; }
+  .formLabel { font-size: 11px; }
+  .formInput, .formSelect { font-size: 13px; padding: 10px 12px; }
+  .timeInput { font-size: 13px; padding: 10px 6px; }
+}
+
+/* ── Staggered section reveal ────────────────────────────────────────────────── */
+.settingsSection {
+  animation: fadeIn 0.25s ease both;
+}
+
+.settingsSection:nth-child(2) { animation-delay: 0.04s; }
+.settingsSection:nth-child(3) { animation-delay: 0.08s; }
+.settingsSection:nth-child(4) { animation-delay: 0.12s; }
+
+/* ── Animation ───────────────────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

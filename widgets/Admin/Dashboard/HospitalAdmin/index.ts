@@ -1,3 +1,7 @@
+export { SupportCenterPage } from "./Support";
+
+export { SecurityPermissionsPage } from "./Security";
+
 export { ReportsAnalyticsPage } from "./ReportAnalytics";
 
 export { ActivityAuditPage } from "./AuditActivity";
@@ -11,3 +15,4 @@ export { CareTeamsPage } from "./CareTeams";
 export { PatientManagementPage } from "./Patients";
 
 export { AdminDashboardPage } from "./Overview";
+export { HospitalSettingsPage } from "./HospitalSettings";

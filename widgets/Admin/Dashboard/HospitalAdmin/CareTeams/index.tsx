@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./style.module.css";
+import { InviteStaffModal } from "@/components/layout";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -74,12 +75,13 @@ const NurseIcon = () => (
 
 );
 
-
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 const CareTeamsPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<Tab>("All Staff");
   const [query, setQuery] = useState("");
+  const [isInviteModalOpen, setIsInviteModalOpen] = useState(false);
+  console.log("isInviteModalOpen:", isInviteModalOpen); 
 
   const getFilteredStaff = () => {
     let currentStaff: StaffMember[] = [];
@@ -109,8 +111,11 @@ const CareTeamsPage: React.FC = () => {
           <h1>Care Teams</h1>
           <p className={styles.subtitle}>Manage doctors, nurses and medical staff</p>
         </div>
-        <button className={styles.inviteStaffBtn}>
-          <InviteIcon /> Invite Staff
+        <button 
+        className={styles.inviteStaffBtn} 
+        onClick={() => setIsInviteModalOpen(true)}
+        >
+           <InviteIcon /> Invite Staff
         </button>
       </div>
 
@@ -193,6 +198,13 @@ const CareTeamsPage: React.FC = () => {
           )}
         </div>
       </div>
+      <InviteStaffModal
+      isOpen={isInviteModalOpen}
+      onClose={() => setIsInviteModalOpen(false)}
+      onInviteSuccess={(name, email, role) => {
+      console.log("Invited:", name, email, role);
+      }}
+      />
     </div>
   );
 };
