@@ -82,6 +82,157 @@ const ChevronIcon = () => (
   </svg>
 );
 
+// ─── Add Hospital Modal ───────────────────────────────────────────────────────
+
+interface AddHospitalModalProps {
+  onClose: () => void;
+  onAdd: (hospital: Hospital) => void;
+}
+
+const HOSPITAL_TYPES: HospitalType[] = ["Public", "Private", "Specialist Hospital", "Teaching Hospital"];
+
+const AddHospitalModal: React.FC<AddHospitalModalProps> = ({ onClose, onAdd }) => {
+  const [name, setName]           = useState("");
+  const [type, setType]           = useState<HospitalType | "">("");
+  const [location, setLocation]   = useState("");
+  const [adminName, setAdminName] = useState("");
+  const [adminEmail, setAdminEmail] = useState("");
+  const [typeOpen, setTypeOpen]   = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name || !type || !location || !adminName || !adminEmail) return;
+    const newHospital: Hospital = {
+      id: Date.now(),
+      name,
+      type: type as HospitalType,
+      location,
+      adminName,
+      adminEmail,
+      adminPhone: "",
+      status: "pending",
+      dateAdded: new Date().toISOString().split("T")[0],
+      registrationId: `REG-${new Date().getFullYear()}-${String(Date.now()).slice(-3)}`,
+      totalStaff: 0,
+      totalPatients: 0,
+      statusNote: "Pending manual review",
+      lastUpdate: "Just now",
+      patientUpdatesToday: 0,
+    };
+    onAdd(newHospital);
+    onClose();
+  };
+
+  return (
+    <div className={styles.modalOverlay} onClick={onClose}>
+      <div className={styles.addModal} onClick={(e) => e.stopPropagation()}>
+
+        {/* Header */}
+        <div className={styles.addModalHeader}>
+          <h2 className={styles.addModalTitle}>Add New Hospital</h2>
+          <button className={styles.modalCloseBtn} onClick={onClose} aria-label="Close">
+            <XCircleIcon />
+          </button>
+        </div>
+
+        <form onSubmit={handleSubmit} className={styles.addModalBody}>
+
+          {/* Hospital Name */}
+          <div className={styles.addFormGroup}>
+            <label className={styles.addFormLabel}>Hospital Name</label>
+            <input
+              type="text"
+              className={styles.addFormInput}
+              placeholder="e.g. Lagos General Hospital"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+
+          {/* Type + Location row */}
+          <div className={styles.addFormRow}>
+            <div className={styles.addFormGroup}>
+              <label className={styles.addFormLabel}>Type</label>
+              <div className={styles.addDropdownWrap}>
+                <button
+                  type="button"
+                  className={`${styles.addFormSelect} ${typeOpen ? styles.addFormSelectOpen : ""}`}
+                  onClick={() => setTypeOpen(!typeOpen)}
+                >
+                  <span style={{ color: type ? "inherit" : "#8A9099" }}>{type || "Select type..."}</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                    style={{ transform: typeOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s ease", flexShrink: 0 }}>
+                    <polyline points="6 9 12 15 18 9"/>
+                  </svg>
+                </button>
+                {typeOpen && (
+                  <ul className={styles.addDropdownMenu}>
+                    {HOSPITAL_TYPES.map((t) => (
+                      <li
+                        key={t}
+                        className={`${styles.addDropdownItem} ${type === t ? styles.addDropdownItemActive : ""}`}
+                        onClick={() => { setType(t); setTypeOpen(false); }}
+                      >
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+
+            <div className={styles.addFormGroup}>
+              <label className={styles.addFormLabel}>Location</label>
+              <input
+                type="text"
+                className={styles.addFormInput}
+                placeholder="City, Country"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                required
+              />
+            </div>
+          </div>
+
+          {/* Admin Full Name */}
+          <div className={styles.addFormGroup}>
+            <label className={styles.addFormLabel}>Admin Full Name</label>
+            <input
+              type="text"
+              className={styles.addFormInput}
+              placeholder="Dr. Jane Doe"
+              value={adminName}
+              onChange={(e) => setAdminName(e.target.value)}
+              required
+            />
+          </div>
+
+          {/* Admin Email */}
+          <div className={styles.addFormGroup}>
+            <label className={styles.addFormLabel}>Admin Email</label>
+            <input
+              type="email"
+              className={styles.addFormInput}
+              placeholder="admin@hospital.com"
+              value={adminEmail}
+              onChange={(e) => setAdminEmail(e.target.value)}
+              required
+            />
+          </div>
+
+          {/* Footer */}
+          <div className={styles.addModalFooter}>
+            <button type="button" className={styles.addCancelBtn} onClick={onClose}>Cancel</button>
+            <button type="submit" className={styles.addSubmitBtn}>Add Hospital</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  );
+};
+
 // ─── Hospital Detail Modal ─────────────────────────────────────────────────────
 
 interface HospitalModalProps {
@@ -244,6 +395,11 @@ const HospitalDirectoryPage: React.FC = () => {
   const [filterOpen, setFilterOpen] = useState(false);
   const [selectedHospital, setSelectedHospital] = useState<Hospital | null>(null);
   const [hospitalList, setHospitalList] = useState<Hospital[]>(hospitals);
+  const [showAddModal, setShowAddModal] = useState(false);
+
+  const handleAddHospital = (hospital: Hospital) => {
+    setHospitalList((prev) => [hospital, ...prev]);
+  };
 
   const filtered = hospitalList.filter((h) => {
     const q = query.toLowerCase();
@@ -282,7 +438,7 @@ const HospitalDirectoryPage: React.FC = () => {
           <h1 className={styles.pageTitle}>Hospital Directory</h1>
           <p className={styles.pageSubtitle}>Manage client hospitals and platform access</p>
         </div>
-        <button className={styles.addHospitalBtn}>
+        <button className={styles.addHospitalBtn} onClick={() => setShowAddModal(true)}>
           <PlusIcon /> Add Hospital
         </button>
       </div>
@@ -377,7 +533,15 @@ const HospitalDirectoryPage: React.FC = () => {
 
       </div>
 
-      {/* Modal */}
+      {/* Add Hospital Modal */}
+      {showAddModal && (
+        <AddHospitalModal
+          onClose={() => setShowAddModal(false)}
+          onAdd={handleAddHospital}
+        />
+      )}
+
+      {/* Detail Modal */}
       {selectedHospital && (
         <HospitalModal
           hospital={selectedHospital}
