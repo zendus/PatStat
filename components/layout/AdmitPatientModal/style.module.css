@@ -1,0 +1,516 @@
+/* ── Tokens (from existing codebase) ────────────────────────────────────────── */
+:root {
+  --teal: #1A949D;
+  --teal-light: #e8f7f8;
+  --teal-mid: rgba(26, 148, 157, 0.12);
+  --dark: #0A0A0A;
+  --mid: #3d4f55;
+  --muted: #646363;
+  --border: #e4e9eb;
+  --surface: #ffffff;
+  --bg: #f0f4f5;
+  --danger: #e05252;
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-sm: 8px;
+  --shadow-card: 0 1px 3px rgba(26,33,36,0.06), 0 4px 16px rgba(26,33,36,0.06);
+  --shadow-btn: 0 2px 8px rgba(26, 148, 157, 0.28);
+}
+
+/* ── Modal Overlay ───────────────────────────────────────────────────────────── */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+    padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
+  animation: fadeInOverlay 0.15s ease-out;
+}
+
+.modal {
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 693px; /* Adjust max-width as per screenshot */
+  box-shadow: 0 8px 30px rgba(26, 33, 36, 0.12);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Ensures content stays within rounded corners */
+  animation: slideInModal 0.2s ease-out forwards;
+    max-height: min(calc(100dvh - 32px - 60px), 780px);
+
+}
+
+/* ── Modal Header ────────────────────────────────────────────────────────────── */
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.modalTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modalTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #252E30;
+  margin: 0;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s ease;
+}
+
+.closeButton:hover {
+  background-color: var(--bg);
+}
+
+.closeButton svg {
+  color: var(--dark);
+}
+
+/* ── Modal Body (Form) ───────────────────────────────────────────────────────── */
+.modalBody {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px; /* Spacing between form groups */
+   overflow-y: hidden;   /* ← scroll only the form content */
+  flex: 1;
+  min-height: 0; 
+}
+
+.modalBody:hover {
+    overflow-y: auto;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.formLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark);
+  /* text-transform: uppercase; */
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.requiredStar {
+  color: var(--danger);
+  font-size: 14px;
+  line-height: 1;
+}
+
+.formInput,
+.formSelect { /* Reusing styles from HospitalSettingsPage */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: #F4F5F6;
+  font-size: 14px;
+  color: #252E30;
+  font-family: inherit;
+  font-weight: 500;
+  outline: none;
+  appearance: none; /* Remove default arrow for select */
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.formInput::placeholder {
+  color: #8A9099;
+}
+
+.formInput:focus,
+.formSelect.active { /* Use .active for dropdown button focus/open state */
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(26, 148, 157, 0.1);
+  background: #fff;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 70px; /* Adjust as per screenshot */
+}
+
+/* ── Custom Dropdown Specific Styles ─────────────────────────────────────────── */
+.dropdownContainer {
+  position: relative;
+  width: 100%;
+}
+
+.dropdownContainer .formSelect { /* Style for the dropdown button */
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%237a8f96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>'); */
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.dropdownContainer .formSelect.active {
+    box-shadow: 0 0 0 3px rgba(26, 148, 157, 0.1);
+    border-color: var(--teal);
+}
+
+.dropdownContainer .formSelect.active svg {
+  transform: rotate(180deg);
+}
+
+.dropdownContainer .formSelect svg {
+  transition: transform 0.2s ease;
+  color: var(--muted);
+  position: absolute; /* Position arrow independently */
+  right: 12px;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%; /* Position below the button */
+  left: 0;
+  right: 0;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-height: 200px; /* Max height for scrollable menu */
+  overflow-y: auto;
+  z-index: 10;
+  list-style: none;
+  padding: 0;
+  margin-top: 5px; /* Space between button and menu */
+}
+
+.dropdownMenu li {
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #252E30;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.dropdownMenu li:hover {
+  background-color: var(--bg);
+}
+
+.dropdownMenu li.selectedOption {
+  background-color: var(--teal-light);
+  color: var(--teal);
+  font-weight: 600;
+}
+
+/* ── Info Box ────────────────────────────────────────────────────────────────── */
+.infoBox {
+  display: flex;
+  align-items: flex-start; /* Align icon to top with text */
+  gap: 10px;
+  background-color: var(--teal-light);
+  border: 1px solid var(--teal-mid);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  font-size: 13px;
+  color: var(--teal);
+  line-height: 1.4;
+}
+
+.infoBox svg {
+  flex-shrink: 0;
+  margin-top: 1px; /* Optical adjustment */
+}
+
+/* ── Modal Actions (Buttons) ─────────────────────────────────────────────────── */
+.modalActions {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 10px;
+  padding-top: 10px; /* Space from the last form element */
+  border-top: 1px solid var(--border);
+  margin-top: 14px;
+  flex-shrink: 0;
+}
+
+.cancelBtn {
+  background: #fff;
+  color: var(--mid);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.cancelBtn:hover {
+  background: #f5f7f8;
+  border-color: #c8d0d3;
+  transform: translateY(-1px);
+}
+
+.cancelBtn:active {
+  transform: translateY(0);
+}
+
+.sendInvitationBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  border: none;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  letter-spacing: 0.01em;
+  background: var(--teal);
+  color: #fff;
+  box-shadow: var(--shadow-btn);
+}
+
+.sendInvitationBtn:hover {
+  background: #158a93;
+  box-shadow: 0 4px 14px rgba(26, 148, 157, 0.36);
+  transform: translateY(-1px);
+}
+
+.sendInvitationBtn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-btn);
+}
+
+
+/* ── Success Screen ──────────────────────────────────────────────────────────── */
+.successScreen {
+  display: flex;
+  flex-direction: column;
+}
+
+.successContent {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+}
+
+.checkCircle {
+  width: 70px; /* Larger circle for the icon background */
+  height: 70px;
+  border-radius: 50%;
+  background-color: #ECFDF3; /* Light green background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.checkCircle svg {
+  color: #28A745; /* Green checkmark */
+}
+
+.successMessage {
+  font-size: 20px;
+  font-weight: 700;
+  color: #252E30;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.admissionDetails {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.careTeamAssigned {
+  background-color: var(--bg);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  width: calc(100% - 40px); /* Adjust width to match screenshot padding */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.careTeamTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #252E30;
+  margin: 0 0 4px;
+}
+
+.careTeamAssigned p {
+  font-size: 14px;
+  color: #3d4f55;
+  margin: 0;
+  line-height: 1.5;
+}
+
+
+.doneBtn {
+  background: var(--dark); /* Dark button for done */
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  width: calc(100% - 48px); /* Match width with other form elements */
+  max-width: 300px; /* Optional: cap max width */
+  margin-top: 10px;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.doneBtn:hover {
+  background: #1f1f1f;
+  transform: translateY(-1px);
+}
+
+.doneBtn:active {
+  transform: translateY(0);
+}
+
+
+/* ── Animations ──────────────────────────────────────────────────────────────── */
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInModal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive Adjustments ──────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .modal {
+    margin: 15px;
+    max-width: calc(100% - 30px);
+  }
+
+  .modalHeader {
+    padding: 15px 20px;
+  }
+
+  .modalTitle {
+    font-size: 16px;
+  }
+
+  .modalBody {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .formInput, .formSelect, .dropdownMenu li {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .textarea {
+    min-height: 60px;
+  }
+
+  .infoBox {
+    padding: 12px 15px;
+    font-size: 12px;
+  }
+
+  .modalActions {
+    flex-direction: column-reverse; /* Stack buttons */
+    gap: 12px;
+    padding-top: 15px;
+  }
+
+  .cancelBtn, .sendInvitationBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 18px;
+  }
+
+  .successContent {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .checkCircle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .checkCircle svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .successMessage {
+    font-size: 18px;
+  }
+
+  .admissionDetails, .careTeamAssigned p {
+    font-size: 13px;
+  }
+
+  .careTeamAssigned {
+    padding: 14px 18px;
+    width: calc(100% - 36px);
+  }
+
+  .careTeamTitle {
+    font-size: 14px;
+  }
+
+  .doneBtn {
+    padding: 10px 20px;
+    font-size: 14px;
+    width: calc(100% - 40px);
+  }
+}

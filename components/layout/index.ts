@@ -1,3 +1,9 @@
+export { InviteFamilyModal } from "./InviteFamilyModal";
+
+export { InviteStaffModal } from "./InviteStaffModal";
+
+export { AdmitPatientModal } from "./AdmitPatientModal";
+
 export { AdminMobileHeader } from "./AdminMobileHeader";
 
 export { AdminMobileMenu } from "./AdminMobileMenu";

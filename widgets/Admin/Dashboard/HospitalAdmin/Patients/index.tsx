@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./style.module.css";
+import { AdmitPatientModal } from "@/components/layout";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -11,16 +12,18 @@ interface Patient {
   id: number;
   name: string;
   age: number;
-  gender: "M" | "F";
+  gender: "M" | "F" | "Other"; // Added 'Other' for gender
   ward: string;
   bed: string;
   status: PatientStatus;
   diagnosis: string;
+  doctor?: string; // Added doctor
+  nurses?: string[]; // Added nurses
 }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
-const allPatients: Patient[] = [
+const initialPatients: Patient[] = [ // Changed to initialPatients
   { id: 1, name: "Martha Caleb", age: 37, gender: "F", ward: "ICU - Ward A", bed: "Bed 01", status: "Getting Better", diagnosis: "Pneumonia with complications" },
   { id: 2, name: "Ujunwa Ngozi", age: 42, gender: "F", ward: "ICU - Ward A", bed: "Bed 02", status: "Stable", diagnosis: "Acute Respiratory Distress Syndrome" },
   { id: 3, name: "Nkiruka Ozoemena", age: 38, gender: "F", ward: "ICU - Ward C", bed: "Bed 03", status: "Critical", diagnosis: "Post-operative Sepsis Monitoring" },
@@ -67,6 +70,8 @@ const FilterIcon = () => (
 
 const PatientManagementPage: React.FC = () => {
   const [query, setQuery] = useState("");
+  const [isAdmitModalOpen, setIsAdmitModalOpen] = useState(false);
+  const [allPatients, setAllPatients] = useState<Patient[]>(initialPatients); // State for all patients
 
   const filtered = allPatients.filter((p) => {
     const q = query.toLowerCase();
@@ -79,7 +84,8 @@ const PatientManagementPage: React.FC = () => {
 
   // Group patients by ward for display, as seen in the screenshot
   const patientsByWard: { [key: string]: Patient[] } = filtered.reduce((acc, patient) => {
-    const wardName = patient.ward.split(' - ')[0]; // "ICU" from "ICU - Ward A"
+    // Extract main ward name, e.g., "ICU" from "ICU - Ward A"
+    const wardName = patient.ward.split(' - ')[0]; 
     if (!acc[wardName]) {
       acc[wardName] = [];
     }
@@ -87,6 +93,21 @@ const PatientManagementPage: React.FC = () => {
     return acc;
   }, {} as { [key: string]: Patient[] });
 
+  const handleAdmitSuccess = (patientName: string, ward: string, bed: string, doctor: string, nurses: string[]) => {
+    const newPatient: Patient = {
+      id: allPatients.length + 1, // Simple ID generation
+      name: patientName,
+      age: parseInt('0'), // You might want to pass age from modal
+      gender: "Other", // You might want to pass gender from modal
+      ward: ward,
+      bed: bed,
+      status: "Being Monitored", // Default status for new admissions
+      diagnosis: "Newly admitted", // Default diagnosis
+      doctor: doctor,
+      nurses: nurses,
+    };
+    setAllPatients((prev) => [...prev, newPatient]);
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -97,11 +118,10 @@ const PatientManagementPage: React.FC = () => {
           <h1>Patient Management</h1>
           <p className={styles.subtitle}>View and manage all patient records</p>
         </div>
-        <button className={styles.admitPatientBtn}>
+        <button className={styles.admitPatientBtn} onClick={() => setIsAdmitModalOpen(true)}>
           <PlusIcon /> Admit Patient
         </button>
       </div>
-
 
       {/* Main content container */}
       <div className={styles.mainContent}>
@@ -156,6 +176,12 @@ const PatientManagementPage: React.FC = () => {
           )}
         </div>
       </div>
+
+      <AdmitPatientModal
+        isOpen={isAdmitModalOpen}
+        onClose={() => setIsAdmitModalOpen(false)}
+        onAdmitSuccess={handleAdmitSuccess}
+      />
     </div>
   );
 };
